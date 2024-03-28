@@ -9,7 +9,7 @@ public class PlayerControler : MonoBehaviour
     public bool DoCameraControl = true;
     public float PlayerWalkSpeed = 50f;
     public float PlayerReach = 5f;
-    public Vector2 MouseSensitivity = new Vector2(125, 125);
+   [SerializeField] public Vector2 MouseSensitivity = new Vector2(125, 125); //serialized for saving
 
     Vector2 MovementDir;
     Vector3 Movement3d;
