@@ -42,15 +42,4 @@ public class SceneLoadTrigger : MonoBehaviour
             SceneManager.LoadSceneAsync(SceneToLoad, LoadSceneMode.Additive);
         }
     }
-
-    void OnTriggerExit(Collider other)
-    {
-        Debug.Log("Something exited trigger");
-        if (other.gameObject.layer == 3)
-        {
-
-            Debug.Log("Something is player, unloading scene " + SceneToLoad);
-            SceneManager.UnloadSceneAsync(SceneToLoad);
-        }
-    }
 }
