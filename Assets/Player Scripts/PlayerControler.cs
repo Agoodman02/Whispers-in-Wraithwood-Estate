@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
+    public static PlayerControler player;
+
     public GameObject CameraCenter;
     public bool DoCameraControl = true;
     public float PlayerWalkSpeed = 50f;
@@ -40,6 +42,15 @@ public class PlayerControler : MonoBehaviour
 
     void Awake()
     {
+        if (player == null)
+        {
+            player = this;
+        }
+        else if (player != this)
+        {
+            Destroy(gameObject);
+        }
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
