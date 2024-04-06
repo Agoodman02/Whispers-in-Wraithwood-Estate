@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 125951913225841941}
   - component: {fileID: 8078314728155793822}
   - component: {fileID: 3569555456196590375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3840477828659169890}
   - component: {fileID: 1775116208768348250}
   - component: {fileID: 2829595154561846813}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraCenter: {fileID: 4832457760427549695}
+  DoCameraControl: 1
   PlayerWalkSpeed: 50
+  PlayerReach: 5
   MouseSensitivity: {x: 125, y: 125}
 --- !u!1 &2863183686035939255
 GameObject:
@@ -195,7 +197,7 @@ GameObject:
   - component: {fileID: 978759943656460527}
   - component: {fileID: 7885337826276295364}
   - component: {fileID: 2455402994876478854}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -285,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4032910628369218947}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
