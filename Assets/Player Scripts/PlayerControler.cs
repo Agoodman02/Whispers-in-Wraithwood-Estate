@@ -21,6 +21,8 @@ public class PlayerControler : MonoBehaviour
     private float camrotx;
     private float camroty;
 
+    [HideInInspector] public bool allowPickup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +74,11 @@ public class PlayerControler : MonoBehaviour
         if (actions.Player3D.Interact.WasPressedThisFrame())
         {
             InteractPressed();
+            
+            if (LookingAt.transform.gameObject.layer == 6)
+            {
+                allowPickup = true;
+            }
         }
     }
 
