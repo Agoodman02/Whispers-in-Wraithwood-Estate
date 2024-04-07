@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,10 +23,6 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        //get rid of later
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     // Update is called once per frame

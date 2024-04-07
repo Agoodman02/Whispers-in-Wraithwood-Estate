@@ -7,9 +7,12 @@ public class ItemPickup : MonoBehaviour
 {
     //Declare varibles
     public Item Item;
-    [SerializeField] Image pickupPopup;
+    [SerializeField] Image pickupPopup; 
+    [SerializeField] Text ItemText;
 
     private bool allowPickup;
+    [HideInInspector] public string itemPopupName;
+    private GameObject InventoryItem;
 
     private void Start()
     {
@@ -20,9 +23,6 @@ public class ItemPickup : MonoBehaviour
     private void Update()
     {
         //allowPickup = GameObject.Find("PlayerPrefab").GetComponent<PlayerPickup>().allowPickup;
-
-        //Needs to get info from raycast to figure out when to display text and when allowed to pickup
-        //Maybe from the player controller
 
         //If within range
         if (allowPickup)
@@ -70,6 +70,7 @@ public class ItemPickup : MonoBehaviour
     void EnablePickupPopup()
     {
         pickupPopup.gameObject.SetActive(true);
+        ItemText.text = $"{Item.itemName}";
     }
 
     //Hides pickup text
