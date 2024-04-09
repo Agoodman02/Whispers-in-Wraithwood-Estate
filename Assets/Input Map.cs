@@ -62,6 +62,15 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""InventoryMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""cebdb519-2f09-4d8a-92b1-d985d55de7f6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +183,17 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
                     ""action"": ""LookGP"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f692335a-8069-4edf-b453-efd6e7f4d1d2"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InventoryMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         m_Player3D_Interact = m_Player3D.FindAction("Interact", throwIfNotFound: true);
         m_Player3D_LookMouse = m_Player3D.FindAction("LookMouse", throwIfNotFound: true);
         m_Player3D_LookGP = m_Player3D.FindAction("LookGP", throwIfNotFound: true);
+        m_Player3D_InventoryMenu = m_Player3D.FindAction("InventoryMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player3D_Interact;
     private readonly InputAction m_Player3D_LookMouse;
     private readonly InputAction m_Player3D_LookGP;
+    private readonly InputAction m_Player3D_InventoryMenu;
     public struct Player3DActions
     {
         private @InputMap m_Wrapper;
@@ -259,6 +281,7 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player3D_Interact;
         public InputAction @LookMouse => m_Wrapper.m_Player3D_LookMouse;
         public InputAction @LookGP => m_Wrapper.m_Player3D_LookGP;
+        public InputAction @InventoryMenu => m_Wrapper.m_Player3D_InventoryMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player3D; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -280,6 +303,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @LookGP.started += instance.OnLookGP;
             @LookGP.performed += instance.OnLookGP;
             @LookGP.canceled += instance.OnLookGP;
+            @InventoryMenu.started += instance.OnInventoryMenu;
+            @InventoryMenu.performed += instance.OnInventoryMenu;
+            @InventoryMenu.canceled += instance.OnInventoryMenu;
         }
 
         private void UnregisterCallbacks(IPlayer3DActions instance)
@@ -296,6 +322,9 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
             @LookGP.started -= instance.OnLookGP;
             @LookGP.performed -= instance.OnLookGP;
             @LookGP.canceled -= instance.OnLookGP;
+            @InventoryMenu.started -= instance.OnInventoryMenu;
+            @InventoryMenu.performed -= instance.OnInventoryMenu;
+            @InventoryMenu.canceled -= instance.OnInventoryMenu;
         }
 
         public void RemoveCallbacks(IPlayer3DActions instance)
@@ -319,5 +348,6 @@ public partial class @InputMap: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnLookMouse(InputAction.CallbackContext context);
         void OnLookGP(InputAction.CallbackContext context);
+        void OnInventoryMenu(InputAction.CallbackContext context);
     }
 }

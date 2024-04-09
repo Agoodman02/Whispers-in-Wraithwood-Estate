@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +12,7 @@ public class PlayerControler : MonoBehaviour
     public bool DoCameraControl = true;
     public float PlayerWalkSpeed = 50f;
     public float PlayerReach = 5f;
-   [SerializeField] public Vector2 MouseSensitivity = new Vector2(125, 125); //serialized for saving
+    [SerializeField] public Vector2 MouseSensitivity = new Vector2(125, 125); //serialized for saving
 
     Vector2 MovementDir;
     Vector3 Movement3d;
@@ -22,6 +23,10 @@ public class PlayerControler : MonoBehaviour
 
     private float camrotx;
     private float camroty;
+
+    //Inventory Stuff
+    public InventoryManager inventoryManager;
+    [HideInInspector]public bool allowPickup = false;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +89,14 @@ public class PlayerControler : MonoBehaviour
         {
             InteractPressed();
         }
+
+        /*
+        //Tells ItemPickup if player is looking at an item; not in use
+        if (LookingAt.transform.gameObject.layer == 6)
+        {
+            allowPickup = true;
+        }
+        */
     }
 
     //We do movement updates here to avoid FPS impacting calculations
