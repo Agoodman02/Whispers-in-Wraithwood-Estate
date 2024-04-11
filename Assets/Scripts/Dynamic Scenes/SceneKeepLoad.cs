@@ -38,6 +38,9 @@ public class SceneKeepLoad : MonoBehaviour
 
                 if (go.GetComponent<Renderer>() != null)
                 {
+
+                    centers.Add(go.GetComponent<Renderer>().bounds.center);
+
                     go.transform.position = go.transform.localPosition;
 
                     Debug.Log("Adding " + go.name + " to bounds");
@@ -45,10 +48,12 @@ public class SceneKeepLoad : MonoBehaviour
 
                     go.transform.localPosition = go.transform.position;
 
-                    centers.Add(go.GetComponent<Renderer>().bounds.center);
+                    
                 }
                 else
                 {
+                    centers.Add(go.transform.position);
+
                     go.transform.position = go.transform.localPosition;
 
                     Debug.Log("Adding " + go.name + " Point to bounds");
@@ -56,7 +61,7 @@ public class SceneKeepLoad : MonoBehaviour
 
                     go.transform.localPosition = go.transform.position;
 
-                    centers.Add(go.transform.position);
+                    
                 }
             }
         }

@@ -260,7 +260,7 @@ MonoBehaviour:
   ScenePath: Assets/Scripts/Dynamic Scenes/SampleScenes/Scene02.unity
   DistanceToUnload: 15
   GroupBoundingbox:
-    m_Center: {x: 0, y: 9.19, z: 50.28}
+    m_Center: {x: 0, y: 8.59, z: 50.3}
     m_Extent: {x: 25, y: 9.605, z: 25}
   SetBounds: 0
 --- !u!4 &1822967444
