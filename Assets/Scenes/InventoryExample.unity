@@ -699,11 +699,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 426
+      value: 425
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -541
+      objectReference: {fileID: 0}
+    - target: {fileID: 318061908452174163, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 318268055283744701, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchorMax.y
@@ -720,6 +724,10 @@ PrefabInstance:
     - target: {fileID: 318268055283744701, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -885
+      objectReference: {fileID: 0}
+    - target: {fileID: 584837833326995400, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024277548613054568, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchorMax.y
@@ -821,6 +829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5627901773162282145, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6714012494121236582, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -840,6 +852,10 @@ PrefabInstance:
     - target: {fileID: 7878151773311135155, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -541
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196859064563847470, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

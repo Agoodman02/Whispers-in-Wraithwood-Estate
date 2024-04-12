@@ -46,6 +46,9 @@ public class PauseMenu : MonoBehaviour
         //screenUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     /*
@@ -63,6 +66,9 @@ public class PauseMenu : MonoBehaviour
         //screenUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Start Menu
