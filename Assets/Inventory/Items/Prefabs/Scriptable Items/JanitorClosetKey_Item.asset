@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
-  m_Name: Item_Cube
+  m_Name: JanitorClosetKey_Item
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: Cube
-  value: 1
-  icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  prefab: {fileID: 6638709353232348730, guid: 8b63192734072294cb6bda657a459d5a, type: 3}
+  id: 8
+  itemName: Janitor Closet Key
+  icon: {fileID: 855794929, guid: b6380d02fed375242be77d3a7699cd38, type: 3}
+  prefab: {fileID: 0}
