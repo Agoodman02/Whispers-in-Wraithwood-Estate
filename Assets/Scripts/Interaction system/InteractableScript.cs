@@ -7,6 +7,9 @@ using UnityEngine.Events;
 public class InteractableScript : MonoBehaviour
 {
     //declare varibles
+    [SerializeField] InventoryManager inventoryManager;
+    private List<Item> items; //should this be <Item>?
+
     [Header("Evidence Board Clues")]
     public GameObject clue1;
     public GameObject clue2;
@@ -15,8 +18,8 @@ public class InteractableScript : MonoBehaviour
     public GameObject clue5;
     public GameObject clue6;
 
-    public bool allowClue1 = false;
-    public bool allowClue2 = false;
+    public bool allowClue1;
+    public bool allowClue2;
     [HideInInspector] public bool allowClue3 = false;
     [HideInInspector] public bool allowClue4 = false;
     [HideInInspector] public bool allowClue5 = false;
@@ -24,7 +27,12 @@ public class InteractableScript : MonoBehaviour
 
     private void Update()
     {
-        
+        //if (items.Contains(id)) { allowClue1 = true; }  //something to check id number
+        //if (items.Contains(items.id(1))) { allowClue2 = true; }
+        //if (items.Contains(items.id(1))) { allowClue3 = true; }
+        //if (items.Contains(items.id(1))) { allowClue4 = true; }
+        //if (items.Contains(items.id(1))) { allowClue5 = true; }
+        //if (items.Contains(items.id(1))) { allowClue6 = true; }
     }
 
 
