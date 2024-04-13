@@ -8,7 +8,7 @@ public class InteractableScript : MonoBehaviour
 {
     //declare varibles
     [SerializeField] InventoryManager inventoryManager;
-    private List<Item> items; //should this be <Item>?
+    public InventorySpace Items;
 
     [Header("Evidence Board Clues")]
     public GameObject clue1;
@@ -18,46 +18,53 @@ public class InteractableScript : MonoBehaviour
     public GameObject clue5;
     public GameObject clue6;
 
-    public bool allowClue1;
-    public bool allowClue2;
-    [HideInInspector] public bool allowClue3 = false;
-    [HideInInspector] public bool allowClue4 = false;
-    [HideInInspector] public bool allowClue5 = false;
-    [HideInInspector] public bool allowClue6 = false;
+    InputMap actions;
+
+    private List<Item> toremove;
+
+    void Awake()
+    {
+        actions = new InputMap();
+
+        actions.Player3D.Enable();
+    }
 
     private void Update()
     {
-        //if (items.Contains(id)) { allowClue1 = true; }  //something to check id number
-        //if (items.Contains(items.id(1))) { allowClue2 = true; }
-        //if (items.Contains(items.id(1))) { allowClue3 = true; }
-        //if (items.Contains(items.id(1))) { allowClue4 = true; }
-        //if (items.Contains(items.id(1))) { allowClue5 = true; }
-        //if (items.Contains(items.id(1))) { allowClue6 = true; }
-    }
-
-
-    public void EnableClue1()
-    {
-        if (allowClue1) clue1.SetActive(true);
-    }
-    public void EnableClue2()
-    {
-        if (allowClue2) clue2.SetActive(true);
-    }
-    public void EnableClue3()
-    {
-        if (allowClue3) clue3.SetActive(true);
-    }
-    public void EnableClue4()
-    {
-        if (allowClue4) clue4 .SetActive(true);
-    }
-    public void EnableClue5()
-    {
-        if (allowClue5) clue5.SetActive(true);
-    }
-    public void EnableClue6()
-    {
-        if (allowClue6) clue6.SetActive(true);
+        foreach (Item i in Items.items)
+        {
+            if (actions.Player3D.Interact.WasPressedThisFrame())
+            {
+                switch (i.id)
+                {
+                    case 1:
+                        clue1.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    case 2:
+                        clue2.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    case 3:
+                        clue3.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    case 4:
+                        clue4.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    case 5:
+                        clue5.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    case 6:
+                        clue6.SetActive(true);
+                        Items.items.Remove(i);
+                        break;
+                    default:
+                        return;
+                }
+            }
+        }
     }
 }

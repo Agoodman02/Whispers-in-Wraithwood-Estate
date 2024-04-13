@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
 
     public static InventoryManager Instance;
-    public List<Item> Items = new List<Item>();
+    public InventorySpace Items;
 
     public Transform ItemContent;
     public GameObject InventoryItem;
@@ -55,20 +55,20 @@ public class InventoryManager : MonoBehaviour
     //Adds Item to List/Inventory
     public void Add(Item item)
     {
-        Items.Add(item);
+        Items.items.Add(item);
     }
 
     //Removes Item from List/Inventory
     public void Remove(Item item) 
     { 
-        Items.Remove(item);
+        Items.items.Remove(item);
     }
 
     //Displays item list when opening inventory
     public void ListItems()
     {
         //list inventory
-        foreach(var item in Items)
+        foreach(var item in Items.items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("Text").GetComponent<Text>();
@@ -95,9 +95,9 @@ public class InventoryManager : MonoBehaviour
     {
         InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
 
-        for (int i = 0; i < Items.Count; i++)
+        for (int i = 0; i < Items.items.Count; i++)
         {
-            InventoryItems[i].AddItem(Items[i]);
+            InventoryItems[i].AddItem(Items.items[i]);
         }
     }
 
