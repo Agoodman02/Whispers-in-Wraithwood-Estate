@@ -174,7 +174,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -581,7 +581,6 @@ GameObject:
   - component: {fileID: 465055630}
   - component: {fileID: 465055633}
   - component: {fileID: 465055632}
-  - component: {fileID: 465055634}
   m_Layer: 6
   m_Name: Evidence Board
   m_TagString: Untagged
@@ -716,19 +715,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.38, y: 1.03, z: 3.53}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &465055634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465055629}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51945b8423f6674c8c2f9d0be97cf1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPopup: {fileID: 866335692}
 --- !u!1 &569043669
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryMenu: {fileID: 405818694}
-  Items: []
+  Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   ItemContent: {fileID: 606560380}
   InventoryItem: {fileID: 7136768198695451367, guid: e70e69a3fae54554aa3d62ba564f31b9, type: 3}
   InventoryItems: []
@@ -791,18 +777,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f383af8cafc194d825a19dec2016f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 569043671}
+  Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   clue1: {fileID: 1096633400}
   clue2: {fileID: 1406645940}
   clue3: {fileID: 198317987}
   clue4: {fileID: 916292682}
   clue5: {fileID: 1448642574}
   clue6: {fileID: 2000026896}
-  allowClue1: 1
-  allowClue2: 1
-  allowClue3: 0
-  allowClue4: 0
-  allowClue5: 0
-  allowClue6: 0
 --- !u!224 &606560380 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
@@ -819,14 +801,13 @@ GameObject:
   - component: {fileID: 702472794}
   - component: {fileID: 702472796}
   - component: {fileID: 702472795}
-  - component: {fileID: 702472797}
   m_Layer: 0
   m_Name: PopupTextCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &702472794
 Transform:
   m_ObjectHideFlags: 0
@@ -874,96 +855,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2, y: 1.03, z: 2.67}
+  m_Size: {x: 3.2, y: 1.03, z: 1.26}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &702472797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702472793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractiableScript: {fileID: 569043671}
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue5
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 569043672}
-        m_TargetAssemblyTypeName: InteractableScript, Assembly-CSharp
-        m_MethodName: EnableClue6
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &831388351
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +885,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2229,6 +2122,10 @@ PrefabInstance:
     - target: {fileID: 4113607700957309817, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113607700957309817, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6714012494121236582, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_IsActive
