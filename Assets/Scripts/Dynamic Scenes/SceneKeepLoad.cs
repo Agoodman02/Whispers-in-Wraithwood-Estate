@@ -51,12 +51,14 @@ public class SceneKeepLoad : MonoBehaviour
                 {
                     go.transform.position = go.transform.localPosition;
 
+                    centers.Add(go.transform.position);
+
                     Debug.Log("Adding " + go.name + " Point to bounds");
                     GroupBoundingbox.Encapsulate(go.transform.position);
 
                     go.transform.localPosition = go.transform.position;
 
-                    centers.Add(go.transform.position);
+                    
                 }
             }
         }
