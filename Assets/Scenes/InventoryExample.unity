@@ -691,11 +691,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_SizeDelta.x
@@ -707,15 +707,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 360.5
       objectReference: {fileID: 0}
     - target: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -541
+      objectReference: {fileID: 0}
+    - target: {fileID: 256347758151708185, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 318061908452174163, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 135
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 318061908452174163, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
       propertyPath: m_ChildAlignment

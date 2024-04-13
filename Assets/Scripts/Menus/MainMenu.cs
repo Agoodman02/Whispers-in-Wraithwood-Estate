@@ -9,13 +9,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive); //Game Scene
+        SceneManager.LoadScene(1); //Game Scene
         mainMenu.SetActive(false);
     }
 
     public void Credits() 
     {
-        SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame() 
