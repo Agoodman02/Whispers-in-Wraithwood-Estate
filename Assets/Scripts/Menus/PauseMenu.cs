@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     //public GameObject controlsMenu;
     //public GameObject screenUI;
     public static bool isPaused;
+    public AudioSource pauseMenuSound;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         //screenUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
+        pauseMenuSound.Play();
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -66,6 +68,7 @@ public class PauseMenu : MonoBehaviour
         //screenUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
+        pauseMenuSound.Play();
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -76,11 +79,4 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-    /*
-    public void ControlsMenu()
-    {
-        controlsMenu.SetActive(true);
-    }
-    */
 }
