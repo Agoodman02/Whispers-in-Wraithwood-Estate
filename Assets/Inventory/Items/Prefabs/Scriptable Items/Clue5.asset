@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79ae4a753c6a0ce43be7a80c94af1c0c, type: 3}
-  m_Name: Current Inventory
+  m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
+  m_Name: Clue5
   m_EditorClassIdentifier: 
-  items: []
+  id: 5
+  itemName: 
+  icon: {fileID: 0}
+  prefab: {fileID: 5960895469018658665, guid: 78c9c793dbd5b7d46bde6d123a761402, type: 3}

@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryMenu: {fileID: 405818694}
-  Items: []
+  Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   ItemContent: {fileID: 606560380}
   InventoryItem: {fileID: 7136768198695451367, guid: e70e69a3fae54554aa3d62ba564f31b9, type: 3}
   InventoryItems: []
@@ -778,18 +778,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 569043671}
+  Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   clue1: {fileID: 1096633400}
   clue2: {fileID: 1406645940}
   clue3: {fileID: 198317987}
   clue4: {fileID: 916292682}
   clue5: {fileID: 1448642574}
   clue6: {fileID: 2000026896}
-  allowClue1: 1
-  allowClue2: 1
-  allowClue3: 0
-  allowClue4: 0
-  allowClue5: 0
-  allowClue6: 0
 --- !u!224 &606560380 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 22860783113900092, guid: fcfb501e14ee36d48b44bbc7c183f959, type: 3}
