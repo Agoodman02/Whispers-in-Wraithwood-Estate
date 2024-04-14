@@ -1,0 +1,21 @@
+1 - Clue 1   //Clue 1-6 are placeholders
+2 - Clue 2
+3 - Clue 3
+4 - Clue 4
+5 - Clue 5
+6 - Clue 6
+7 - Jewelry Box Key
+8 - Janitor Key
+9 - Hex Bag
+10 - Poison Cup
+11 - Bloody Pen
+12 - Picture 1 (Corpse)
+13 - Picture 2 (Olivia & Edmund(Alive))
+14 - Spellbook
+
+
+
+
+
+20 - Sphere
+21 - Cube
