@@ -301,6 +301,7 @@ InputManager:
     positiveButton: i
     altNegativeButton: 
     altPositiveButton: joystick button 1
+
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -309,4 +310,6 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
+
+
   m_UsePhysicalKeys: 1
