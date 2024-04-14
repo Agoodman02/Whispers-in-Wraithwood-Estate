@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: Picture1_Item
   m_EditorClassIdentifier: 
-  id: 12
+  id: 1
   itemName: Picture of Puncture Marks on Corpse
   icon: {fileID: 0}
   prefab: {fileID: 0}

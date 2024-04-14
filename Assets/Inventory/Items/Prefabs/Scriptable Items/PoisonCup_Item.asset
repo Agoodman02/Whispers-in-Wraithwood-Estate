@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: PoisonCup_Item
   m_EditorClassIdentifier: 
-  id: 10
+  id: 4
   itemName: Poison Cup
   icon: {fileID: 1494718026, guid: c8bf51bc08041fc4aa2d2c172daf07f8, type: 3}
   prefab: {fileID: 0}

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class InteractReciever : MonoBehaviour
 {
-    public MonoBehaviour InteractiableScript;
+    public MonoBehaviour InteractableScript;
     //public string EventToTrigger;
     
     public UnityEvent onTrigger;

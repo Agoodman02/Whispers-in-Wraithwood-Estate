@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         //Closes Menu
-        if(Input.GetButtonDown("Inventory") && menuActivated)
+        if(Input.GetKeyDown(KeyCode.I) && menuActivated)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
             CleanList();
         }
         //Opens Menu
-        else if (Input.GetButtonDown("Inventory") && !menuActivated)
+        else if (Input.GetKeyDown(KeyCode.I) && !menuActivated)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);

@@ -27,6 +27,9 @@ public class InteractableScript : MonoBehaviour
         actions = new InputMap();
 
         actions.Player3D.Enable();
+
+        //Clear inventory on start
+        //Items.items.Remove();
     }
 
     private void Update()

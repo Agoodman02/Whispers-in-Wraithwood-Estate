@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: Spellbook_Item
   m_EditorClassIdentifier: 
-  id: 14
+  id: 6
   itemName: Spellbook
   icon: {fileID: -1012254677, guid: 804325642d245e34a98adf2fd7b15832, type: 3}
   prefab: {fileID: 0}
