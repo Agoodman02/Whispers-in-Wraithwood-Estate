@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PoisonCup_Item
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Poison Cup
+  itemName: Olivia's Cup
   icon: {fileID: 1494718026, guid: c8bf51bc08041fc4aa2d2c172daf07f8, type: 3}
   prefab: {fileID: 0}

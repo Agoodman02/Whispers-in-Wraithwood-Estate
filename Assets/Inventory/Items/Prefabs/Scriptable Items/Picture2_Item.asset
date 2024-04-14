@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Picture2_Item
   m_EditorClassIdentifier: 
   id: 5
-  itemName: Picture of Olivia and Mystery Man
+  itemName: Picture
   icon: {fileID: 0}
   prefab: {fileID: 0}
