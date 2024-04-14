@@ -1,0 +1,102 @@
+﻿title: Intro
+---
+Wraithwood: Alright, I’m trusting you with the front desk tonight. There’s going to be a special event. Being new here will be no excuse for unprofessionalism. We’re going to have some… non-traditional guests. Just be respectful and you should be fine. *Hangs up*
+<<jump Maxwell>>
+===
+
+title: Maxwell
+---
+The doors of the estate open
+MAX: Hey, hey! Take a look at this joint… So this is where we’ll be staying, huh?
+OLIVIA: Oh, good evening, sir!
+PLAYER: Thanks for coming into the estate!
+PLAYER: (I-It's a werewolf...he's *huge*! What kind of guests did Mr. Wraithwood invite?)
+MAX: Hey, a warm welcome! I could get used to that. I'm checking into a room of my own, yeah?
+PLAYER: That's correct! Can I have your name for the record?
+MAX: Name's Maxwell. But you? You can call me Max!
+PLAYER: ...
+PLAYER: (...He winked at me...? And now he’s smiling… Look at all those teeth!)
+MAX: Once you're done eyeing me up, I'll go ahead and take that room key!
+PLAYER: Right! The key…
+OLIVIA: They’re on the hooks behind you. I’ll go ahead and bring the luggage to his room!
+Olivia leaves. The player then grabs the key and hands it over.
+MAX: Thanks!
+MAX: Hey, before I go…
+PLAYER: Ah, yes?
+MAX: That lady… what’s her name again?
+PLAYER: You mean Olivia? She’s one of our staff members here.
+MAX: Olivia, right, got it. Thanks again!
+<<jump Edmund>>
+===
+
+title: Edmund
+---
+Edmund the Skeleton enters the estate and approaches the front desk
+EDMUND: I’m finally out of that blasted rain!
+PLAYER: Welcome to the estate sir.
+Edmund approaches the desk slowly, letting the water drip onto the wood floor.
+PLAYER: (First a werewolf, now a skeleton? How does he even talk? …Ugh, nevermind.)
+EDMUND: …You must be a new sort, huh.
+PLAYER: …I’m sorry?
+EDMUND: Forget it. It doesn’t matter.
+Edmund looks past you at Olivia.
+OLIVIA: Good evening.
+EDMUND: …Yeah.
+He turns to look at the player.
+EDMUND: Reservations under Edmund?
+PLAYER: Oh, of course! You’re all registered, sir. 
+OLIVIA: I’ll go ahead and bring your luggage to your room.
+EDMUND: …Don’t you think I’ll need my room key?
+PLAYER: Oh! Right!
+Edmund to the Player before he follows Olivia.
+EDMUND: I’ll be in my room. Don’t bother me unless it’s urgent.
+<<jump Minerva>>
+===
+
+title: Minerva
+---
+Once the doors open
+MINERVA: Good evening.
+PLAYER: Good evening! Are you here on the owner’s invitation…?
+MINERVA: Unless I got the wrong place, I believe so!
+OLIVIA: You’ve come to the right place. Some of the others have already arrived.
+MINERVA: And here I thought I might be the first. I should be under ‘Minerva’.
+Once the player hands over the key.
+PLAYER: So you’re acquainted with the other guests, Miss Minerva?
+MINERVA: Minerva is fine.
+MINERVA: And yes, I am. Is there a problem?
+PLAYER: Ah, no, not at all.
+PLAYER: (It’s just that she’s the odd one out so far…)
+OLIVIA: I’ll go ahead and bring the luggage over to your room, Minerva. Right this way.
+PLAYER: Have a great stay!
+Once Olivia returns and after Minerva has left
+PLAYER: Olivia, I’m a bit confused. What kind of event is going on?
+OLIVIA: Monsters Anonymous.
+PLAYER: Pardon?
+OLIVIA: Monsters Anonymous. It’s a support group for the…non-humans. They discuss issues they’re having in their lives.
+PLAYER: I see… But what about Minerva?
+OLIVIA: Hmm? Isn’t it obvious?
+OLIVIA: She’s a Witch.
+PLAYER: That makes sense. Thanks.
+OLIVIA: There shouldn’t be much left on the list. Keep up the good work.
+PLAYER: Got it!
+PLAYER: (Still, I can’t help but wonder…)
+PLAYER: (Why’d they choose to hold the meeting at this estate?)
+<<jump Bartholomew>>
+===
+
+title: Bartholomew
+---
+Bartholomew approaches the front desk expectantly and waits a moment.
+PLAYER: (Now a vampire? We really are getting quite the mix of guests tonight…)
+PLAYER: Welcome!
+BART: My roomkey…?
+PLAYER: Name?
+BART: *Sighs* Bartholomew.
+OLIVIA: Here, let me get your luggage to your room, sir.
+PLAYER: And I’ll get you your key.
+Player turns around, grabs keys, turns back, and hands them to Bart.
+PLAYER: Okay, here you go… have a good night.
+Bart scowls and leaves.
+PLAYER: (...you’re welcome?)
+===
