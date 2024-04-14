@@ -56,8 +56,8 @@ public class PlayerControler : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
     // Update is called once per frame
     void Update()

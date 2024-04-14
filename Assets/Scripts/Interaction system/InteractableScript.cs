@@ -10,6 +10,10 @@ public class InteractableScript : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     public InventorySpace Items;
 
+    [Header("Interaction Objects")]
+    public GameObject wardrobeBlockingDoor;
+    public GameObject JewelryBoxLid;
+
     [Header("Evidence Board Clues")]
     public GameObject clue1;
     public GameObject clue2;
@@ -69,5 +73,15 @@ public class InteractableScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoveWardrobe()
+    {
+        wardrobeBlockingDoor.SetActive(false);
+    }
+
+    public void OpenJewelryBox()
+    {
+        JewelryBoxLid.SetActive(false);
     }
 }
