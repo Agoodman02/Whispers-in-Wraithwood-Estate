@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: Picture2_Item
   m_EditorClassIdentifier: 
-  id: 13
-  itemName: Picture of Olivia and Mystery Man
+  id: 5
+  itemName: Picture
   icon: {fileID: 0}
   prefab: {fileID: 0}
