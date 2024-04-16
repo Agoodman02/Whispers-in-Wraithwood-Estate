@@ -1,21 +1,17 @@
-1 - Clue 1   //Clue 1-6 are placeholders
-2 - Clue 2
-3 - Clue 3
-4 - Clue 4
-5 - Clue 5
-6 - Clue 6
+1 - Picture 1 (Corpse)   //Clue 1-6 are placeholders
+2 - Bloody Pen
+3 - Hex Bag (Adds note 3)
+4 - Poison Cup (Adds note 4)
+5 - Picture 2 (Olivia & Edmund(Alive))
+6 - Spellbook
 7 - Jewelry Box Key
 8 - Janitor Key
-9 - Hex Bag
-10 - Poison Cup
-11 - Bloody Pen
-12 - Picture 1 (Corpse)
-13 - Picture 2 (Olivia & Edmund(Alive))
-14 - Spellbook
 
-
-
-
+8 inventory items
 
 20 - Sphere
 21 - Cube
+
+Hidden inventory for non-item clues?
+note for each persons name
+16 notes/popups on board

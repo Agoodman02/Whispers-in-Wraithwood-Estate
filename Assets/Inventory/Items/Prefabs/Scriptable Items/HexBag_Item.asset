@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: HexBag_Item
   m_EditorClassIdentifier: 
-  id: 9
+  id: 3
   itemName: Hex Bag
   icon: {fileID: -933250381, guid: 7088e835cbf545649ad1eb07a49ed3d2, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 7547099659401848210, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}

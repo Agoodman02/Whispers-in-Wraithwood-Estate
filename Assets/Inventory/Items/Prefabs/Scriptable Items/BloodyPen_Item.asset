@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b465e0a64fe32344995323522fc5950, type: 3}
   m_Name: BloodyPen_Item
   m_EditorClassIdentifier: 
-  id: 11
+  id: 2
   itemName: Bloody Pen
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 1d5e72b206d81f142af53eb5f2aee163, type: 3}
   prefab: {fileID: 0}
