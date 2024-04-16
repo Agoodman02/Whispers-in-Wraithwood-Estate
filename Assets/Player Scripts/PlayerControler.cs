@@ -64,7 +64,7 @@ public class PlayerControler : MonoBehaviour
     {
         MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
 
-        Movement3d = gameObject.transform.forward * MovementDir.y + gameObject.transform.right * MovementDir.x;
+        Movement3d = gameObject.transform.forward * (MovementDir.y * PlayerWalkSpeed) + gameObject.transform.right * (MovementDir.x * PlayerWalkSpeed);
         Movement3d.y = selfphys.velocity.y;
 
         if (DoCameraControl)
