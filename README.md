@@ -1,4 +1,4 @@
-# Whispters in Wraithwood estate
+# Whispers in Wraithwood estate
  
 A mysterious group of monsters check in for their gathering at the Manor, unbeknownst to all that the night will take a sinister turn as a fellow employee goes missing. As a staff member, you’ve been tasked with uncovering the disappearance before it’s too late. Investigate the manor, find clues to fill your evidence board, and figure out the mysteries of Wraithwood Estate.
 
