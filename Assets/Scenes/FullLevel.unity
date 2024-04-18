@@ -6769,7 +6769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractableScript: {fileID: 412165260}
+  InteractableScript: {fileID: 0}
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -9086,6 +9086,7 @@ MonoBehaviour:
   clue4: {fileID: 1133846929}
   clue5: {fileID: 570701151}
   clue6: {fileID: 1206846480}
+  nearboard: 0
 --- !u!114 &412165264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13671,7 +13672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractableScript: {fileID: 412165260}
+  InteractableScript: {fileID: 0}
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -16301,7 +16302,7 @@ GameObject:
   - component: {fileID: 956414220}
   - component: {fileID: 956414219}
   - component: {fileID: 956414218}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Evidence Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16320,7 +16321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractableScript: {fileID: 412165260}
+  InteractableScript: {fileID: 412165263}
   onTrigger:
     m_PersistentCalls:
       m_Calls:
@@ -40976,11 +40977,19 @@ PrefabInstance:
       objectReference: {fileID: 1290281969}
     - target: {fileID: 3756895119937940981, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
       propertyPath: m_Radius
-      value: 0.2
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3756895119937940981, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4875779536330864802, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
       propertyPath: m_Name
       value: PoisonCup_Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875779536330864802, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5251741472502243864, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41035,6 +41044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 502893127}
     m_Modifications:
+    - target: {fileID: 81437462981410705, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
+      propertyPath: m_Radius
+      value: 0.42
+      objectReference: {fileID: 0}
     - target: {fileID: 539519943004906204, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.3
@@ -41079,6 +41092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JanitorClosetKey_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 880192228112971878, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2822454741269883425, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
       propertyPath: ItemText
       value: 
@@ -41087,6 +41104,18 @@ PrefabInstance:
       propertyPath: pickupPopup
       value: 
       objectReference: {fileID: 1290281969}
+    - target: {fileID: 7747768007927854779, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150076920179500913, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448192121513410500, guid: c7fad1327ee7ff2469a48962b702884e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41100,6 +41129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 502893127}
     m_Modifications:
+    - target: {fileID: 2455952125147150427, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3687683582704253359, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.495
@@ -41144,9 +41177,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: BloodyPen_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 4064102851286147861, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715141064143725751, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215775376863385701, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905165971083193800, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7530174013013591204, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
       propertyPath: m_Radius
-      value: 0.82
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8718487393778949663, guid: 088871ed485d56f4bb5efc450e1db1c0, type: 3}
       propertyPath: ItemText
@@ -41177,6 +41226,10 @@ PrefabInstance:
       propertyPath: pickupPopup
       value: 
       objectReference: {fileID: 1290281969}
+    - target: {fileID: 5819118479530050038, guid: 7fa9e220a77115c45b8193b19f45faf5, type: 3}
+      propertyPath: m_Radius
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5901050315991619113, guid: 7fa9e220a77115c45b8193b19f45faf5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.41
@@ -41221,6 +41274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Picture1_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6534561791158209683, guid: 7fa9e220a77115c45b8193b19f45faf5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41236,7 +41293,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2057332962501620061, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}
       propertyPath: m_Radius
-      value: 0.04
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2477682602725244579, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}
       propertyPath: ItemText
@@ -41249,6 +41306,10 @@ PrefabInstance:
     - target: {fileID: 7203366368034307880, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}
       propertyPath: m_Name
       value: HexBag_Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203366368034307880, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7547099659401848210, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41303,6 +41364,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 502893127}
     m_Modifications:
+    - target: {fileID: 616267192422559158, guid: 198ac4ee88f886f4fa1d6c6e62defd3d, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1145300688769634303, guid: 198ac4ee88f886f4fa1d6c6e62defd3d, type: 3}
       propertyPath: ItemText
       value: 
@@ -41356,6 +41421,10 @@ PrefabInstance:
       value: Picture2_Item
       objectReference: {fileID: 0}
     - target: {fileID: 5388834574183708579, guid: 198ac4ee88f886f4fa1d6c6e62defd3d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388834574183708579, guid: 198ac4ee88f886f4fa1d6c6e62defd3d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -41372,6 +41441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 502893127}
     m_Modifications:
+    - target: {fileID: 796112964389318082, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2100725491124404404, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
       propertyPath: ItemText
       value: 
@@ -41380,13 +41453,25 @@ PrefabInstance:
       propertyPath: pickupPopup
       value: 
       objectReference: {fileID: 1290281969}
+    - target: {fileID: 5435586181460030185, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143346374497716604, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8395744222157094641, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
       propertyPath: m_Name
       value: JewelryBoxKey_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 8395744222157094641, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8891455233434184218, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
       propertyPath: m_Radius
-      value: 1.8
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 9207746119722230859, guid: 41d0fc46035b9864cb00331775557ba6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41485,9 +41570,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spellbook_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 915033064068479851, guid: f8f1643b7e318524d8400e395a68216b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5791555507801439509, guid: f8f1643b7e318524d8400e395a68216b, type: 3}
       propertyPath: m_Radius
-      value: 0.51
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 6439970635003576444, guid: f8f1643b7e318524d8400e395a68216b, type: 3}
       propertyPath: ItemText
