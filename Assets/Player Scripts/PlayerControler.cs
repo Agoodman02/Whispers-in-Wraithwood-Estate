@@ -21,6 +21,8 @@ public class PlayerControler : MonoBehaviour
     InputMap actions;
     RaycastHit LookingAt;
 
+    private RaycastHit WasLooking;
+
     private float camrotx;
     private float camroty;
 
@@ -74,7 +76,7 @@ public class PlayerControler : MonoBehaviour
 
             camroty += mousex;
             camrotx -= mousey;
-            Mathf.Clamp(camrotx, -89f, 89);
+            camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
             gameObject.transform.rotation = Quaternion.Euler(0, camroty, 0);
             CameraCenter.transform.rotation = Quaternion.Euler(camrotx, camroty, 0);
@@ -84,25 +86,36 @@ public class PlayerControler : MonoBehaviour
 
         Ray ray = new Ray(CameraCenter.transform.position, CameraCenter.transform.forward);
         Physics.Raycast(ray, out LookingAt, PlayerReach);
+        Debug.DrawRay(CameraCenter.transform.position, CameraCenter.transform.forward, Color.cyan);
 
         if (actions.Player3D.Interact.WasPressedThisFrame())
         {
             InteractPressed();
         }
 
-        /*
+        if (LookingAt.transform.gameObject != WasLooking.transform.gameObject)
+        {
+            WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
+            WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+        }
+
         //Tells ItemPickup if player is looking at an item; not in use
         if (LookingAt.transform.gameObject.layer == 6)
         {
-            allowPickup = true;
+            LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
+            LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
         }
-        */
     }
 
     //We do movement updates here to avoid FPS impacting calculations
     void FixedUpdate()
     {
         selfphys.velocity = Movement3d;
+    }
+
+    void LateUpdate()
+    {
+        WasLooking = LookingAt;
     }
 
     void InteractPressed()

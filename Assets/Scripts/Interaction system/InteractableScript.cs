@@ -23,6 +23,7 @@ public class InteractableScript : MonoBehaviour
     public GameObject clue6;
 
     InputMap actions;
+    public bool nearboard = false;
 
     private List<Item> toremove;
 
@@ -40,7 +41,7 @@ public class InteractableScript : MonoBehaviour
     {
         foreach (Item i in Items.items)
         {
-            if (actions.Player3D.Interact.WasPressedThisFrame())
+            if (actions.Player3D.Interact.WasPressedThisFrame() && nearboard)
             {
                 switch (i.id)
                 {

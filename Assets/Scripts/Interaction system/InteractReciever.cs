@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class InteractReciever : MonoBehaviour
 {
-    public MonoBehaviour InteractableScript;
+    public InteractableScript InteractableScript;
     //public string EventToTrigger;
     
     public UnityEvent onTrigger;
@@ -16,5 +16,29 @@ public class InteractReciever : MonoBehaviour
         Debug.Log("interact recieved by player");
         //InteractiableScript.Invoke(EventToTrigger, 0f);
         onTrigger.Invoke();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+           InteractableScript.nearboard = true;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+           InteractableScript.nearboard = false;
+        }
+        else
+        {
+            return;
+        }
     }
 }

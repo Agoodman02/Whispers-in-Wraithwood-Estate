@@ -10,7 +10,7 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] Image pickupPopup; 
     [SerializeField] Text ItemText;
 
-    private bool allowPickup;
+    public bool allowPickup;
     [HideInInspector] public string itemPopupName;
     private GameObject InventoryItem;
 
@@ -37,6 +37,7 @@ public class ItemPickup : MonoBehaviour
     }
     
     //Shows popup and allows item to be picked up once in range
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -57,6 +58,7 @@ public class ItemPickup : MonoBehaviour
             allowPickup = false;
         }
     }
+    */
 
     //Picks up item
     public void Pickup()
@@ -67,14 +69,14 @@ public class ItemPickup : MonoBehaviour
     }
 
     //Displays pickup text
-    void EnablePickupPopup()
+    public void EnablePickupPopup()
     {
         pickupPopup.gameObject.SetActive(true);
         ItemText.text = $"{Item.itemName}";
     }
 
     //Hides pickup text
-    void DisablePickupPopup()
+    public void DisablePickupPopup()
     {
         pickupPopup.gameObject.SetActive(false);
     }
