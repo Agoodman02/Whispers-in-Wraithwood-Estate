@@ -100,7 +100,6 @@ public class PlayerControler : MonoBehaviour
             WasLooking.transform.GetComponent<InteractionTextPopup>().DisableTextPopup(); //not working?; interaction text popup
         }
 
-        //Tells ItemPickup if player is looking at an item; not in use
         if (LookingAt.transform.gameObject.layer == 6)
         {
             LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;

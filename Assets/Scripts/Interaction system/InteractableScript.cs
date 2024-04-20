@@ -9,6 +9,7 @@ public class InteractableScript : MonoBehaviour
     //declare varibles
     [SerializeField] InventoryManager inventoryManager;
     public InventorySpace Items;
+    public DoorOpen doorOpen;
 
     [Header("Interaction Objects")]
     public GameObject wardrobeBlockingDoor;
@@ -141,8 +142,7 @@ public class InteractableScript : MonoBehaviour
         {
             if (i.id == 8)
             {
-                //janitorClosetDoor.gameObject.GetComponents<DoorOpen>().OpenDoor(); //how to activate method from another object
-                Items.items.Remove(i);
+                doorOpen.OpenDoor();
             }
         }
     }
