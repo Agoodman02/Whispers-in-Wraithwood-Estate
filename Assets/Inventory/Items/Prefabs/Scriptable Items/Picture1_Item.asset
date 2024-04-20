@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Picture1_Item
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Picture of Puncture Marks on Corpse
-  icon: {fileID: 0}
+  itemName: Picture of Olivia and Mystery Man
+  icon: {fileID: 867031816, guid: 508ee73da83fe414990758a2f2d12b64, type: 3}
   prefab: {fileID: 0}

@@ -1,13 +1,14 @@
-1 - Picture 1 (Corpse)   //Clue 1-6 are placeholders
-2 - Bloody Pen
-3 - Hex Bag (Adds note 3)
-4 - Poison Cup (Adds note 4)
-5 - Picture 2 (Olivia & Edmund(Alive))
-6 - Spellbook
-7 - Jewelry Box Key
-8 - Janitor Key
+1 - Picture 1 (Olivia & Edmund(Alive))	//Adds note 18
+2 - Bloody Pen							//Adds note 17
+3 - Hex Bag								//Adds note 19
+4 - Poison Cup							//Adds note 21
+5 - Picture 2 (Corpse)					//Adds note 16; gotten from corpse
+6 - Spellbook							//Adds note 20
+7 - Jewelry Box Key						//opens jewelry box; reveals picture 1
+8 - Janitor Key							//opens janitor closet; reveals body(picture 2) & hexbag
+9 - Crowbar								//Open Vent; reveals pen
 
-8 inventory items
+9 inventory items
 
 20 - Sphere
 21 - Cube
@@ -15,3 +16,5 @@
 Hidden inventory for non-item clues?
 note for each persons name
 16 notes/popups on board
+10 Non-physical evidence
+6 physical evidence

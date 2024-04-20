@@ -97,6 +97,7 @@ public class PlayerControler : MonoBehaviour
         {
             WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
             WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+            WasLooking.transform.GetComponent<InteractionTextPopup>().DisableTextPopup(); //not working?; interaction text popup
         }
 
         //Tells ItemPickup if player is looking at an item; not in use
@@ -104,6 +105,7 @@ public class PlayerControler : MonoBehaviour
         {
             LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
             LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
+            LookingAt.transform.GetComponent<InteractionTextPopup>().EnableTextPopup(); //not working?; interaction text popup
         }
     }
 
