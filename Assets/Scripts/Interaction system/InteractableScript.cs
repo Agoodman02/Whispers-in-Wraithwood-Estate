@@ -62,15 +62,23 @@ public class InteractableScript : MonoBehaviour
 
     void Awake()
     {
+
+
         actions = new InputMap();
 
         actions.Player3D.Enable();
+        /*
+        old busted
 
         //Clear inventory on start; only clears single item?
         foreach (Item i in Items.items) 
         {
             Items.items.Remove(i);
         }
+        */
+
+        //new hotness
+        Items.clearinv();
     }
 
     private void Update()
