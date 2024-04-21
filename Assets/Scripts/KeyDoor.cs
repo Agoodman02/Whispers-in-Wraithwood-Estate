@@ -50,10 +50,6 @@ public class KeyDoor : MonoBehaviour
                     OpenDoor();
                 }
             }
-            else if (i.id != 8) //doesn't work
-            {
-                noKeyText.gameObject.SetActive(true);
-            }
         }
     }
 
@@ -63,15 +59,15 @@ public class KeyDoor : MonoBehaviour
         {
             enter = true;
             interactionPopup.gameObject.SetActive(true);
-            /*
+            
             //Pulls up Missing Key Text
             foreach(Item i in Items.items)
             {
-                if(i.id != 8)
+                if(!open && i.id != 8)
                 {
                     noKeyText.gameObject.SetActive(true);
                 }
-            }*/
+            }
         }
     }
 

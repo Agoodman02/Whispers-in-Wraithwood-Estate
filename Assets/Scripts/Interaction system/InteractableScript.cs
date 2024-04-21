@@ -9,7 +9,7 @@ public class InteractableScript : MonoBehaviour
     //declare varibles
     [SerializeField] InventoryManager inventoryManager;
     public InventorySpace Items;
-    public DoorOpen doorOpen;
+    public Item Item;
 
     [Header("Interaction Objects")]
     public GameObject wardrobeBlockingDoor;
@@ -136,17 +136,6 @@ public class InteractableScript : MonoBehaviour
         }
     }
 
-    public void OpenJanitorCloset()
-    {
-        foreach (Item i in Items.items)
-        {
-            if (i.id == 8)
-            {
-                doorOpen.OpenDoor();
-            }
-        }
-    }
-
     public void OpenVent()
     {
         foreach (Item i in Items.items)
@@ -161,11 +150,9 @@ public class InteractableScript : MonoBehaviour
             }
         }
     }
-
-    /*
-    public void interactWithBody()
+    
+    public void InteractWithBody()
     {
-
+        InventoryManager.Instance.Add(Item);
     }
-    */
 }

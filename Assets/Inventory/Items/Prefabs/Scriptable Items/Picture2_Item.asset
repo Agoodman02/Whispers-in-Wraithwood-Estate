@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Picture2_Item
   m_EditorClassIdentifier: 
   id: 5
-  itemName: Picture
+  itemName: Picture of Corpse
   icon: {fileID: 0}
   prefab: {fileID: 0}
