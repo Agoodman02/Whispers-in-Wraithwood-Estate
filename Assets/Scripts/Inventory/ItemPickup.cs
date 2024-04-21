@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour
     //Declare varibles
     public Item Item;
     [SerializeField] Image pickupPopup; 
-    [SerializeField] Text ItemText;
+    //[SerializeField] Text ItemText;
 
     public bool allowPickup;
     [HideInInspector] public string itemPopupName;
@@ -46,7 +46,7 @@ public class ItemPickup : MonoBehaviour
     public void EnablePickupPopup()
     {
         pickupPopup.gameObject.SetActive(true);
-        ItemText.text = $"{Item.itemName}";
+        //ItemText.text = $"{Item.itemName}";
     }
 
     //Hides pickup text

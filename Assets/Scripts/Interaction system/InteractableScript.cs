@@ -107,7 +107,6 @@ public class InteractableScript : MonoBehaviour
                     //Poison Cup
                     case 4:
                         clue21.SetActive(true);
-                        Items.items.Remove(i);
                         break;
                     //Corpse Pic
                     case 5:
