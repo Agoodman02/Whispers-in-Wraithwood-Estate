@@ -7,38 +7,16 @@ public class InteractionTextPopup : MonoBehaviour
 {
     [SerializeField] Image textPopup;
 
-    private void Start()
-    {
-        //Makes sure things are not ugly
-        DisableTextPopup();
-    }
-
-    //Shows popup and allows item to be picked up once in range
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            EnableTextPopup();
-        }
-    }
-
-    //Hides popup and does not allow item to be picked up once in range
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            DisableTextPopup();
-        }
-    }
+    InputMap actions;
 
     //Displays pickup text
-    void EnableTextPopup()
+    public void EnableTextPopup()
     {
         textPopup.gameObject.SetActive(true);
     }
 
     //Hides pickup text
-    void DisableTextPopup()
+    public void DisableTextPopup()
     {
         textPopup.gameObject.SetActive(false);
     }

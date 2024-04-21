@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     //public GameObject settingsMenu;
     //public GameObject controlsMenu;
-    //public GameObject screenUI;
+    public GameObject screenUI;
     public static bool isPaused;
     public AudioSource pauseMenuSound;
 
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-        //screenUI.SetActive(false);
+        screenUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
         pauseMenuSound.Play();
@@ -65,7 +65,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        //screenUI.SetActive(true);
+        screenUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
         pauseMenuSound.Play();

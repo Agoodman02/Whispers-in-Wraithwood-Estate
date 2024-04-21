@@ -1,17 +1,28 @@
-1 - Picture 1 (Corpse)   //Clue 1-6 are placeholders
-2 - Bloody Pen
-3 - Hex Bag (Adds note 3)
-4 - Poison Cup (Adds note 4)
-5 - Picture 2 (Olivia & Edmund(Alive))
-6 - Spellbook
-7 - Jewelry Box Key
-8 - Janitor Key
+1 - Picture 1 (Olivia & Edmund(Alive))	//Adds note 18;							removes from inventory
+2 - Bloody Pen							//Adds note 17;							removes from inventory
+3 - Hex Bag								//Adds note 19;							removes from inventory
+4 - Poison Cup							//Adds note 21							stays in inventory
+5 - Picture 2 (Corpse)					//Adds note 16; gotten from corpse;		removes from inventory
+6 - Spellbook							//Adds note 20;							removes from inventory
+7 - Jewelry Box Key						//opens jewelry box; reveals picture 1; removes from inventory
+8 - Janitor Key							//opens janitor closet					stays in inventory
+9 - Crowbar								//Open Vent; reveals pen				removes from inventory
+10 - Purple Candle (Minerva)			//candle puzzle;						removes from inventory
+11 - Green Candle (Edmund)				//candle puzzle;						removes from inventory
+12 - Pink Candle (Olivia)				//candle puzzle;						removes from inventory
+13 - Blue Candle (Max)					//candle puzzle;						removes from inventory
+14 - Red Candle (Bart)					//candle puzzle;						removes from inventory
+15 - Maintenance Room Key
 
-8 inventory items
+
+
+14 inventory items
 
 20 - Sphere
 21 - Cube
 
 Hidden inventory for non-item clues?
 note for each persons name
-16 notes/popups on board
+22 notes/popups on board
+18 Non-physical evidence
+6 physical evidence

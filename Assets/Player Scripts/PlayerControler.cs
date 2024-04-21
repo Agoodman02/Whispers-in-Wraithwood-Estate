@@ -28,7 +28,7 @@ public class PlayerControler : MonoBehaviour
 
     //Inventory Stuff
     public InventoryManager inventoryManager;
-    [HideInInspector]public bool allowPickup = false;
+    [HideInInspector] public bool allowPickup = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class PlayerControler : MonoBehaviour
 
         //activate actions
         actions = new InputMap();
-        
+
         actions.Player3D.Enable();
     }
 
@@ -93,17 +93,31 @@ public class PlayerControler : MonoBehaviour
             InteractPressed();
         }
 
-        if (LookingAt.transform.gameObject != WasLooking.transform.gameObject)
+        if (WasLooking.transform != null && LookingAt.transform == null || LookingAt.transform.gameObject != WasLooking.transform.gameObject)
         {
-            WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
-            WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+            if (WasLooking.transform != null && hasComponent<ItemPickup>(WasLooking.transform.gameObject))
+            {
+                WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
+                WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+            }
+            else if (hasComponent<InteractionTextPopup>(WasLooking.transform.gameObject))
+            {
+                WasLooking.transform.GetComponent<InteractionTextPopup>().DisableTextPopup();
+            }
         }
 
-        //Tells ItemPickup if player is looking at an item; not in use
-        if (LookingAt.transform.gameObject.layer == 6)
+        if (LookingAt.transform != null && LookingAt.transform.gameObject.layer == 6)
         {
-            LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
-            LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
+            if (hasComponent<ItemPickup>(LookingAt.transform.gameObject))
+            {
+                LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
+                LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
+            }
+            else if (hasComponent<InteractionTextPopup>(LookingAt.transform.gameObject))
+            {
+                Debug.Log("showing interact pop up for " + LookingAt.transform.gameObject.name);
+                LookingAt.transform.GetComponent<InteractionTextPopup>().EnableTextPopup();
+            }
         }
     }
 
@@ -120,16 +134,22 @@ public class PlayerControler : MonoBehaviour
 
     void InteractPressed()
     {
-        if(LookingAt.transform.name == null)
+        if (LookingAt.transform.name == null)
         {
             return;
         }
 
         Debug.Log(LookingAt.transform.gameObject.name);
 
-        if(LookingAt.transform.gameObject.layer == 6)
+        if (LookingAt.transform.gameObject.layer == 6)
         {
             LookingAt.transform.gameObject.GetComponent<InteractReciever>().Interacted();
         }
     }
+
+    public bool hasComponent<T>(GameObject g)
+    {
+        return g.GetComponent<T>() != null;
+    }
 }
+

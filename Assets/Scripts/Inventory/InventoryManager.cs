@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
 {
     //declare varibles
     public GameObject InventoryMenu;
+    public GameObject screenUI;
     private bool menuActivated;
 
     public static InventoryManager Instance;
@@ -33,6 +34,7 @@ public class InventoryManager : MonoBehaviour
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
+            screenUI.SetActive(true);
             menuActivated = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -44,6 +46,7 @@ public class InventoryManager : MonoBehaviour
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
+            screenUI.SetActive(false);
             menuActivated = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  
