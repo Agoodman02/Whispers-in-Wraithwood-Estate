@@ -53,13 +53,15 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    /*
-    //Settings Menu
-    public void SettingsMenu()
+    public void Controls()
     {
-        settingsMenu.SetActive(true);
+        SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
-    */
+
+    public void Settings()
+    {
+        SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+    }
 
     //Resume Game
     public void ResumeGame()
