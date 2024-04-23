@@ -1,14 +1,21 @@
-﻿title: EdmundMain
+﻿title: ED01OL
 ---
 //looking for Olivia?? why is this important 
 PLAYER: Have you seen Olivia?
 EDMUND: No. I’ve just been here after the meeting.
+===
+
+title: ED02BD
+---
 //after finding Olivia's body
 ->PLAYER: Olivia’s been found dead.
     EDMUND: Okay.
     PLAYER: No reaction?
     EDMUND: I’ve only just met her.
     EDMUND: So no.
+
+title: ED03OL
+---
 // after revealing shes been murdered
 ->PLAYER: There’s a chance Olivia’s been murdered.
     EDMUND: Okay.
@@ -18,13 +25,30 @@ EDMUND: No. I’ve just been here after the meeting.
     EDMUND: ...
 ===
 
-title: EdMain1
+title: CS
 ---
 // Start of loop?... maybe?
 PLAYER: I need to ask you some questions
 EDMUND: ...
-// Alibi
+===
 
+title: Ed04
+---
+// Alibi
+PLAYER: Where were you before and after the meeting?
+EDMUND: I was in my room. I don’t really talk to anyone else outside of meetings.
+===
+
+title: ED04OL
+---
+// asked about Olivia before
+PLAYER: Where were you before and after the meeting?
+EDMUND: As I’ve said before, I was in my room. I don’t really talk to anyone else outside of meetings.
+===
+
+
+title: ED05
+---
 //On being a Skeleton
 -> PLAYER: So what’s it like as a skeleton?
     EDMUND: ...
@@ -36,6 +60,44 @@ EDMUND: ...
     EDMUND: ...
     EDMUND: It’s something like that.
     PLAYER: I-I see. I’m sorry to hear that.
+===
+
+title: OD
+---
+PLAYER: Did you notice the drink that she had?
+EDMUND: What of it?
+PLAYER: Did you see anyone tamper with it?
+EDMUND: No? Do you think that’s what killed her?
+PLAYER: It’s a possibility I’m looking into.
+===
+
+
+title:ED06MNMR
+---
+// unlocked after learning from Minerva, or asking Mr. Wraithwood
+PLAYER: Did you know that Olivia was a witch?
+EDMUND: Nope. Didn’t really know her at all.
+===
+
+title: ED07MN
+---
+// unlocked after learning from Minerva
+PLAYER: Did you know she was a necromancer?
+EDMUND: No. Again I never really knew her.
+===
+
+
+title: ED08OE
+---
+//Show him the picture of O + E 
+PLAYER: Any idea on who you think is in this picture with Olivia?
+EDMUND: Could be anyone.
+PLAYER: Seems like she was close with whoever this was.
+EDMUND: ...Sure. Didn’t know her well enough.
+===
+
+title: ED09OL
+---
 ->PLAYER: So Olivia.
     EDMUND: What about her?
     PLAYER: You gave her a look earlier in the lobby.
@@ -45,12 +107,51 @@ EDMUND: ...
     EDMUND: ... You’ve seen the other guests here right?
     EDMUND: Most humans just run off scared.
     PLAYER: ...
+===
 
-//Unlocked after certain events
-->PLAYER: Did you know that Olivia was a witch?
-    EDMUND: Nope. Didn’t really know her at all.
-->PLAYER: Did you know she was a necromancer?
-    EDMUND: No. Again I never really knew her.
+title: ED10BT
+---
+PLAYER: What do you know about Bartholomew?
+EDMUND: He’s a vampire. Never really talked to him outside of meetings. 
+PLAYER: Any reason?
+EDMUND: No. We don’t gel is all.
+EDMUND: …Hates humans, though.
+PLAYER: R-really? 
+EDMUND: Has a lot of issues with them. 
+EDMUND: (…) Can’t really say I care.
+===
 
+title: ED11MN
+---
+PLAYER: What do you think about Minerva?
+EDMUND: She’s nice enough. And I figure having a witch on my good side isn’t a bad idea, so we get along. Beats the opposite.
+===
 
+title: ED12MN
+---
+// unlocked after asking Minerva about Edmund
+PLAYER: Minerva mentioned you were really insistent about her dealing in necromancy. What exactly did you want her to do?
+EDMUND: I wanted her to undo me.
+PLAYER: … What?
+EDMUND: I wanted her to undo the resurrection spell that’s been cast on me.
+PLAYER: And she turned you down?
+EDMUND: Yeah. Something about hating necromancy. Some witch she is.
+===
+
+title: ED13MX
+---
+PLAYER: What do you think about Max?
+EDMUND: The werewolf? He’s an idiot. And he’s loud.
+PLAYER: Okay, and do you think he’s capable of killing someone?
+EDMUND: Maybe? I don’t really care. He doesn’t seem capable of much outside of talking someone to death.
+PLAYER: (Did he just tell a joke?)
+===
+
+title: ED14MX
+---
+PLAYER: Max seems pretty flirty, huh?
+EDMUND: Seems that way.
+PLAYER: Did you hear about him making a pass on Olivia?
+EDMUND: No, but it’s unsurprising. Did she turn him down? He doesn’t seem like her type.
+PLAYER: Apparently, she did turn him down.
 ===
