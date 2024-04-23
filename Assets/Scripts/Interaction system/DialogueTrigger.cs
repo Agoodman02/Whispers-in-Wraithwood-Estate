@@ -36,6 +36,8 @@ public class DialogueTrigger : MonoBehaviour
     public bool WraithwoodIsGhost = false;
     // ---- Olivia Clues
     public bool KnowOliviaKilled = false;
+    // UNOFFICIAL verbal clue; Doesn't go on the evidence board.
+    public bool KnowOliviaMarried = false;
     public bool KnowOliviaWidow = false;
     public bool KnowOliviaWitch = false;
     public bool KnowOliviaNecromancer = false;
@@ -43,6 +45,10 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Max Clues
     public bool KnowMaxRejectedByOlivia = false;
     public bool KnowMaxSeenWithBlood = false;
+    //UNOFFICIAL verbal clue; Doesn't go on the evidence board.
+    public bool MaxTalkedAboutMeeting = false;
+    //UNOFFICIAL verbal clue; Doesn't go on the evidence board.
+    public bool MaxKnowsOliviaDead = false;
     // ---- Edmund Clues
     public bool KnowEdmund_Want_UndoUndead = false;
     public bool KnowEdmund_Hate_BeingUndead = false;
@@ -60,10 +66,10 @@ public class DialogueTrigger : MonoBehaviour
 
 
     // ------------------------------ General Variables ---------------- //
-    //There are a total of 22 clues.
+    //There are a total of 21 clues.
     // 33% of total clues = 7
     // 60% of total clues = 13
-    // 3 clues remaining out of total clues = 19
+    // 3 clues remaining out of total clues = 18
     public int CluesObtained = 0;
     public int CluesOnBoard = 0;
 
@@ -117,7 +123,7 @@ public class DialogueTrigger : MonoBehaviour
                 /// - [MR-02-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
                 /// - [MR-04-BD] - After finding the body. [FindBody == True]
                 /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True]
-                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaWidow == True]
+                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaMarried == True]
                 /// 
                 ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
                 ///*Dialogue options:
@@ -129,7 +135,7 @@ public class DialogueTrigger : MonoBehaviour
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MR-14-BD] - After finding the body. [FindBody == True]
                 /// - [MR-15-SB] - After finding spellbook. [HasSpellbook == True]
-                /// - [MR-16-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaWidow == True]
+                /// - [MR-16-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaMarried == True] [Set KnowOliviaWidow = true]
                 /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
                 /// 
                 ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
@@ -172,9 +178,9 @@ public class DialogueTrigger : MonoBehaviour
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MN-01-OL] - If talked to before finding the body. [FindBody == False]
                 /// - [MN-02-BD] - Approaching her after finding the body for the first time
-                /// - [MN-14-PSN] - Has obtained >= 2 clues. [CluesObtained or CluesOnBoard >= 13]
+                /// - [MN-14-PSN] - Has added >= 13 clues to the board. [CluesOnBoard >= 13]
                 ///   * NO Cup = Conversation Ends.
-                ///   * [MN-15-CP] - Has Olivia's Cup [HasOliviaCup == True]
+                ///   * [MN-15-CP] - Has Olivia's Cup [HasOliviaCup == True, KnowPlayerIsPoisoned == false] [Set KnowPlayerIsPoisoned == true]
                 ///   
                 ///--- Start Questioning Dialogue: "PLAYER: Can I ask you a few questions, Minerva?" ---//
                 ///*Dialogue Options:
@@ -195,7 +201,25 @@ public class DialogueTrigger : MonoBehaviour
                 ///--- End Questioning Dialogue: "PLAYER: I think that’s it… Thanks for your time." ---//
                 break;
             case "Max":
-                //Dialogue
+                ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
+                /// - [MX-01-OL] - Asking about Olivia before the murder.
+                /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true, even if it was already true.]
+                /// - [MX-02] - About the meeting. [Set KnowOliviaMarried = true] [Set MaxTalkedAboutMeeting = true]
+                /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true]
+                /// - [MX-08-OL] - Tell Max about the murder. [FindBody == true] [Set MaxKnowsOliviaDead = true]
+                /// 
+                /// - [MX-04-BL] - Ask more about Olivia after talking about the meeting, NO KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
+                /// - [MX-05] - Ask more about Olivia after talking about the meeting, YES KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
+                /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [CluesAddedToBoard >= 13, KnowPlayerIsPoisoned == false]
+                ///  * [MX-07-PSN] - If the player hasn’t talked to Minerva about being poisoned yet. Just merge this with MX-06-PSN tbh.
+                ///  
+                ///--- Start Questioning Dialogue:  "MAXWELL: Aagh! This night couldn’t get any worse… Woah! It’s you. Uh, hey! How can I help ya?" ---//
+                ///*Dialogue Options:
+                /// - [MX-09-BT] - Ask about Bartholomew [MaxKnowsOliviaDead == true] [set KnowBartBitHuman = true]
+                /// - [MX-10-MN] - Ask about Minerva
+                /// - [MX-11-MR] - Ask about Wraithwood
+                /// - [MX-12-ED] - Ask about Edmund
+                ///--- End Questioning Dialogue: "PLAYER: That’s all for now. Thanks for helping me out. | MAX: No problem! Come back anytime!" ---//
                 break;
         }
         //------ End of Character Trigger Filtering; targetNodeName is Set accordingly. -------//
