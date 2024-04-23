@@ -1,0 +1,56 @@
+﻿title: EdmundMain
+---
+//looking for Olivia?? why is this important 
+PLAYER: Have you seen Olivia?
+EDMUND: No. I’ve just been here after the meeting.
+//after finding Olivia's body
+->PLAYER: Olivia’s been found dead.
+    EDMUND: Okay.
+    PLAYER: No reaction?
+    EDMUND: I’ve only just met her.
+    EDMUND: So no.
+// after revealing shes been murdered
+->PLAYER: There’s a chance Olivia’s been murdered.
+    EDMUND: Okay.
+    PLAYER: Do you know if she has any enemies here?
+    EDMUND: No, I barely knew the girl.
+    PLAYER: Well I’ll still need to ask you some questions anyways.
+    EDMUND: ...
+===
+
+title: EdMain1
+---
+// Start of loop?... maybe?
+PLAYER: I need to ask you some questions
+EDMUND: ...
+// Alibi
+
+//On being a Skeleton
+-> PLAYER: So what’s it like as a skeleton?
+    EDMUND: ...
+    EDMUND: It’s like being cursed.
+    PLAYER: I’ve never been cursed before.
+    EDMUND: Imagine living in absolute nothingness.
+    EDMUND: To know you’ll never feel a summer breeze again.
+    EDMUND: To forget what a delicious steak tastes like.
+    EDMUND: ...
+    EDMUND: It’s something like that.
+    PLAYER: I-I see. I’m sorry to hear that.
+->PLAYER: So Olivia.
+    EDMUND: What about her?
+    PLAYER: You gave her a look earlier in the lobby.
+    EDMUND: It was the same look I gave you.
+    EDMUND: I’m surprised there’s two humans working here.
+    PLAYER: Is it really that odd?
+    EDMUND: ... You’ve seen the other guests here right?
+    EDMUND: Most humans just run off scared.
+    PLAYER: ...
+
+//Unlocked after certain events
+->PLAYER: Did you know that Olivia was a witch?
+    EDMUND: Nope. Didn’t really know her at all.
+->PLAYER: Did you know she was a necromancer?
+    EDMUND: No. Again I never really knew her.
+
+
+===

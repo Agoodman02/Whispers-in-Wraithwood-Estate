@@ -18,4 +18,49 @@ title: BartMain2
 ---
 PLAYER: Where have you been tonight?
 BART: I don’t see that being any of your business.
+-> PLAYER: What do you know about Edmund?
+    BART: Only the bits and pieces he’s shared in our PRIVATE meetings. 
+->PLAYER: What can you tell me about Minerva?
+    BART: She’s a witch of notable caliber. I wouldn’t want to be amongst her enemies.
+    PLAYER: Are you saying she’s a danger to others?
+    BART: I imagine she could be if she so desired.
+->PLAYER: So what do you think of Max?
+    BART: Ugh… I’d rather not get into it.
+    PLAYER: Please do.
+    BART: Listen, human, I’d like to spend as little of your short lifespan with you as possible, so save us both the time and leave.
+// Options below appear after certain conditions are met
+->PLAYER: Really? Because there were fang marks on her neck.
+    <<jump BartMain3>>
+->PLAYER: So who do you figure is responsible for the murder?
+    <<jump BartMain4>>
+->PLAYER: Did Olivia and Edmund know each other?
+    BART: Didn’t seem like it, but I know little of that sad sack of bones’ background.
+->PLAYER: Apparently, you’ve bitten into a human before. Is it true?
+    <<jump BartMain5>>
 ===
+
+title: BartMain3
+---
+// After finding Olivia's body
+BART: Not mine. I wouldn’t deign to shake a human’s hand, nonetheless bite one’s neck.
+PLAYER: But you drink our blood?
+BART: Solely from bags of donated blood and it’s not as if it is my choice. Humans are dirty, filthy animals that I try to keep a healthy distance from.
+===
+
+title: BartMain4
+---
+// After revealing Olivia was killed
+BART: Well she did have quite the run-in with that reprehensible ball of fur, Maxwell, when he tried to make a pass at her. I wouldn’t put it past him to have held a grudge.
+BART: Not to mention the blood he had on him.
+PLAYER: You saw blood on Max?
+BART: Yes, after the meeting, I noticed him back in the ballroom with some of it on his arm.
+===
+
+title: BartMain5
+---
+// After Max has told that Bart has bitten a human
+BART: …curses upon whoever broke the sanctity of our meeting discussions.
+PLAYER: So it is?
+BART: It was eons ago. I hardly remember it, nor would I repeat that blunder.
+===
+
