@@ -5,11 +5,8 @@ using UnityEngine;
 using Yarn.Unity;
 public class DialogueTrigger : MonoBehaviour
 {
-<<<<<<< Updated upstream
-=======
     //Note: The pseudocode uses nodenames with "-" hyphens in them, but the actual dialogue nodes do not have any hyphens.
 
->>>>>>> Stashed changes
     //Yarn Spinner's Dialogue runner. This runs the dialogue.
     private DialogueRunner dialogueRunner;
 
@@ -35,6 +32,8 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Bart Clues
     public bool KnowBartBitHuman = false;
     public bool KnowBartDislikesHumans = false;
+    //UNOFFICIAL flag; Doesn't go on evidence board.
+    public bool BartTalkOliviaBody = false;
     // ---- Wraithwood Clues?
     //Player finds out front door is locked IF they try to open the front door. (Interact with front door.) Technically a verbal clue, but has a physical object source.
     public bool KnowFrontDoorLocked = false;
@@ -59,6 +58,8 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Edmund Clues
     public bool KnowEdmund_Want_UndoUndead = false;
     public bool KnowEdmund_Hate_BeingUndead = false;
+    //UNOFFICIAL flag; Doesn't go on evidence board.
+    public bool EdmundTalkOliviaBody = false;
     // ---- Minerva Clues
     public bool KnowHasPoison = false;
     public bool KnowMinervaDislikesOlivia = false;
@@ -111,8 +112,8 @@ public class DialogueTrigger : MonoBehaviour
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [BT-01] Default. Before finding the body. [FindBody == False] [Set KnowMaxRejectedByOlivia = True]
                 /// - [BT-02] Default Repeat dialogue after [BT-01] has been run.
-                /// - [BT-03-BD] - After finding Olivia’s body. [FindBody == True]
-                /// - [BT-04-OL] - Olivia's Been Killed [KnowOliviaKilled == True] [Set KnowBartDislikesHumans = True]
+                /// - [BT-03-BD] - After finding Olivia’s body. [FindBody == True, BartTalkOliviaBody == false] [Set BartTalkOliviaBody = true]
+                /// - [BT-04-OL] - Olivia's Been Killed [BartTalkOliviaBody == True] [Set KnowBartDislikesHumans = True]
                 /// - [BT-05-OL] - Continues after [BT-05-OL]. [Set KnowMaxSeenWithBlood = True]. Might just merge these two into one dialogue node instead of playing them back-to-back.
                 /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True]
                 /// - [BT-07-MX] - Know Bart has bitten a huamn before (heard from Max). [KnowBartBitHuman == True]
@@ -146,21 +147,12 @@ public class DialogueTrigger : MonoBehaviour
                 /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
                 /// 
                 ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
-<<<<<<< Updated upstream
-                ///*Dialogue options:
-                /// - About Mr.Wraithwood
-                ///  * [MR-08] PLAYER: What are you?
-                ///  * [MR-10] PLAYER: Why won’t you be more helpful?
-                ///  * [MR-11] PLAYER: What’s it like being a ghost?
-                /// - About Others
-=======
                 ///*Dialogue options: [MR00] - MR00 includes these options, and jumps to MR08 or MR09 depending on the option chosen. *****Dialogue Trigger only needs to trigger MR00.
                 /// - About Mr.Wraithwood [MR08]
                 ///  * [MR-08] PLAYER: What are you?
                 ///  * [MR-10] PLAYER: Why won’t you be more helpful?
                 ///  * [MR-11] PLAYER: What’s it like being a ghost?
                 /// - About Others [MR09]
->>>>>>> Stashed changes
                 ///  * [MR-12] PLAYER: What do you know of the guests here?
                 ///  * [MR-09-OL] PLAYER: What do you know about Olivia?
                 ///  * [MR-13-OL] PLAYER: Did Olivia know you were a ghost?
@@ -169,9 +161,9 @@ public class DialogueTrigger : MonoBehaviour
             case "Edmund":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [ED-01-OL] Default. Before finding the body. [FindBody == False]
-                /// - [ED-02-BD] - After finding her body. [FindBody == True]
-                /// - [ED-03-OL] - After revealing she’s been murdered. [KnowOliviaKilled == True]
-                /// - [???????] - Olivia’s drink. [????????] (Waiting for response from narrative.)
+                /// - [ED-02-BD] - After finding her body. [FindBody == True] [set EdmundTalkOliviaBody = true]
+                /// - [ED-03-OL] - After revealing she’s been murdered. [EdmundTalkOliviaBody == True]
+                /// - [EDOD] - Olivia’s drink. [FindBody == True]
                 /// - [ED-06-MN-MR] - Olivia Was a Witch. [KnowOliviaWitch == True]
                 /// - [ED-07-MN] - Olivia was a Necromancer. [KnowOliviaNecromancer == True]
                 /// - [ED-08-OE] - Show him the picture of Olivia & Edmund [HasOliviaEdmundPhoto == True]
@@ -191,7 +183,6 @@ public class DialogueTrigger : MonoBehaviour
                 break;
             //If currently selected character is Minerva. [MN], "Minerva".
             case "Minerva":
-                ///*Starting dialogue: MNStartConvo
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MN-01-OL] - If talked to before finding the body. [FindBody == False]
                 /// - [MN-02-BD] - Approaching her after finding the body for the first time
@@ -199,7 +190,7 @@ public class DialogueTrigger : MonoBehaviour
                 ///   * NO Cup = Conversation Ends.
                 ///   * [MN-15-CP] - Has Olivia's Cup [HasOliviaCup == True, KnowPlayerIsPoisoned == false] [Set KnowPlayerIsPoisoned == true]
                 ///   
-                ///--- Start Questioning Dialogue: "PLAYER: Can I ask you a few questions, Minerva?" ---//
+                ///--- Start Questioning Dialogue: [MBStartConvo] ---//
                 ///*Dialogue Options:
                 /// - About Others
                 ///  * [MN-03-OL] - Olivia
@@ -215,10 +206,9 @@ public class DialogueTrigger : MonoBehaviour
                 ///  * [MN-10-SB] - Spellbook [AskedSpellbook == True] [Set KnowOliviaWitch = True]
                 ///  * [MN-11-OL] - Olivia Is Witch (After learning Olivia is a witch from Minerva) [KnowOliviaWitch == True] [Set KnowOliviaNecromancer = True]
                 ///  * [MN-12-PSN] - Bottles From Minvera's Room
-                ///--- End Questioning Dialogue: "PLAYER: I think that’s it… Thanks for your time." ---//
+                ///--- End Questioning Dialogue: [MNEndConvo] ---//
                 break;
             case "Max":
-                ///*Starting dialogue: MXStartConvo
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false] [Set MaxTalkPreFindBody = true]
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true, even if it was already true.]
@@ -231,13 +221,13 @@ public class DialogueTrigger : MonoBehaviour
                 /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [CluesAddedToBoard >= 13, KnowPlayerIsPoisoned == false]
                 ///  * [MX-07-PSN] - If the player hasn’t talked to Minerva about being poisoned yet. Just merge this with MX-06-PSN tbh.
                 ///  
-                ///--- Start Questioning Dialogue:  "MAXWELL: Aagh! This night couldn’t get any worse… Woah! It’s you. Uh, hey! How can I help ya?" ---//
+                ///--- Start Questioning Dialogue: [MXStartConvo] ---//
                 ///*Dialogue Options:
                 /// - [MX-09-BT] - Ask about Bartholomew [MaxKnowsOliviaDead == true] [set KnowBartBitHuman = true]
                 /// - [MX-10-MN] - Ask about Minerva
                 /// - [MX-11-MR] - Ask about Wraithwood
                 /// - [MX-12-ED] - Ask about Edmund
-                ///--- End Questioning Dialogue: "PLAYER: That’s all for now. Thanks for helping me out. | MAX: No problem! Come back anytime!" ---//
+                ///--- End Questioning Dialogue: [MXEndConvo] ---//
                 break;
         }
         //------ End of Character Trigger Filtering; targetNodeName is Set accordingly. -------//
