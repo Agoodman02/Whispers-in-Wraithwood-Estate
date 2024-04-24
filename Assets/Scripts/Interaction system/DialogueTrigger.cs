@@ -5,6 +5,11 @@ using UnityEngine;
 using Yarn.Unity;
 public class DialogueTrigger : MonoBehaviour
 {
+<<<<<<< Updated upstream
+=======
+    //Note: The pseudocode uses nodenames with "-" hyphens in them, but the actual dialogue nodes do not have any hyphens.
+
+>>>>>>> Stashed changes
     //Yarn Spinner's Dialogue runner. This runs the dialogue.
     private DialogueRunner dialogueRunner;
 
@@ -141,12 +146,21 @@ public class DialogueTrigger : MonoBehaviour
                 /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
                 /// 
                 ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
+<<<<<<< Updated upstream
                 ///*Dialogue options:
                 /// - About Mr.Wraithwood
                 ///  * [MR-08] PLAYER: What are you?
                 ///  * [MR-10] PLAYER: Why won’t you be more helpful?
                 ///  * [MR-11] PLAYER: What’s it like being a ghost?
                 /// - About Others
+=======
+                ///*Dialogue options: [MR00] - MR00 includes these options, and jumps to MR08 or MR09 depending on the option chosen. *****Dialogue Trigger only needs to trigger MR00.
+                /// - About Mr.Wraithwood [MR08]
+                ///  * [MR-08] PLAYER: What are you?
+                ///  * [MR-10] PLAYER: Why won’t you be more helpful?
+                ///  * [MR-11] PLAYER: What’s it like being a ghost?
+                /// - About Others [MR09]
+>>>>>>> Stashed changes
                 ///  * [MR-12] PLAYER: What do you know of the guests here?
                 ///  * [MR-09-OL] PLAYER: What do you know about Olivia?
                 ///  * [MR-13-OL] PLAYER: Did Olivia know you were a ghost?
