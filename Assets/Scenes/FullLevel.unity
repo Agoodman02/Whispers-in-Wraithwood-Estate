@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8998,6 +8998,7 @@ GameObject:
   - component: {fileID: 412165263}
   - component: {fileID: 412165262}
   - component: {fileID: 412165264}
+  - component: {fileID: 412165265}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9099,6 +9100,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c84fcf804a0314591fdf5062da4e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &412165265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412165258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5719561e61c1ac841a66cad0454e9e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 0}
+  currentCharacter: 
+  targetNodeName: 
+  KnowPlayerIsPoisoned: 0
+  KnowBartBitHuman: 0
+  KnowBartDislikesHumans: 0
+  KnowFrontDoorLocked: 0
+  WraithwoodIsGhost: 0
+  KnowOliviaKilled: 0
+  KnowOliviaWidow: 0
+  KnowOliviaWitch: 0
+  KnowOliviaNecromancer: 0
+  KnowOliviaRecentlyJoined: 0
+  KnowMaxRejectedByOlivia: 0
+  KnowMaxSeenWithBlood: 0
+  KnowEdmund_Want_UndoUndead: 0
+  KnowEdmund_Hate_BeingUndead: 0
+  KnowHasPoison: 0
+  KnowMinervaDislikesOlivia: 0
+  FindBody: 0
+  HasOliviaEdmundPhoto: 0
+  HasSpellbook: 0
+  HasOliviaCup: 0
+  HasBloodyPen: 0
+  HasHexBag: 0
+  CluesObtained: 0
+  CluesOnBoard: 0
 --- !u!1001 &417672151
 PrefabInstance:
   m_ObjectHideFlags: 0

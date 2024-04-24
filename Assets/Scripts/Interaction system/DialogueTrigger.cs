@@ -45,10 +45,12 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Max Clues
     public bool KnowMaxRejectedByOlivia = false;
     public bool KnowMaxSeenWithBlood = false;
-    //UNOFFICIAL verbal clue; Doesn't go on the evidence board.
+    //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
     public bool MaxTalkedAboutMeeting = false;
-    //UNOFFICIAL verbal clue; Doesn't go on the evidence board.
+    //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
     public bool MaxKnowsOliviaDead = false;
+    //UNOFFICIAL flag; Doesn't go on the evidence board.
+    public bool MaxTalkPreFindBody = false;
     // ---- Edmund Clues
     public bool KnowEdmund_Want_UndoUndead = false;
     public bool KnowEdmund_Hate_BeingUndead = false;
@@ -79,7 +81,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         ///* Check if all of the clues are added to the evidence board.
     
-        if (CluesOnBoard == 22) 
+        if (CluesOnBoard == 21) 
         {
             targetNodeName = "Insert Final Cutscene NodeName Here";
 
@@ -175,6 +177,7 @@ public class DialogueTrigger : MonoBehaviour
                 break;
             //If currently selected character is Minerva. [MN], "Minerva".
             case "Minerva":
+                ///*Starting dialogue: MNStartConvo
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MN-01-OL] - If talked to before finding the body. [FindBody == False]
                 /// - [MN-02-BD] - Approaching her after finding the body for the first time
@@ -201,8 +204,9 @@ public class DialogueTrigger : MonoBehaviour
                 ///--- End Questioning Dialogue: "PLAYER: I think that’s it… Thanks for your time." ---//
                 break;
             case "Max":
+                ///*Starting dialogue: MXStartConvo
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [MX-01-OL] - Asking about Olivia before the murder.
+                /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false] [Set MaxTalkPreFindBody = true]
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true, even if it was already true.]
                 /// - [MX-02] - About the meeting. [Set KnowOliviaMarried = true] [Set MaxTalkedAboutMeeting = true]
                 /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true]
