@@ -8,16 +8,16 @@ EDMUND: No. I’ve just been here after the meeting.
 title: ED02BD
 ---
 //after finding Olivia's body
-->PLAYER: Olivia’s been found dead.
+-> PLAYER: Olivia’s been found dead.
     EDMUND: Okay.
     PLAYER: No reaction?
     EDMUND: I’ve only just met her.
     EDMUND: So no.
-
+===
 title: ED03OL
 ---
 // after revealing shes been murdered
-->PLAYER: There’s a chance Olivia’s been murdered.
+-> PLAYER: There’s a chance Olivia’s been murdered.
     EDMUND: Okay.
     PLAYER: Do you know if she has any enemies here?
     EDMUND: No, I barely knew the girl.
@@ -98,15 +98,15 @@ EDMUND: ...Sure. Didn’t know her well enough.
 
 title: ED09OL
 ---
-->PLAYER: So Olivia.
-    EDMUND: What about her?
-    PLAYER: You gave her a look earlier in the lobby.
-    EDMUND: It was the same look I gave you.
-    EDMUND: I’m surprised there’s two humans working here.
-    PLAYER: Is it really that odd?
-    EDMUND: ... You’ve seen the other guests here right?
-    EDMUND: Most humans just run off scared.
-    PLAYER: ...
+PLAYER: So Olivia.
+EDMUND: What about her?
+PLAYER: You gave her a look earlier in the lobby.
+EDMUND: It was the same look I gave you.
+EDMUND: I’m surprised there’s two humans working here.
+PLAYER: Is it really that odd?
+EDMUND: ... You’ve seen the other guests here right?
+EDMUND: Most humans just run off scared.
+PLAYER: ...
 ===
 
 title: ED10BT
