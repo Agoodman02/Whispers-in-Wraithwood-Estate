@@ -1,11 +1,7 @@
 ﻿title: MR01OL
 ---
 // on phone
-<<<<<<< Updated upstream:Assets/Yarn Spinner/WraithwoodPhone.yarn
 -> PLAYER: What do you know about Olivia?
-=======
-->PLAYER: What do you know about Olivia?
->>>>>>> Stashed changes:Assets/Yarn Spinner/WraithwoodMain.yarn
     MR: Not much; she was hired pretty recently. Just figure this out. *Hangs up*
 -> PLAYER: What do you know of the guests here? //MR03
     MR: I try not to meddle in other people’s business and I’d suggest you do the same. *Hangs up*
@@ -26,11 +22,7 @@
 -> PLAYER: Do you know if Olivia was married? //MR06OE
     MR: Why would I? *Hangs up*
 ===
-<<<<<<< Updated upstream:Assets/Yarn Spinner/WraithwoodPhone.yarn
-=======
 
-
->>>>>>> Stashed changes:Assets/Yarn Spinner/WraithwoodMain.yarn
 title: MR00
 ---
 // In person
@@ -39,10 +31,6 @@ title: MR00
 -> Ask about others
     <<jump MR09>>
 ===
-<<<<<<< Updated upstream:Assets/Yarn Spinner/WraithwoodPhone.yarn
-=======
-
->>>>>>> Stashed changes:Assets/Yarn Spinner/WraithwoodMain.yarn
 title: MR08
 ---
 -> PLAYER: What are you?
