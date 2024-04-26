@@ -21,9 +21,13 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController[] InventoryItems;
 
+    DescriptionTextureizer descriptionTextureizer;
+
     private void Awake()
     {
         Instance = this;
+
+        descriptionTextureizer = DescriptionTextureizer.single;
     }
 
     // Update is called once per frame
@@ -70,8 +74,10 @@ public class InventoryManager : MonoBehaviour
     //Displays item list when opening inventory
     public void ListItems()
     {
+        descriptionTextureizer.ClearDesc();
+
         //list inventory
-        foreach(var item in Items.items)
+        foreach (var item in Items.items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("Text").GetComponent<Text>();
