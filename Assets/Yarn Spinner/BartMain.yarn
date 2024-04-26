@@ -13,11 +13,11 @@ PLAYER: You mean Max?
 BART: Yes, he was nearly throwing himself on that woman right in front of us in the ballroom.
 PLAYER: Did they go off together?
 BART: Oh, goodness no. She was repulsed and did not hold back in vocalizing it. *He chuckles dryly.*
--> PLAYER: Thanks for the help. // exit convo
+->PLAYER: Thanks for the help. // exit convo
 ->PLAYER: Where have you been tonight?
     BART: I don’t see that being any of your business. // BT-02
 // after discovering Olivia has been killed
--> PLAYER: Olivia’s been killed. Do you know anything about that?
+->PLAYER: Olivia’s been killed. Do you know anything about that?
     BART: I do not.
     <<jump BT04BD>>
 ===
@@ -36,12 +36,12 @@ title: BT04BD
     BART: Yes, after the meeting, I noticed him back in the ballroom with some of it on his arm.
 ===
 
-title: BT06OE
----
+//title: BT06OE
+//---
 // after finding 'Olivia and Edmund photo'
-PLAYER: Did Olivia and Edmund know each other?
-BART: Didn’t seem like it, but I know little of that sad sack of bones’ background.
-===
+//PLAYER: Did Olivia and Edmund know each other?
+//BART: Didn’t seem like it, but I know little of that sad sack of bones’ background.
+//===
 
 title: BT07MX
 ---
@@ -72,5 +72,11 @@ PLAYER: So what do you think of Max?
 BART: Ugh… I’d rather not get into it.
 PLAYER: Please do.
 BART: Listen, human, I’d like to spend as little of your short lifespan with you as possible, so save us both the time and leave.
+===
+
+title: BT11OC // self made, could change
+---
+PLAYER: Ugh, Bart, I’m feeling dreadful…
+BART: Don’t call me Bart unless you want to feel even worse. But yes, you do appear to be in poor health. Good luck with that.
 ===
 
