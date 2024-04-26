@@ -67,14 +67,14 @@ public class PlayerControler : MonoBehaviour
     {
         if (DoCameraControl)
         {
-            float mousex = Input.GetAxisRaw("Mouse X") * Time.deltaTime * MouseSensitivity.x;
+            float mousex = Input.GetAxisRaw("Mouse X") * MouseSensitivity.x;
             float mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * MouseSensitivity.y;
 
             camroty += mousex;
             camrotx -= mousey;
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
-            gameObject.transform.Rotate(Vector3.up * camroty);
+            gameObject.transform.Rotate(Vector3.up, camroty);
             CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
         }
 
