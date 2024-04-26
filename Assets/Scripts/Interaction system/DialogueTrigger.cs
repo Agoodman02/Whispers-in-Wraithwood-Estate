@@ -32,8 +32,11 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Bart Clues
     public bool KnowBartBitHuman = false;
     public bool KnowBartDislikesHumans = false;
+<<<<<<< Updated upstream
     //UNOFFICIAL flag; Doesn't go on evidence board.
     public bool BartTalkOliviaBody = false;
+=======
+>>>>>>> Stashed changes
     // ---- Wraithwood Clues?
     //Player finds out front door is locked IF they try to open the front door. (Interact with front door.) Technically a verbal clue, but has a physical object source.
     public bool KnowFrontDoorLocked = false;
@@ -111,10 +114,14 @@ public class DialogueTrigger : MonoBehaviour
             case "Bartholomew":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [BT-01] Default. Before finding the body. [FindBody == False] [Set KnowMaxRejectedByOlivia = True]
+<<<<<<< Updated upstream
                 /// - [BT-02] Default Repeat dialogue after [BT-01] has been run.
                 /// - [BT-03-BD] - After finding Olivia’s body. [FindBody == True, BartTalkOliviaBody == false] [Set BartTalkOliviaBody = true]
                 /// - [BT-04-OL] - Olivia's Been Killed [BartTalkOliviaBody == True] [Set KnowBartDislikesHumans = True]
                 /// - [BT-05-OL] - Continues after [BT-05-OL]. [Set KnowMaxSeenWithBlood = True]. Might just merge these two into one dialogue node instead of playing them back-to-back.
+=======
+                /// - [BT04BD] - After finding Olivia’s body. [FindBody == True] [Set KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True]
+>>>>>>> Stashed changes
                 /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True]
                 /// - [BT-07-MX] - Know Bart has bitten a huamn before (heard from Max). [KnowBartBitHuman == True]
                 /// 
@@ -210,16 +217,25 @@ public class DialogueTrigger : MonoBehaviour
                 break;
             case "Max":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
+<<<<<<< Updated upstream
                 /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false] [Set MaxTalkPreFindBody = true]
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true, even if it was already true.]
                 /// - [MX-02] - About the meeting. [Set KnowOliviaMarried = true] [Set MaxTalkedAboutMeeting = true]
+=======
+                /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false, FindBody == false] [Set MaxTalkPreFindBody = true, KnowOliviaMarried = true, MaxTalkedAboutMeeting = true] 
+                ///  * Merged with [MX-02].
+                /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true.]
+>>>>>>> Stashed changes
                 /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true]
                 /// - [MX-08-OL] - Tell Max about the murder. [FindBody == true] [Set MaxKnowsOliviaDead = true]
                 /// 
                 /// - [MX-04-BL] - Ask more about Olivia after talking about the meeting, NO KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
                 /// - [MX-05] - Ask more about Olivia after talking about the meeting, YES KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
                 /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [CluesAddedToBoard >= 13, KnowPlayerIsPoisoned == false]
+<<<<<<< Updated upstream
                 ///  * [MX-07-PSN] - If the player hasn’t talked to Minerva about being poisoned yet. Just merge this with MX-06-PSN tbh.
+=======
+>>>>>>> Stashed changes
                 ///  
                 ///--- Start Questioning Dialogue: [MXStartConvo] ---//
                 ///*Dialogue Options:

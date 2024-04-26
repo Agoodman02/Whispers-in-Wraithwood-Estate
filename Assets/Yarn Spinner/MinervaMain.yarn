@@ -1,0 +1,166 @@
+﻿
+title: MNStartConvo
+---
+PLAYER: Can I ask you a few questions, Minerva?
+===
+title: MN01OL
+---
+// If talked to before finding Olivia
+PLAYER: Minerva, have you seen Olivia by any chance?
+MINERVA: Olivia? The woman with you, right?
+MINERVA: No, not after the meeting. I’ve been in my room, reading.
+===
+
+title: MN02BD
+---
+// After finding the body
+PLAYER: Olivia’s been murdered. Would you know anything about that? // could change??
+MINERVA: What? No! Are you really telling me she’s been murdered?
+MINERVA: A murder! Just my luck…
+PLAYER: I know, it’s awful... I’m sorry this happened.
+MINERVA: Is that so? Sorry, but it’s not your fault to begin with. So unless you’re saying you killed her, don’t apologize.
+PLAYER: Right! Of course…
+===
+
+title: MN03OL
+---
+PLAYER: Is there anything you can tell me about Olivia?
+MINERVA: ...
+MINERVA: I’d guess I know about as much as the victim as you do.
+PLAYER: I see.
+===
+
+title: MN04MX
+---
+PLAYER: Can I ask more about Maxwell?
+MINERVA: No.
+PLAYER: …
+MINERVA: Just kidding. He’s pretty straightforward; a werewolf who wears his heart on his sleeve. If you asked him about something, he’d probably tell you straight away.
+===
+
+title: MN05
+---
+// if asked about the meeting
+PLAYER: Did anything happen during or after the meeting?
+MINERVA: Well, the only thing I can think of is what Max tried to pull. Have you heard about it?
+MINERVA: He asked Olivia out, made a comment about her that she sure didn’t like, and then she turned him down!
+===
+
+title: MN06ED
+---
+PLAYER: I was wondering if you knew anything about Edmund.
+MINERVA: Hmm? Edmund? Him and I chat every so often. You know, “How have you been?”, “How’s your studies?”...
+MINERVA: I suppose you could say we’re acquainted fairly well!
+MINERVA: Oh, but nothing that close, mind you. He’s asked me for a favor before, but…
+PLAYER: Pardon?
+MINERVA: Well, he’s asked me for magical help before. …Something involving necromancy. He was pretty insistent about it, and frankly, I don’t really think it’s my place to talk about it. It was a very personal matter, and not something I wanted any part of.
+PLAYER: I see…
+===
+
+title: MN07BT
+---
+PLAYER: Can you tell me about Bartholomew?
+MINERVA: That’s a very broad question. Let’s see, older than he looks, almost always wears the same few sets of clothes…
+PLAYER: Er, what about after the meeting? Did you see him at all?
+MINERVA: Not at all. I’ve been in my room, and, thankfully, these walls aren’t paper thin. So I haven’t heard him at all, either. I have no idea what he was up to.
+===
+
+title: MN08
+---
+PLAYER: Could you tell me what you were doing between after the meeting and now?
+MINERVA: I headed straight to my room to relax, and I haven’t moved from here since. Does that answer your question?
+===
+
+title: MN09HX
+---
+PLAYER: Minerva, I found this near Olivia’s body. Do you know what this is?
+MINERVA: That’s a hex bag. It’s a tool used by some who practice witchcraft.
+PLAYER: Is it yours?
+MINERVA: No. It isn’t mine.
+MINERVA: Someone else must be practicing witchcraft around here.
+// if asked after spellbook 
+MINERVA: If it was with Olivia, it was probably her’s. // MN09HXSB
+// ^^ is this important, can we cut it?
+===
+
+title: MN10SB
+---
+PLAYER: Minerva, I found this in Olivia’s room. It’s a book of spells, isn’t it?
+MINERVA: …A book of necromancy spells, to be precise.
+PLAYER: Is it yours?
+MINERVA:  No… I guess there’s no point in hiding it anymore.
+MINERVA: This spellbook… It’s Olivia’s.
+PLAYER: Pardon?
+MINERVA: What else is there to say? Olivia, like me, is a witch. I’ve known her for a while now.
+PLAYER: You know her? What? Why didn’t you say anything about it earlier?
+MINERVA: Isn’t it obvious?  If I talked about how I knew her, I’d be the first on your list of suspects. // ok make yourself more sus I see
+===
+
+title: MN11OL
+---
+// after learning Olivia is a witch from Minerva
+PLAYER: Can you tell me how you know Olivia?
+MINERVA: We’ve come across each other at some witch-related events, but she doesn’t run with the same crowd as me.
+MINERVA: Admittedly, I’ve never been very fond of her.
+PLAYER: So you two don’t get along?
+MINERVA: …Nothing that foul. Olivia practices necromancy. That’s something I refuse to touch. It’s just plain unnatural. It’s gross, it’s dangerous… So, I don’t associate with her very closely.
+===
+
+
+title: MN12PSN
+---
+PLAYER: Minerva, could you tell me about these bottles?
+MINERVA: They contain components I use in some of my spells.
+PLAYER: …Even the ones marked as deadly?
+MINERVA: …They’re poisons. I wouldn’t be much of a witch if I didn’t know what was in each bottle.
+MINERVA: And before you ask, no, I haven’t even opened them. No one’s even tampered with them.
+===
+
+title: MN13MR
+---
+PLAYER: Do you know anything about the owner here, Mr. Wraithwood?
+MINERVA: No. I’m surprised you asked me: shouldn’t you know more than I do?
+===
+
+title: MN14PSN
+---
+// If player's clue percent is at #2 or higher and the player has not 
+// found out the cause of feeling sick, only one dialogue will be 
+// available to the player for each character. Otherwise, see “When 
+// talking to Minerva” (MNStartConvo)
+// ^^ I hope you know what this means bc I'm lost
+MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
+PLAYER: Sorry, I…I need to know if you saw anyone at the front desk after the meeting.
+MINERVA: Of course not. I was in my room. Did something happen?
+PLAYER: I’m…not sure. I’ve felt more and more sick by the second.
+MINERVA: Yes, I can tell. You didn’t eat or drink anything strange, did you? 
+//Without Olivia’s cup, the conversation ends.
+===
+
+title:MN15CP
+---
+// If the player has Olivia's cup
+PLAYER: Well… There was this...
+MINERVA: What? The cup that obviously says “Olivia” on it?
+PLAYER: (...She snatched it from me.)
+PLAYER: …I was thirsty. I didn’t think she’d mind…
+PLAYER: (Minerva’s staring at the cup intensely, chanting something under her breath…)
+MINERVA: …
+MINERVA: You’re going to want to hear this. I don’t think you drank anything good.
+MINERVA: If I’m right, you drank some form of powerful poison. …The strong, deadly kind.
+PLAYER: Wh…what? Olivia’s cup was poisoned? I-Isn’t there an antidote? Maybe if I—
+MINERVA: It’s no use. It’s already in your system. Eventually, it will cause one of your organs to stop.
+PLAYER: …
+PLAYER: There’s got to be something! Someone poisoned that cup.
+MINERVA: I can’t concoct any sort of antidote unless I have a big enough sample and enough time to do it. But…
+MINERVA: …If you can figure out who had the poison, or why they’d put it in this cup, then maybe that same person will have the antidote.
+MINERVA: I’ll try using a spell to help stave off the effects of the poison for now. 
+===
+
+title: MNEndConvo
+---
+PLAYER: I think that’s it… Thanks for your time.
+===
+
+
+
