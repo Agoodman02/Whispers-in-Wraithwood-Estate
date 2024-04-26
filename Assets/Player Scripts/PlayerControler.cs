@@ -20,6 +20,7 @@ public class PlayerControler : MonoBehaviour
     Rigidbody selfphys;
     InputMap actions;
     RaycastHit LookingAt;
+    Vector3 forward;
 
     private RaycastHit WasLooking;
 
@@ -64,11 +65,6 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
-
-        Movement3d = gameObject.transform.forward * (MovementDir.y * PlayerWalkSpeed) + gameObject.transform.right * (MovementDir.x * PlayerWalkSpeed);
-        Movement3d.y = selfphys.velocity.y;
-
         if (DoCameraControl)
         {
             float mousex = Input.GetAxisRaw("Mouse X") * Time.deltaTime * MouseSensitivity.x;
@@ -78,9 +74,14 @@ public class PlayerControler : MonoBehaviour
             camrotx -= mousey;
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
-            gameObject.transform.rotation = Quaternion.Euler(0, camroty, 0);
-            CameraCenter.transform.localRotation = Quaternion.Euler(camrotx, 0, 0);
+            gameObject.transform.Rotate(Vector3.up * camroty);
+            CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
         }
+
+        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
+
+        Movement3d = (PlayerWalkSpeed * transform.forward * MovementDir.y) + (PlayerWalkSpeed * transform.right * MovementDir.x);
+        Movement3d.y = selfphys.velocity.y;
 
         // it wasn't samdaman_og
 
@@ -158,6 +159,25 @@ public class PlayerControler : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0, re.y, 0);
         CameraCenter.transform.localRotation = Quaternion.Euler(re.x, 0, 0);
         DoCameraControl = cam;
+    }
+
+    public void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void UnlockCursor(bool confined)
+    {
+        Cursor.visible = true;
+        if (confined)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
 
