@@ -34,15 +34,10 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Bart Clues
     public bool KnowBartBitHuman = false;
     public bool KnowBartDislikesHumans = false;
-<<<<<<< Updated upstream
-    //UNOFFICIAL flag; Doesn't go on evidence board.
-    public bool BartTalkOliviaBody = false;
-=======
->>>>>>> Stashed changes
     // ---- Wraithwood Clues?
     //Player finds out front door is locked IF they try to open the front door. (Interact with front door.) Technically a verbal clue, but has a physical object source.
     public bool KnowFrontDoorLocked = false;
-    public bool WraithwoodIsGhost = false;
+    public bool KnowWraithwoodIsGhost = false;
     // ---- Olivia Clues
     public bool KnowOliviaKilled = false;
     // UNOFFICIAL verbal clue; Doesn't go on the evidence board.
@@ -79,27 +74,36 @@ public class DialogueTrigger : MonoBehaviour
 
 
     // ------------------------------ General Variables ---------------- //
-    //There are a total of 21 clues.
-    // 33% of total clues = 7
-    // 60% of total clues = 13
-    // 3 clues remaining out of total clues = 18
-    public int CluesObtained = 0;
-    public int CluesOnBoard = 0;
+    // 10 CluesObtained is the trigger for PlayerIsSick.
+    public GameManager CluesObtained;
+    public GameManager CluesOnBoard;
+    public GameManager PlayerIsSick;
 
 
     // Start is called before the first frame update.
     void Start()
     {
-    dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+        dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
     }
 
+    // This function should be run every time the player obtains a clue. This should run AFTER any dialogue for obtaining a clue is completed.
+    public void CheckIfPlayerSick()
+    {
+        // Checks if the player has obtained 10+ clues AND has not yet played the PlayerIsSick dialogue.
+        if (CluesObtained.CluesObtained >= 10 & PlayerIsSick.PlayerIsSick == false)
+        {
+            // Sets PlayerIsSick to true. This prevents the PlayerSick dialogue from running multiple times, and PlayerIsSick also used to trigger PlayerSick-related dialogue.
+            PlayerIsSick.PlayerIsSick = true;
+            dialogueRunner.StartDialogue("PlayerSick");
+        }
+    }
 
     //This function checks if the player has acquired 100% of the clues, and then triggers the final cutscene's dialogue node.
     public void TriggerFinalCutscene()
     {
         ///* Check if all of the clues are added to the evidence board.
     
-        if (CluesOnBoard == 21) 
+        if (CluesOnBoard.CluesOnBoard == 21) 
         {
             targetNodeName = "Insert Final Cutscene NodeName Here";
 
@@ -125,55 +129,37 @@ public class DialogueTrigger : MonoBehaviour
             case "Bartholomew":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [BT-01] Default. Before finding the body. [FindBody == False] [Set KnowMaxRejectedByOlivia = True]
-<<<<<<< Updated upstream
-                /// - [BT-02] Default Repeat dialogue after [BT-01] has been run.
-                /// - [BT-03-BD] - After finding Olivia’s body. [FindBody == True, BartTalkOliviaBody == false] [Set BartTalkOliviaBody = true]
-                /// - [BT-04-OL] - Olivia's Been Killed [BartTalkOliviaBody == True] [Set KnowBartDislikesHumans = True]
-                /// - [BT-05-OL] - Continues after [BT-05-OL]. [Set KnowMaxSeenWithBlood = True]. Might just merge these two into one dialogue node instead of playing them back-to-back.
-=======
-                /// - [BT04BD] - After finding Olivia’s body. [FindBody == True] [Set KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True]
->>>>>>> Stashed changes
+                /// - [BT04BD] - After finding Olivia’s body. [FindBody == True] [Set KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True, KnowMaxRejectedByOlivia = true]
                 /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True]
-                /// - [BT-07-MX] - Know Bart has bitten a huamn before (heard from Max). [KnowBartBitHuman == True]
+                /// - [BT-07-MX] - Know Bart has bitten a human before (heard from Max). [KnowBartBitHuman == True]
                 /// 
-                ///--- Start Questioning Dialogue: "PLAYER: So what do you know about..." ---//
-                ///*Dialogue Options:
-                /// - Ask about Characters
-                ///  * [BT-08-ED] - Edmund
-                ///  * [BT-09-MN] - Minerva
-                ///  * [BT-10-MX] - Max
+                ///--- Questioning Dialogue: BTStartConvo ---//
+                ///* All of the dialogue options asking questions about diff characters are nested in BTStartConvo.
+                ///* Jumps to BTEndConvo.
                 break;
             //If currently selected character is Mr. Wraithwood, over the phone. [MR], "Wraithwood".
             case "Wraithwood_Phone":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MR-02-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
-                /// - [MR-04-BD] - After finding the body. [FindBody == True]
-                /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True]
-                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaMarried == True]
+                /// - [MR-04-BD] - After finding the body. [FindBody == True, MRTalkBody == false] [Set MRTalkBody = true]
+                /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true]
+                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [MRTalkOEPhoto == false && (HasOliviaEdmundPhoto == True || KnowOliviaMarried == True)]
+                /// - [MRSick] - Has added >= 13 clues to the board and is thus sick.
                 /// 
-                ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
-                ///*Dialogue options:
-                /// - [MR-01-OL] PLAYER: What do you know about Olivia?
-                /// - [MR-03] PLAYER: What do you know of the guests here?
-                /// - [MR-07] PLAYER: Why won’t you be more helpful?
+                ///--- Questioning Dialogue: MRPStartConvo ---//
                 break;
             case "Wraithwood":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [MR-14-BD] - After finding the body. [FindBody == True]
-                /// - [MR-15-SB] - After finding spellbook. [HasSpellbook == True]
+                /// - [MRSick] - Has added >= 13 clues to the board and is thus sick.
+                /// - [MR-14-BD] - After finding the body. [FindBody == True, MRTalkBody == false] [Set MRTalkBody = true]
+                /// - [MR-15-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true]
                 /// - [MR-16-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaMarried == True] [Set KnowOliviaWidow = true]
                 /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
                 /// 
-                ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
-                ///*Dialogue options: [MR00] - MR00 includes these options, and jumps to MR08 or MR09 depending on the option chosen. *****Dialogue Trigger only needs to trigger MR00.
+                ///--- Start Questioning Dialogue: MRStartConvo ---//
+                ///*Dialogue options: [MRStartConvo] - MRStartConvo includes these options, and jumps to MR08 or MR09 depending on the option chosen. [Set KnowWraithwoodIsGhost = true]
                 /// - About Mr.Wraithwood [MR08]
-                ///  * [MR-08] PLAYER: What are you?
-                ///  * [MR-10] PLAYER: Why won’t you be more helpful?
-                ///  * [MR-11] PLAYER: What’s it like being a ghost?
                 /// - About Others [MR09]
-                ///  * [MR-12] PLAYER: What do you know of the guests here?
-                ///  * [MR-09-OL] PLAYER: What do you know about Olivia?
-                ///  * [MR-13-OL] PLAYER: Did Olivia know you were a ghost?
                 break;
             //If currently selected character is Edmund. [ED], "Edmund"
             case "Edmund":
@@ -228,25 +214,15 @@ public class DialogueTrigger : MonoBehaviour
                 break;
             case "Max":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-<<<<<<< Updated upstream
-                /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false] [Set MaxTalkPreFindBody = true]
-                /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true, even if it was already true.]
-                /// - [MX-02] - About the meeting. [Set KnowOliviaMarried = true] [Set MaxTalkedAboutMeeting = true]
-=======
                 /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false, FindBody == false] [Set MaxTalkPreFindBody = true, KnowOliviaMarried = true, MaxTalkedAboutMeeting = true] 
                 ///  * Merged with [MX-02].
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true.]
->>>>>>> Stashed changes
                 /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true]
                 /// - [MX-08-OL] - Tell Max about the murder. [FindBody == true] [Set MaxKnowsOliviaDead = true]
                 /// 
                 /// - [MX-04-BL] - Ask more about Olivia after talking about the meeting, NO KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
                 /// - [MX-05] - Ask more about Olivia after talking about the meeting, YES KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
                 /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [CluesAddedToBoard >= 13, KnowPlayerIsPoisoned == false]
-<<<<<<< Updated upstream
-                ///  * [MX-07-PSN] - If the player hasn’t talked to Minerva about being poisoned yet. Just merge this with MX-06-PSN tbh.
-=======
->>>>>>> Stashed changes
                 ///  
                 ///--- Start Questioning Dialogue: [MXStartConvo] ---//
                 ///*Dialogue Options:

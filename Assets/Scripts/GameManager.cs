@@ -18,4 +18,10 @@ public class GameManager : MonoBehaviour
     // ------------------------------ Verbal Clues --------------------- //
     // ---- Player or Misc. Clues ----//
     public bool KnowPlayerIsPoisoned = true;
+    // ------------------------------ General Variables ---------------- //
+    // 10 CluesObtained is the trigger for PlayerIsSick.
+    public int CluesObtained = 0;
+    public int CluesOnBoard = 0;
+    public bool PlayerIsSick = false;
+
 }

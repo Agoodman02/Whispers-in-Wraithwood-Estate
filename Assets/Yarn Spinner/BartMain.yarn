@@ -1,5 +1,6 @@
-﻿title: BartMain1
+﻿title: BT01
 ---
+// verbal clue.
 PLAYER: Have you seen Olivia?
 BART: Who?
 PLAYER: The other staff member who showed you to your room.
@@ -12,31 +13,59 @@ PLAYER: You mean Max?
 BART: Yes, he was nearly throwing himself on that woman right in front of us in the ballroom.
 PLAYER: Did they go off together?
 BART: Oh, goodness no. She was repulsed and did not hold back in vocalizing it. *He chuckles dryly.*
-<<<<<<< Updated upstream
-PLAYER: Thanks for the help.
-=======
--> PLAYER: Where have you been tonight?
-    BART: I don’t see that being any of your business. // BT-02
--> PLAYER: Thanks for the help. // exit convo
->>>>>>> Stashed changes
 ===
-title: BartMain2
+title: BTStartConvo
 ---
-<<<<<<< Updated upstream
-PLAYER: Where have you been tonight?
-BART: I don’t see that being any of your business.
-=======
+// This has all of the dialogue options nested. This is the Questioning Dialogue that will be repeated and played as long as no higher priority one-time dialogue bits are triggered.
+BART: ...
+-> PLAYER: Where have you been tonight?// BT-02
+    BART: I don’t see that being any of your business.
+-> PLAYER: What do you know about Edmund?//[BT-08-ED]
+    BART: Only the bits and pieces he’s shared in our PRIVATE meetings.
+-> PLAYER: What can you tell me about Minerva?//[BT-09-MN]
+    BART: She’s a witch of notable caliber. I wouldn’t want to be amongst her enemies.
+    PLAYER: Are you saying she’s a danger to others?
+    BART: I imagine she could be if she so desired.
+-> PLAYER: So what do you think of Max?//[BT-10-MX]
+    BART: Ugh… I’d rather not get into it.
+    PLAYER: Please do.
+    BART: Listen, human, I’d like to spend as little of your short lifespan with you as possible, so save us both the time and leave.
+<<jump BTEndConvo>>
+===
+title: BTEndConvo
+---
+PLAYER: Thanks for the help. // exit convo
+===
+
+title: BT04BD
+---
 // after discovering Olivia has been killed
 PLAYER: Olivia’s been killed. Do you know anything about that?
 BART: I do not.
-PLAYER: Really? Because there were fang marks on her neck. // BT-04-OL
+PLAYER: Really? Because there were fang marks on her neck.
 BART: Not mine. I wouldn’t deign to shake a human’s hand, nonetheless bite one’s neck.
 PLAYER: But you drink our blood?
 BART: Solely from bags of donated blood and it’s not as if it is my choice. Humans are dirty, filthy animals that I try to keep a healthy distance from.
-PLAYER: So who do you figure is responsible for the murder? // BT-05-OL
+PLAYER: So who do you figure is responsible for the murder?
 BART: Well she did have quite the run-in with that reprehensible ball of fur, Maxwell, when he tried to make a pass at her. I wouldn’t put it past him to have held a grudge.
 BART: Not to mention the blood he had on him.
 PLAYER: You saw blood on Max?
 BART: Yes, after the meeting, I noticed him back in the ballroom with some of it on his arm.
->>>>>>> Stashed changes
 ===
+
+title: BT06OE
+---
+// after finding 'Olivia and Edmund photo'
+PLAYER: Did Olivia and Edmund know each other?
+BART: Didn’t seem like it, but I know little of that sad sack of bones’ background.
+===
+
+title: BT07MX
+---
+// after max has said that Bart has bitten a human
+PLAYER: Apparently, you’ve bitten into a human before. Is it true?
+BART: ...Curses upon whoever broke the sanctity of our meeting discussions.
+PLAYER: So it is?
+BART: It was eons ago. I hardly remember it, nor would I repeat that blunder.
+===
+
