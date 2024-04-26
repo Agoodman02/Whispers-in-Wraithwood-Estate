@@ -44,6 +44,6 @@ public class MainMenu : MonoBehaviour
     public void BackButton()
     {
         Debug.Log("Button Clicked");
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }

@@ -16,6 +16,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused;
     public AudioSource pauseMenuSound;
 
+    public InventoryManager inventoryManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +31,18 @@ public class PauseMenu : MonoBehaviour
         //Opens Pause  menu and stops game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
+            if (!inventoryManager.inventoryMenuActivated)
             {
-                ResumeGame();
+                if(isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
-            else
-            {
-                PauseGame();
-            }
+
         }
     }
 
