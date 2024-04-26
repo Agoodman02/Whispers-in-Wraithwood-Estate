@@ -20,7 +20,6 @@ public class PlayerControler : MonoBehaviour
     Rigidbody selfphys;
     InputMap actions;
     RaycastHit LookingAt;
-    Vector3 forward;
 
     private RaycastHit WasLooking;
 
@@ -74,7 +73,7 @@ public class PlayerControler : MonoBehaviour
             camrotx -= mousey;
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
-            gameObject.transform.Rotate(Vector3.up, camroty);
+            selfphys.rotation = Quaternion.Euler(0, camroty, 0);
             CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
         }
 
@@ -94,7 +93,7 @@ public class PlayerControler : MonoBehaviour
             InteractPressed();
         }
 
-        if (WasLooking.transform != null && LookingAt.transform != null | LookingAt.transform.gameObject != WasLooking.transform.gameObject)
+        if (WasLooking.transform != null && LookingAt.transform == null || LookingAt.transform.gameObject != WasLooking.transform.gameObject)
         {
             if (WasLooking.transform != null && hasComponent<ItemPickup>(WasLooking.transform.gameObject))
             {
