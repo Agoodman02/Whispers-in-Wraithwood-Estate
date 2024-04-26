@@ -154,11 +154,10 @@ public class PlayerControler : MonoBehaviour
 
     public void TeleportPlayer(Vector3 p, Vector3 re, bool cam)
     {
-
-    }
-    public void TeleportPlayer(Vector3 p, Quaternion rq, bool cam)
-    {
-
+        gameObject.transform.position = p;
+        gameObject.transform.rotation = Quaternion.Euler(0, re.y, 0);
+        CameraCenter.transform.localRotation = Quaternion.Euler(re.x, 0, 0);
+        DoCameraControl = cam;
     }
 }
 
