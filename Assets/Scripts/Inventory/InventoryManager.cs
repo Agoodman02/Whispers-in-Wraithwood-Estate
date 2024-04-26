@@ -11,7 +11,7 @@ public class InventoryManager : MonoBehaviour
     //declare varibles
     public GameObject InventoryMenu;
     public GameObject screenUI;
-    private bool menuActivated;
+    [HideInInspector] public bool inventoryMenuActivated;
 
     public static InventoryManager Instance;
     public InventorySpace Items;
@@ -30,24 +30,24 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         //Closes Menu
-        if(Input.GetKeyDown(KeyCode.I) && menuActivated)
+        if(Input.GetKeyDown(KeyCode.I) && inventoryMenuActivated)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             screenUI.SetActive(true);
-            menuActivated = false;
+            inventoryMenuActivated = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             CleanList();
         }
         //Opens Menu
-        else if (Input.GetKeyDown(KeyCode.I) && !menuActivated)
+        else if (Input.GetKeyDown(KeyCode.I) && !inventoryMenuActivated)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             screenUI.SetActive(false);
-            menuActivated = true;
+            inventoryMenuActivated = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  
 
