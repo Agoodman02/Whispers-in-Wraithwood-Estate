@@ -79,7 +79,7 @@ public class PlayerControler : MonoBehaviour
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
             gameObject.transform.rotation = Quaternion.Euler(0, camroty, 0);
-            CameraCenter.transform.rotation = Quaternion.Euler(camrotx, camroty, 0);
+            CameraCenter.transform.localRotation = Quaternion.Euler(camrotx, 0, 0);
         }
 
         // it wasn't samdaman_og
@@ -93,7 +93,7 @@ public class PlayerControler : MonoBehaviour
             InteractPressed();
         }
 
-        if (WasLooking.transform != null && LookingAt.transform == null || LookingAt.transform.gameObject != WasLooking.transform.gameObject)
+        if (WasLooking.transform != null && LookingAt.transform != null | LookingAt.transform.gameObject != WasLooking.transform.gameObject)
         {
             if (WasLooking.transform != null && hasComponent<ItemPickup>(WasLooking.transform.gameObject))
             {
@@ -150,6 +150,15 @@ public class PlayerControler : MonoBehaviour
     public bool hasComponent<T>(GameObject g)
     {
         return g.GetComponent<T>() != null;
+    }
+
+    public void TeleportPlayer(Vector3 p, Vector3 re, bool cam)
+    {
+
+    }
+    public void TeleportPlayer(Vector3 p, Quaternion rq, bool cam)
+    {
+
     }
 }
 

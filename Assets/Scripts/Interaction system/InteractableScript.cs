@@ -92,31 +92,32 @@ public class InteractableScript : MonoBehaviour
                     //Picture 1
                     case 1:
                         clue18.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Bloody Pen
                     case 2:
                         clue17.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Hex Bag
                     case 3:
                         clue19.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Poison Cup
                     case 4:
                         clue21.SetActive(true);
+                        //Items.items.Remove(i);
                         break;
                     //Corpse Pic
                     case 5:
                         clue16.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Spellbook
                     case 6:
                         clue20.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     default:
                         return;
