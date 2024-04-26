@@ -11,11 +11,13 @@ public class DialogueTrigger : MonoBehaviour
     private DialogueRunner dialogueRunner;
 
     //Attach this DialogueTrigger script to every Character.
-    //currentCharacter should be used to store the name of the currently targeted character. 
+    //selectedCharacter should be used to store the name of the currently targeted character. 
     //Since this is attached per character (can also be used for clues) that you interact with for dialogue, you can manually input the name of the Character/Object this is attached to in the Unity interface, through this Serialized Field.
-    [SerializeField] string currentCharacter;
+    [SerializeField] string selectedCharacter;
+    // Global Variable version of currentCharacter. This should pull from the Game Manager, which has the GameManager.cs script attached to it as a component, and thus stores these global variables.
+    public GameManager currentCharacter;
 
-    //Exact names used for currentCharacter: (Make sure you're inputting these correctly)
+    // Exact names used for selectedCharacter & currentCharacter: (Make sure you're inputting these correctly!)
     // Minerva, Edmund, Max, Wraithwood_Phone, Wraithwood, Bartholomew
 
     //This is the variable storing the name of the target dialogue node. This tells the game (& yarn spinner) what dialogue node to run.
@@ -23,12 +25,12 @@ public class DialogueTrigger : MonoBehaviour
 
     // Clues & Variables. These reference global variables that should be stored in the GameManager, and should be set to True/False in the relevant scripts.
     // Physical clues should be set to True once they have been picked up. (Object Interaction script; Once picked up, set to True.)
-    // Verbal clues should be set to True once they have been "obtained" through dialogue. (Either Yarn Spinner script, or DialogueTrigger script. Once actiavated, set to True.)
+    // Verbal clues should be set to True once they have been "obtained" through dialogue. (Currently handled within DialogueTrigger.cs. Can be done either through Yarn Spinner scripts, or this DialogueTrigger.cs script. Once activated, set to True.)
 
-    /// Placeholder Variables for Clues/Flags
+    /// Variables for Clues/Flags. These are all booleans, except for the counter variables: CluesObtained & CluesOnBoard.
     // ------------------------------ Verbal Clues --------------------- //
     // ---- Player or Misc. Clues ----//
-    public bool KnowPlayerIsPoisoned = false;
+    public GameManager KnowPlayerIsPoisoned;
     // ---- Bart Clues
     public bool KnowBartBitHuman = false;
     public bool KnowBartDislikesHumans = false;
@@ -85,6 +87,13 @@ public class DialogueTrigger : MonoBehaviour
     public int CluesOnBoard = 0;
 
 
+    // Start is called before the first frame update.
+    void Start()
+    {
+    dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+    }
+
+
     //This function checks if the player has acquired 100% of the clues, and then triggers the final cutscene's dialogue node.
     public void TriggerFinalCutscene()
     {
@@ -107,8 +116,10 @@ public class DialogueTrigger : MonoBehaviour
     //This function goes through all of the triggers and conditions to fetch the right dialogue node for Characters.
     public void TalkToCharacter()
     {
+        // Set the global variable "currentCharacter" to the currently selected character. "selectedCharacter" is set in the Unity hierarchy, as it is a Serialized Field.
+        currentCharacter.currentCharacter = selectedCharacter;
         //Run code based on which character is currently being spoken to.
-        switch(currentCharacter)
+        switch(currentCharacter.currentCharacter)
         {
             //If currently selected character is Bartholomew. [BT], "Bartholomew".
             case "Bartholomew":

@@ -8999,6 +8999,7 @@ GameObject:
   - component: {fileID: 412165262}
   - component: {fileID: 412165264}
   - component: {fileID: 412165265}
+  - component: {fileID: 412165266}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9139,6 +9140,18 @@ MonoBehaviour:
   HasHexBag: 0
   CluesObtained: 0
   CluesOnBoard: 0
+--- !u!114 &412165266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412165258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f05c57813e614f9edcf1931575cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &417672151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9210,13 +9223,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 14464f96a6cf2054bae8c15988cb83bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 417672154}
   m_SourcePrefab: {fileID: 100100000, guid: 14464f96a6cf2054bae8c15988cb83bf, type: 3}
 --- !u!4 &417672152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 14464f96a6cf2054bae8c15988cb83bf, type: 3}
   m_PrefabInstance: {fileID: 417672151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &417672153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 14464f96a6cf2054bae8c15988cb83bf, type: 3}
+  m_PrefabInstance: {fileID: 417672151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &417672154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417672153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCharacter: Max
+  targetNodeName: 
+  KnowPlayerIsPoisoned: 0
+  KnowBartBitHuman: 0
+  KnowBartDislikesHumans: 0
+  BartTalkOliviaBody: 0
+  KnowFrontDoorLocked: 0
+  WraithwoodIsGhost: 0
+  KnowOliviaKilled: 0
+  KnowOliviaMarried: 0
+  KnowOliviaWidow: 0
+  KnowOliviaWitch: 0
+  KnowOliviaNecromancer: 0
+  KnowOliviaRecentlyJoined: 0
+  KnowMaxRejectedByOlivia: 0
+  KnowMaxSeenWithBlood: 0
+  MaxTalkedAboutMeeting: 0
+  MaxKnowsOliviaDead: 0
+  MaxTalkPreFindBody: 0
+  KnowEdmund_Want_UndoUndead: 0
+  KnowEdmund_Hate_BeingUndead: 0
+  EdmundTalkOliviaBody: 0
+  KnowHasPoison: 0
+  KnowMinervaDislikesOlivia: 0
+  FindBody: 0
+  HasOliviaEdmundPhoto: 0
+  HasSpellbook: 0
+  HasOliviaCup: 0
+  HasBloodyPen: 0
+  HasHexBag: 0
+  CluesObtained: 0
+  CluesOnBoard: 0
 --- !u!1 &418308745
 GameObject:
   m_ObjectHideFlags: 0
@@ -23446,13 +23511,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f7befd5bebccd546b368e70a96105e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1320930657}
   m_SourcePrefab: {fileID: 100100000, guid: 2f7befd5bebccd546b368e70a96105e5, type: 3}
 --- !u!4 &1320930655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f7befd5bebccd546b368e70a96105e5, type: 3}
   m_PrefabInstance: {fileID: 1320930654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1320930656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f7befd5bebccd546b368e70a96105e5, type: 3}
+  m_PrefabInstance: {fileID: 1320930654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1320930657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320930656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCharacter: Minerva
+  targetNodeName: 
+  KnowPlayerIsPoisoned: 0
+  KnowBartBitHuman: 0
+  KnowBartDislikesHumans: 0
+  BartTalkOliviaBody: 0
+  KnowFrontDoorLocked: 0
+  WraithwoodIsGhost: 0
+  KnowOliviaKilled: 0
+  KnowOliviaMarried: 0
+  KnowOliviaWidow: 0
+  KnowOliviaWitch: 0
+  KnowOliviaNecromancer: 0
+  KnowOliviaRecentlyJoined: 0
+  KnowMaxRejectedByOlivia: 0
+  KnowMaxSeenWithBlood: 0
+  MaxTalkedAboutMeeting: 0
+  MaxKnowsOliviaDead: 0
+  MaxTalkPreFindBody: 0
+  KnowEdmund_Want_UndoUndead: 0
+  KnowEdmund_Hate_BeingUndead: 0
+  EdmundTalkOliviaBody: 0
+  KnowHasPoison: 0
+  KnowMinervaDislikesOlivia: 0
+  FindBody: 0
+  HasOliviaEdmundPhoto: 0
+  HasSpellbook: 0
+  HasOliviaCup: 0
+  HasBloodyPen: 0
+  HasHexBag: 0
+  CluesObtained: 0
+  CluesOnBoard: 0
 --- !u!1 &1325673383
 GameObject:
   m_ObjectHideFlags: 0
@@ -38042,6 +38159,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a68270fe37b5314984619705010e8a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2076990787}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a68270fe37b5314984619705010e8a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2076990788}
   m_SourcePrefab: {fileID: 100100000, guid: 1a68270fe37b5314984619705010e8a6, type: 3}
 --- !u!4 &2032441308 stripped
 Transform:
@@ -39469,6 +39589,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c83be1cebe99b4c8803cba66f54f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2076990788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076990784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCharacter: Bartholomew
+  targetNodeName: 
+  KnowPlayerIsPoisoned: 0
+  KnowBartBitHuman: 0
+  KnowBartDislikesHumans: 0
+  BartTalkOliviaBody: 0
+  KnowFrontDoorLocked: 0
+  WraithwoodIsGhost: 0
+  KnowOliviaKilled: 0
+  KnowOliviaMarried: 0
+  KnowOliviaWidow: 0
+  KnowOliviaWitch: 0
+  KnowOliviaNecromancer: 0
+  KnowOliviaRecentlyJoined: 0
+  KnowMaxRejectedByOlivia: 0
+  KnowMaxSeenWithBlood: 0
+  MaxTalkedAboutMeeting: 0
+  MaxKnowsOliviaDead: 0
+  MaxTalkPreFindBody: 0
+  KnowEdmund_Want_UndoUndead: 0
+  KnowEdmund_Hate_BeingUndead: 0
+  EdmundTalkOliviaBody: 0
+  KnowHasPoison: 0
+  KnowMinervaDislikesOlivia: 0
+  FindBody: 0
+  HasOliviaEdmundPhoto: 0
+  HasSpellbook: 0
+  HasOliviaCup: 0
+  HasBloodyPen: 0
+  HasHexBag: 0
+  CluesObtained: 0
+  CluesOnBoard: 0
 --- !u!1 &2077323415
 GameObject:
   m_ObjectHideFlags: 0
