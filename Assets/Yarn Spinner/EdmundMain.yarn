@@ -9,17 +9,11 @@ EDMUND: No. I’ve just been here after the meeting.
 title: ED02BD
 ---
 //after finding Olivia's body
-PLAYER: Olivia’s been found dead.
+PLAYER: I found Olivia. She’s been murdered.
 EDMUND: Okay.
 PLAYER: No reaction?
 EDMUND: I’ve only just met her.
 EDMUND: So no.
-===
-title: ED03OL
----
-// after revealing shes been murdered
-PLAYER: There’s a chance Olivia’s been murdered.
-EDMUND: Okay.
 PLAYER: Do you know if she has any enemies here?
 EDMUND: No, I barely knew the girl.
 PLAYER: Well I’ll still need to ask you some questions anyways.
@@ -29,7 +23,7 @@ EDMUND: ...
 title: EDStartConvo
 ---
 // Start of loop?... maybe?
-PLAYER: I need to ask you some questions
+PLAYER: I need to ask you some questions.
 EDMUND: ...
 ===
 title: EDEndConvo
@@ -37,7 +31,7 @@ title: EDEndConvo
 PLAYER: "That'll be all."
 ===
 
-title: Ed04
+title: ED04
 ---
 // Alibi
 PLAYER: Where were you before and after the meeting?
@@ -55,27 +49,17 @@ EDMUND: As I’ve said before, I was in my room. I don’t really talk to anyone
 title: ED05
 ---
 //On being a Skeleton
--> PLAYER: So what’s it like as a skeleton?
-    EDMUND: ...
-    EDMUND: It’s like being cursed.
-    PLAYER: I’ve never been cursed before.
-    EDMUND: Imagine living in absolute nothingness.
-    EDMUND: To know you’ll never feel a summer breeze again.
-    EDMUND: To forget what a delicious steak tastes like.
-    EDMUND: ...
-    EDMUND: It’s something like that.
-    PLAYER: I-I see. I’m sorry to hear that.
+PLAYER: So what’s it like as a skeleton?
+EDMUND: ...
+EDMUND: It’s like being cursed.
+PLAYER: I’ve never been cursed before.
+EDMUND: Imagine living in absolute nothingness.
+EDMUND: To know you’ll never feel a summer breeze again.
+EDMUND: To forget what a delicious steak tastes like.
+EDMUND: ...
+EDMUND: It’s something like that.
+PLAYER: I-I see. I’m sorry to hear that.
 ===
-
-title: EDOD
----
-PLAYER: Did you notice the drink that she had?
-EDMUND: What of it?
-PLAYER: Did you see anyone tamper with it?
-EDMUND: No? Do you think that’s what killed her?
-PLAYER: It’s a possibility I’m looking into.
-===
-
 
 title:ED06MNMR
 ---
@@ -137,7 +121,7 @@ title: ED12MN
 // unlocked after asking Minerva about Edmund
 PLAYER: Minerva mentioned you were really insistent about her dealing in necromancy. What exactly did you want her to do?
 EDMUND: I wanted her to undo me.
-PLAYER: … What?
+PLAYER: ...What?
 EDMUND: I wanted her to undo the resurrection spell that’s been cast on me.
 PLAYER: And she turned you down?
 EDMUND: Yeah. Something about hating necromancy. Some witch she is.

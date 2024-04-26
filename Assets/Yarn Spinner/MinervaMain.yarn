@@ -111,8 +111,8 @@ title: MN12PSN
 ---
 PLAYER: Minerva, could you tell me about these bottles?
 MINERVA: They contain components I use in some of my spells.
-PLAYER: …Even the ones marked as deadly?
-MINERVA: …They’re poisons. I wouldn’t be much of a witch if I didn’t know what was in each bottle.
+PLAYER: ...Even the ones marked as deadly?
+MINERVA: ...They’re poisons. I wouldn’t be much of a witch if I didn’t know what was in each bottle.
 MINERVA: And before you ask, no, I haven’t even opened them. No one’s even tampered with them.
 ===
 
@@ -128,38 +128,42 @@ title: MN14PSN
 // found out the cause of feeling sick, only one dialogue will be 
 // available to the player for each character. Otherwise, see “When 
 // talking to Minerva” (MNStartConvo)
-// ^^ I hope you know what this means bc I'm lost
+// ^^ I hope you know what this means bc I'm lost -Amber
+// Yeah, don't worry about it lol. -Skye
 MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
-PLAYER: Sorry, I…I need to know if you saw anyone at the front desk after the meeting.
+PLAYER: Sorry, I...I need to know if you saw anyone at the front desk after the meeting.
 MINERVA: Of course not. I was in my room. Did something happen?
-PLAYER: I’m…not sure. I’ve felt more and more sick by the second.
-MINERVA: Yes, I can tell. You didn’t eat or drink anything strange, did you? 
+PLAYER: I’m...not sure. I’ve felt more and more sick by the second.
+MINERVA: Yes, I can tell. You didn’t eat or drink anything strange, did you?
 //Without Olivia’s cup, the conversation ends.
 ===
 
 title:MN15CP
 ---
 // If the player has Olivia's cup
+MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
+PLAYER: Sorry, I...I need to know if you saw anyone at the front desk after the meeting.
+MINERVA: Of course not. I was in my room. Did something happen?
+PLAYER: I’m...not sure. I’ve felt more and more sick by the second.
+MINERVA: Yes, I can tell. You didn’t eat or drink anything strange, did you? 
 PLAYER: Well… There was this...
-MINERVA: What? The cup that obviously says “Olivia” on it?
-PLAYER: (...She snatched it from me.)
-PLAYER: …I was thirsty. I didn’t think she’d mind…
+MINERVA: What?!
+PLAYER: (...She snatched the cup from me.)
 PLAYER: (Minerva’s staring at the cup intensely, chanting something under her breath…)
-MINERVA: …
+MINERVA: ...
 MINERVA: You’re going to want to hear this. I don’t think you drank anything good.
-MINERVA: If I’m right, you drank some form of powerful poison. …The strong, deadly kind.
-PLAYER: Wh…what? Olivia’s cup was poisoned? I-Isn’t there an antidote? Maybe if I—
+MINERVA: If I’m right, you drank some form of powerful poison. ...The strong, deadly kind.
+PLAYER: Wh...what? Olivia’s cup was poisoned? I-Isn’t there an antidote? Maybe if I—
 MINERVA: It’s no use. It’s already in your system. Eventually, it will cause one of your organs to stop.
-PLAYER: …
-PLAYER: There’s got to be something! Someone poisoned that cup.
-MINERVA: I can’t concoct any sort of antidote unless I have a big enough sample and enough time to do it. But…
-MINERVA: …If you can figure out who had the poison, or why they’d put it in this cup, then maybe that same person will have the antidote.
-MINERVA: I’ll try using a spell to help stave off the effects of the poison for now. 
+PLAYER: ...
+PLAYER: There’s got to be something!
+MINERVA: I can’t concoct any sort of antidote unless I have a big enough sample and enough time to do it.
+MINERVA: But, maybe if you can find out who had this poison...
 ===
 
 title: MNEndConvo
 ---
-PLAYER: I think that’s it… Thanks for your time.
+PLAYER: I think that’s it... Thanks for your time.
 ===
 
 

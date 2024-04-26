@@ -128,10 +128,10 @@ public class DialogueTrigger : MonoBehaviour
             //If currently selected character is Bartholomew. [BT], "Bartholomew".
             case "Bartholomew":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [BT-01] Default. Before finding the body. [FindBody == False] [Set KnowMaxRejectedByOlivia = True]
-                /// - [BT04BD] - After finding Olivia’s body. [FindBody == True] [Set KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True, KnowMaxRejectedByOlivia = true]
-                /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True]
-                /// - [BT-07-MX] - Know Bart has bitten a human before (heard from Max). [KnowBartBitHuman == True]
+                /// - [BT-01] Default. Before finding the body. [FindBody == False, BTTalkPreBody == false] [Set KnowMaxRejectedByOlivia = True, BTTalkPreBody = true]
+                /// - [BT04BD] - After finding Olivia’s body. [FindBody == True, BTTalkPostBody == false] [Set BTTalkPostBody = true, KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True, KnowMaxRejectedByOlivia = true]
+                /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True, BTTalkOEPhoto == false] [Set BTTalkOEPhoto = true]
+                /// - [BT-07-MX] - Know Bart has bitten a human before (heard from Max). [KnowBartBitHuman == True, BTTalkBartBitHuman == false] [Set BTTalkBartBitHuman = true]
                 /// 
                 ///--- Questioning Dialogue: BTStartConvo ---//
                 ///* All of the dialogue options asking questions about diff characters are nested in BTStartConvo.
@@ -140,43 +140,41 @@ public class DialogueTrigger : MonoBehaviour
             //If currently selected character is Mr. Wraithwood, over the phone. [MR], "Wraithwood".
             case "Wraithwood_Phone":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [MR-02-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
+                /// - [MRSick] - Has added >= 13 clues to the board and is thus sick.
+                /// - [MR-02-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True, MRTalkFrontDoor == false] [set MRTalkFrontDoor = true]
                 /// - [MR-04-BD] - After finding the body. [FindBody == True, MRTalkBody == false] [Set MRTalkBody = true]
                 /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true]
-                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [MRTalkOEPhoto == false && (HasOliviaEdmundPhoto == True || KnowOliviaMarried == True)]
-                /// - [MRSick] - Has added >= 13 clues to the board and is thus sick.
+                /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [MRTalkOEPhoto == false & (HasOliviaEdmundPhoto == True || KnowOliviaMarried == True)]
                 /// 
                 ///--- Questioning Dialogue: MRPStartConvo ---//
                 break;
             case "Wraithwood":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
                 /// - [MRSick] - Has added >= 13 clues to the board and is thus sick.
+                /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True, MRTalkFrontDoor == false] [set MRTalkFrontDoor = true]
                 /// - [MR-14-BD] - After finding the body. [FindBody == True, MRTalkBody == false] [Set MRTalkBody = true]
                 /// - [MR-15-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true]
-                /// - [MR-16-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [HasOliviaEdmundPhoto == True || KnowOliviaMarried == True] [Set KnowOliviaWidow = true]
-                /// - [MR-17-FD] - After finding the front door to be locked. [KnowFrontDoorLocked == True]
+                /// - [MR-16-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [MRTalkOEPhoto == false & (HasOliviaEdmundPhoto == True || KnowOliviaMarried == True)] [Set KnowOliviaWidow = true, MRTalkOEPhoto = true]
                 /// 
                 ///--- Start Questioning Dialogue: MRStartConvo ---//
                 ///*Dialogue options: [MRStartConvo] - MRStartConvo includes these options, and jumps to MR08 or MR09 depending on the option chosen. [Set KnowWraithwoodIsGhost = true]
-                /// - About Mr.Wraithwood [MR08]
-                /// - About Others [MR09]
+                /// * About Mr.Wraithwood [MR08]
+                /// * About Others [MR09]
                 break;
             //If currently selected character is Edmund. [ED], "Edmund"
             case "Edmund":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [ED-01-OL] Default. Before finding the body. [FindBody == False]
-                /// - [ED-02-BD] - After finding her body. [FindBody == True] [set EdmundTalkOliviaBody = true]
-                /// - [ED-03-OL] - After revealing she’s been murdered. [EdmundTalkOliviaBody == True]
-                /// - [EDOD] - Olivia’s drink. [FindBody == True]
-                /// - [ED-06-MN-MR] - Olivia Was a Witch. [KnowOliviaWitch == True]
-                /// - [ED-07-MN] - Olivia was a Necromancer. [KnowOliviaNecromancer == True]
-                /// - [ED-08-OE] - Show him the picture of Olivia & Edmund [HasOliviaEdmundPhoto == True]
+                /// - [ED-01-OL] Default. Before finding the body. [FindBody == False, EDTalkPreBody == false] [Set EDTalkPreBody = true]
+                /// - [ED-02-BD] - After finding her body. [FindBody == True, EdmundTalkPostBody == false] [set EdmundTalkPostBody = true]
+                /// - [ED-06-MN-MR] - Olivia Was a Witch. [KnowOliviaWitch == True, EDTalkOliviaWitch == false] [Set EDTalkOliviaWitch = true]
+                /// - [ED-07-MN] - Olivia was a Necromancer. [KnowOliviaNecromancer == True, EDTalkOliviaNecromaner == false] [Set EDTalkOliviaNecromaner = true]
+                /// - [ED-08-OE] - Show him the picture of Olivia & Edmund [HasOliviaEdmundPhoto == True, EDTalkOEPhoto == false] [Set EDTalkOEPhoto = true]
                 /// 
-                ///--- Start Questioning Dialogue: "PLAYER: I've got some questions, Mr. Wraithwood..." ---//
+                ///--- Start Questioning Dialogue: EDStartConvo ---//
                 ///*Dialogue options:
                 /// - About Him
                 ///  * [ED-04] - His Alibi [EdmundAskedAboutOlivia == False]
-                ///  * [ED-04-OL] - His Alibi, alternate dialogue for same dialogue option. [EdmundAskedAboutOlivia == False].
+                ///    - [ED-04-OL] - His Alibi, alternate dialogue for same dialogue option. [EdmundAskedAboutOlivia == False].
                 ///  * [ED-05] - On Being a Skeleton
                 /// - About Others
                 ///  * [ED-09-OL] - About Olivia
@@ -188,11 +186,10 @@ public class DialogueTrigger : MonoBehaviour
             //If currently selected character is Minerva. [MN], "Minerva".
             case "Minerva":
                 ///*Dialogue w/ NO options -- PRIORITY OVER Questioning Dialogue:
-                /// - [MN-01-OL] - If talked to before finding the body. [FindBody == False]
-                /// - [MN-02-BD] - Approaching her after finding the body for the first time
-                /// - [MN-14-PSN] - Has added >= 13 clues to the board. [CluesOnBoard >= 13]
-                ///   * NO Cup = Conversation Ends.
-                ///   * [MN-15-CP] - Has Olivia's Cup [HasOliviaCup == True, KnowPlayerIsPoisoned == false] [Set KnowPlayerIsPoisoned == true]
+                /// - [MN-01-OL] - If talked to before finding the body. [FindBody == False, MNTalkPreBody == false] [Set MNTalkPreBody = true]
+                /// - [MN-02-BD] - Approaching her after finding the body for the first time [FindBody == true, MNTalkPostBody == false] [Set MNTalkPostBody = true]
+                /// - [MN-14-PSN] - Has collected >= 10 clues, and PlayerIsSick. [PlayerIsSick == true, MNTalkPlayerSick == false] [set MNTalkPlayerSick = true]
+                ///   [MN-15-CP] - Has Olivia's Cup, Has collected >= 10 clues, and PlayerIsSick. [HasOliviaCup == True, PlayerIsSick == true, KnowPlayerIsPoisoned == false] [Set KnowPlayerIsPoisoned == true]
                 ///   
                 ///--- Start Questioning Dialogue: [MBStartConvo] ---//
                 ///*Dialogue Options:
@@ -217,12 +214,10 @@ public class DialogueTrigger : MonoBehaviour
                 /// - [MX-01-OL] - Asking about Olivia before the murder. [MaxTalkPreFindBody == false, FindBody == false] [Set MaxTalkPreFindBody = true, KnowOliviaMarried = true, MaxTalkedAboutMeeting = true] 
                 ///  * Merged with [MX-02].
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MaxKnowsOliviaDead == true] [Set MaxTalkedAboutMeeting = true.]
-                /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true]
-                /// - [MX-08-OL] - Tell Max about the murder. [FindBody == true] [Set MaxKnowsOliviaDead = true]
+                /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true, MXTalkBloodied == false] [set MXTalkBloodied = true]
+                /// - [MX-08-OL] - Tell Max about the murder. [FindBody == true, MaxKnowsOliviaDead == false] [Set MaxKnowsOliviaDead = true]
                 /// 
-                /// - [MX-04-BL] - Ask more about Olivia after talking about the meeting, NO KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
-                /// - [MX-05] - Ask more about Olivia after talking about the meeting, YES KnowMaxSeenWithBlood. [MaxTalkedAboutMeeting == true, KnowMaxSeenWithBlood == false]
-                /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [CluesAddedToBoard >= 13, KnowPlayerIsPoisoned == false]
+                /// - [MX-06-PSN] - If player has added 13 clues to the board, and has not found out cause of being sick. [PlayerIsSick == true, KnowPlayerIsPoisoned == false]
                 ///  
                 ///--- Start Questioning Dialogue: [MXStartConvo] ---//
                 ///*Dialogue Options:
