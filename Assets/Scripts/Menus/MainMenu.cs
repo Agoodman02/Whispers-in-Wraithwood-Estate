@@ -8,42 +8,66 @@ public class MainMenu : MonoBehaviour
 {
     public AudioSource theMusic;
 
-    public static MainMenu instance;
-    
+    //singleton instance
+    public static MainMenu Instance = null;
+
+    //initalize the singleton instance
     private void Awake()
     {
-        theMusic.Play();
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(theMusic);
+
+        DontDestroyOnLoad(theMusic);
     }
 
+    //Load game
     public void PlayGame()
     {
-        SceneManager.LoadScene(1); //Game Scene
+        SceneManager.LoadScene(1);
+        Destroy(theMusic);
     }
 
+    //loads credits
     public void Credits() 
     {
         SceneManager.LoadScene("Credits", LoadSceneMode.Additive);
     }
 
+    //loads controls
     public void Controls()
     {
         SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
 
+    //Loads settings
     public void Settings()
     {
         SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
     }
 
+    //Closes game
     public void QuitGame() 
     {
         Application.Quit();
     }
 
-    //Back to start menu
-    public void BackButton()
+    //Closes controls
+    public void CloseControls()
     {
-        Debug.Log("Button Clicked");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.UnloadSceneAsync("Controls");
+    }
+
+    //closes settings
+    public void CloseSettings()
+    {
+        SceneManager.UnloadSceneAsync("Settings");
+    }
+
+    //closes credits
+    public void CloseCredits()
+    {
+        SceneManager.UnloadSceneAsync("Credits");
     }
 }
