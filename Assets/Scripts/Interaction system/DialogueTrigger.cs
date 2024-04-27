@@ -32,45 +32,46 @@ public class DialogueTrigger : MonoBehaviour
     // ---- Player or Misc. Clues ----//
     public GameManager KnowPlayerIsPoisoned;
     // ---- Bart Clues
-    public bool KnowBartBitHuman = false;
-    public bool KnowBartDislikesHumans = false;
-    // ---- Wraithwood Clues?
+    public GameManager KnowBartBitHuman;
+    public GameManager KnowBartDislikesHumans;
+    // ---- Wraithwood Clues
     //Player finds out front door is locked IF they try to open the front door. (Interact with front door.) Technically a verbal clue, but has a physical object source.
-    public bool KnowFrontDoorLocked = false;
-    public bool KnowWraithwoodIsGhost = false;
+    public GameManager KnowFrontDoorLocked;
+    public GameManager KnowWraithwoodIsGhost;
+    public GameManager KnowWraithwoodIsRoomBound;
     // ---- Olivia Clues
-    public bool KnowOliviaKilled = false;
+    public GameManager KnowOliviaKilled;
     // UNOFFICIAL verbal clue; Doesn't go on the evidence board.
-    public bool KnowOliviaMarried = false;
-    public bool KnowOliviaWidow = false;
-    public bool KnowOliviaWitch = false;
-    public bool KnowOliviaNecromancer = false;
-    public bool KnowOliviaRecentlyJoined = false;
+    public GameManager KnowOliviaMarried;
+    public GameManager KnowOliviaWidow;
+    public GameManager KnowOliviaWitch;
+    public GameManager KnowOliviaNecromancer;
+    public GameManager KnowOliviaRecentlyJoined;
     // ---- Max Clues
-    public bool KnowMaxRejectedByOlivia = false;
-    public bool KnowMaxSeenWithBlood = false;
+    public GameManager KnowMaxRejectedByOlivia;
+    public GameManager KnowMaxSeenWithBlood;
     //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
-    public bool MaxTalkedAboutMeeting = false;
+    public GameManager MaxTalkedAboutMeeting;
     //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
-    public bool MaxKnowsOliviaDead = false;
+    public GameManager MaxKnowsOliviaDead;
     //UNOFFICIAL flag; Doesn't go on the evidence board.
-    public bool MaxTalkPreFindBody = false;
+    public GameManager MaxTalkPreFindBody;
     // ---- Edmund Clues
-    public bool KnowEdmund_Want_UndoUndead = false;
-    public bool KnowEdmund_Hate_BeingUndead = false;
+    public GameManager KnowEdmund_Want_UndoUndead;
+    public GameManager KnowEdmund_Hate_BeingUndead;
     //UNOFFICIAL flag; Doesn't go on evidence board.
-    public bool EdmundTalkOliviaBody = false;
+    public GameManager EdmundTalkOliviaBody;
     // ---- Minerva Clues
-    public bool KnowHasPoison = false;
-    public bool KnowMinervaDislikesOlivia = false;
+    public GameManager KnowHasPoison;
+    public GameManager KnowMinervaDislikesOlivia;
 
     // ------------------------------ Physical Clues ------------------- //
-    public bool FindBody = false;
-    public bool HasOliviaEdmundPhoto = false;
-    public bool HasSpellbook = false;
-    public bool HasOliviaCup = false;
-    public bool HasBloodyPen = false;
-    public bool HasHexBag = false;
+    public GameManager FindBody;
+    public GameManager HasOliviaEdmundPhoto;
+    public GameManager HasSpellbook;
+    public GameManager HasOliviaCup;
+    public GameManager HasBloodyPen;
+    public GameManager HasHexBag;
 
 
     // ------------------------------ General Variables ---------------- //
