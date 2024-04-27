@@ -36,6 +36,7 @@ MR: Why would I? *Hangs up*
 ===
 title: MRPSick
 ---
+// on phone
 PLAYER: I'm feeling awful...
 MR: You're out of sick days. *Hangs up*
 ===
@@ -98,3 +99,11 @@ PLAYER: Why is the front door locked? // MR17FD
 MR: I prefer to handle issues internally. Get back to work.
 PLAYER: Okay, good talk. // exit convo 
 ===
+
+title: MRISick
+---
+PLAYER: I’m feeling awful…
+MR: Okay? Do I look like a doctor to you?
+===
+
+

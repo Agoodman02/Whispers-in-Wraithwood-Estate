@@ -1,8 +1,16 @@
 ﻿
 title: MNStartConvo
 ---
-PLAYER: Can I ask you a few questions, Minerva?
+// Before "Photo of Body" Clue and after Minerva sees the player is poisoned
+MINERVA: Yes?
 ===
+
+title: MNStartSick
+---
+// occurs once then reverts to og starter
+MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
+===
+
 title: MN01OL
 ---
 // If talked to before finding Olivia
@@ -14,12 +22,10 @@ MINERVA: No, not after the meeting. I’ve been in my room, reading.
 title: MN02BD
 ---
 // After finding the body
-PLAYER: Olivia’s been murdered. Would you know anything about that? // could change??
+PLAYER: Olivia’s been murdered. Would you know anything about that?
 MINERVA: What? No! Are you really telling me she’s been murdered?
 MINERVA: A murder! Just my luck…
-PLAYER: I know, it’s awful... I’m sorry this happened.
-MINERVA: Is that so? Sorry, but it’s not your fault to begin with. So unless you’re saying you killed her, don’t apologize.
-PLAYER: Right! Of course…
+PLAYER: I know, it’s awful but I'll have to ask you some questions.
 ===
 
 title: MN03OL
@@ -53,8 +59,7 @@ MINERVA: Hmm? Edmund? Him and I chat every so often. You know, “How have you b
 MINERVA: I suppose you could say we’re acquainted fairly well!
 MINERVA: Oh, but nothing that close, mind you. He’s asked me for a favor before, but…
 PLAYER: Pardon?
-MINERVA: Well, he’s asked me for magical help before. …Something involving necromancy. He was pretty insistent about it, and frankly, I don’t really think it’s my place to talk about it. It was a very personal matter, and not something I wanted any part of.
-PLAYER: I see…
+MINERVA: Well, he’s asked me for magical help before. …Something involving necromancy. He was pretty insistent about it, but I just don’t deal in that type of witchcraft.
 ===
 
 title: MN07BT
@@ -73,18 +78,19 @@ MINERVA: I headed straight to my room to relax, and I haven’t moved from here 
 
 title: MN09HX
 ---
-PLAYER: Minerva, I found this near Olivia’s body. Do you know what this is?
+// asked about hexbag
+PLAYER: Minerva, I found this sack near Olivia’s body. Do you know what this is?
 MINERVA: That’s a hex bag. It’s a tool used by some who practice witchcraft.
 PLAYER: Is it yours?
 MINERVA: No. It isn’t mine.
 MINERVA: Someone else must be practicing witchcraft around here.
-// if asked after spellbook 
+// if "Minerva Talk Flag 1"
 MINERVA: If it was with Olivia, it was probably her’s. // MN09HXSB
-// ^^ is this important, can we cut it?
 ===
 
 title: MN10SB
 ---
+// asked about spellbook
 PLAYER: Minerva, I found this in Olivia’s room. It’s a book of spells, isn’t it?
 MINERVA: …A book of necromancy spells, to be precise.
 PLAYER: Is it yours?
@@ -93,7 +99,7 @@ MINERVA: This spellbook… It’s Olivia’s.
 PLAYER: Pardon?
 MINERVA: What else is there to say? Olivia, like me, is a witch. I’ve known her for a while now.
 PLAYER: You know her? What? Why didn’t you say anything about it earlier?
-MINERVA: Isn’t it obvious?  If I talked about how I knew her, I’d be the first on your list of suspects. // ok make yourself more sus I see
+MINERVA: Isn’t it obvious?  If I talked about how I knew her, I’d be the first on your list of suspects. // ok make yourself more sus I see - Amber
 ===
 
 title: MN11OL
@@ -109,17 +115,30 @@ MINERVA: …Nothing that foul. Olivia practices necromancy. That’s something I
 
 title: MN12PSN
 ---
+// asked about poison bottles
 PLAYER: Minerva, could you tell me about these bottles?
 MINERVA: They contain components I use in some of my spells.
 PLAYER: ...Even the ones marked as deadly?
-MINERVA: ...They’re poisons. I wouldn’t be much of a witch if I didn’t know what was in each bottle.
-MINERVA: And before you ask, no, I haven’t even opened them. No one’s even tampered with them.
+MINERVA: Yes. I wouldn’t be much of a witch if I didn’t know how to properly handle poisons.
+PLAYER: Have any of these been used or opened? …Maybe when you weren’t looking?
+MINERVA: Of course I’m sure. I locked my room up right before going to the meeting, and only you and I have been in here since. They’re exactly where I placed them the first time.
 ===
 
 title: MN13MR
 ---
 PLAYER: Do you know anything about the owner here, Mr. Wraithwood?
 MINERVA: No. I’m surprised you asked me: shouldn’t you know more than I do?
+===
+
+title: MN16MN
+---
+PLAYER: Is there anything I should know about you, Minerva?
+MINERVA: Well, I’m often doing a lot for my studies. Practicing spells, gathering materials, attending gatherings… The world of magic has a lot to offer.
+PLAYER: So you know a lot of other witches?
+MINERVA: And wizards. I have a friend taking care of my pet cat right now.
+PLAYER: You have a pet cat?
+MINERVA: Her name’s Nightshade. She’s really cute! I’ll have to show you some pictures later.
+
 ===
 
 title: MN14PSN

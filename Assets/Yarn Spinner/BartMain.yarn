@@ -30,6 +30,10 @@ BART: ...
     BART: Ugh… I’d rather not get into it.
     PLAYER: Please do.
     BART: Listen, human, I’d like to spend as little of your short lifespan with you as possible, so save us both the time and leave.
+-> PLAYER: Do you know anything about Mr. Wraithwood? // [BT-11-MR]
+    BART: Aside from the fact that he's the owner of this mansion? No.
+-> PLAYER: Could you tell me a bit about yourself? // [BT-12-BT]
+    BART: Sure, I don’t like humans questioning me.
 <<jump BTEndConvo>>
 ===
 title: BTEndConvo
@@ -69,3 +73,8 @@ PLAYER: So it is?
 BART: It was eons ago. I hardly remember it, nor would I repeat that blunder.
 ===
 
+title: BTSick
+---
+PLAYER: Ugh, Bart, I’m feeling dreadful… 
+BART: Don’t call me Bart unless you want to feel even worse. But yes, you do appear to be in poor health. Good luck with that.
+===
