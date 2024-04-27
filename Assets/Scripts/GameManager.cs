@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     //*** Added to evidence board?
     public bool AddedKnowBartBitHuman = false;
     public bool AddedKnowBartDislikesHumans = false;
+    //UNOFFICIAL flags; Not on board.
+    public bool BTTalkPreBody = false;
+    public bool BTTalkPostBody = false;
+    public bool BTTalkOEPhoto = false;
+    public bool BTTalkBartBitHuman = false;
+
     // ---- Wraithwood Clues -------------------------------------- WRAITHWOOD ---- //
     //Player finds out front door is locked IF they try to open the front door. (Interact with front door.) Technically a verbal clue, but has a physical object source.
     public bool KnowFrontDoorLocked = false;
@@ -35,6 +41,12 @@ public class GameManager : MonoBehaviour
     public bool AddedKnowFrontDoorLocked = false;
     public bool AddedKnowWraithwoodIsGhost = false;
     public bool AddedKnowWraithwoodIsRoomBound = false;
+    //UNOFFICIAL flag; Doesn't go on evidence board.
+    public bool MRTalkSick = false;
+    public bool MRTalkFrontDoor = false;
+    public bool MRTalkBody = false;
+    public bool MRTalkSpellbook = false;
+    public bool MRTalkOEPhoto = false;
     // ---- Olivia Clues ------------------------------------------- OLIVIA -------- //
     public bool KnowOliviaKilled = false;
     public bool AddedKnowOliviaKilled = false;
@@ -55,26 +67,35 @@ public class GameManager : MonoBehaviour
     //*** Added to evidence board?
     public bool AddedKnowMaxRejectedByOlivia = false;
     public bool AddedKnowMaxSeenWithBlood = false;
-    //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
-    public bool MaxTalkedAboutMeeting = false;
-    //UNOFFICIAL verbal clue/flag; Doesn't go on the evidence board.
-    public bool MaxKnowsOliviaDead = false;
-    //UNOFFICIAL flag; Doesn't go on the evidence board.
-    public bool MaxTalkPreFindBody = false;
+    //UNOFFICIAL flags; Doesn't go on the evidence board.
+    public bool MXTalkPreFindBody = false;
+    public bool MXTalkedAboutMeeting = false;
+    public bool MXKnowsOliviaDead = false;
+    public bool MXTalkBloodied = false;
+    public bool MXTalkSick = false;
     // ---- Edmund Clues ------------------------------------------------ EDMUND ---- //
     public bool KnowEdmund_Want_UndoUndead = false;
     public bool KnowEdmund_Hate_BeingUndead = false;
     //*** Added to evidence board?
     public bool AddedKnowEdmund_Want_UndoUndead = false;
     public bool AddedKnowEdmund_Hate_BeingUndead = false;
-    //UNOFFICIAL flag; Doesn't go on evidence board.
-    public bool EdmundTalkOliviaBody = false;
+    //UNOFFICIAL flags; Doesn't go on evidence board.
+    public bool EDTalkPreBody = false;
+    public bool EDTalkPostBody = false;
+    public bool EDTalkOliviaWitch = false;
+    public bool EDTalkOliviaNecromancer = false;
+    public bool EDTalkOEPhoto = false;
     // ---- Minerva Clues ----------------------------------------------- MINERVA --- //
     public bool KnowHasPoison = false;
     public bool KnowMinervaDislikesOlivia = false;
     //*** Added to evidence board?
     public bool AddedKnowHasPoison = false;
     public bool AddedKnowMinervaDislikesOlivia = false;
+    //UNOFFICIAL flags; Not on evidence board.
+    public bool MNTalkPreBody = false;
+    public bool MNTalkPostBody = false;
+    public bool MNTalkPlayerSick = false;
+
 
     // ------------------------------ Physical Clues --------------------------------------------------- //
     public bool FindBody = false;
