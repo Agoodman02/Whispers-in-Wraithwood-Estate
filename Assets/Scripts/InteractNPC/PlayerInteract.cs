@@ -17,10 +17,14 @@ public class PlayerInteract : MonoBehaviour
                 Debug.Log(collider);
                 if(collider.TryGetComponent(out NPCInteractable npcInteractable)) //change to name of NPC
                     {
+                        //if npcInteractable = "Bartholomew_Vampire"
+                        //rotate camera & Body towards NPC
+                        //DoCameraControl = true;
                         npcInteractable.StartConversation();
                     } 
             }
         }
+    //DoCameraControl = true;
    }
 
     //UI
