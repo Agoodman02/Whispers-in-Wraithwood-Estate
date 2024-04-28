@@ -10,7 +10,8 @@ public class InventoryManager : MonoBehaviour
 {
     //declare varibles
     public GameObject InventoryMenu;
-    private bool menuActivated;
+    public GameObject screenUI;
+    [HideInInspector] public bool inventoryMenuActivated;
 
     public static InventoryManager Instance;
     public InventorySpace Items;
@@ -20,31 +21,37 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController[] InventoryItems;
 
+    DescriptionTextureizer descriptionTextureizer;
+
     private void Awake()
     {
         Instance = this;
+
+        descriptionTextureizer = DescriptionTextureizer.single;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Closes Menu
-        if(Input.GetKeyDown(KeyCode.I) && menuActivated)
+        if(Input.GetKeyDown(KeyCode.I) && inventoryMenuActivated)
         {
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
-            menuActivated = false;
+            screenUI.SetActive(true);
+            inventoryMenuActivated = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
             CleanList();
         }
         //Opens Menu
-        else if (Input.GetKeyDown(KeyCode.I) && !menuActivated)
+        else if (Input.GetKeyDown(KeyCode.I) && !inventoryMenuActivated)
         {
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
-            menuActivated = true;
+            screenUI.SetActive(false);
+            inventoryMenuActivated = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  
 
@@ -67,8 +74,10 @@ public class InventoryManager : MonoBehaviour
     //Displays item list when opening inventory
     public void ListItems()
     {
+        descriptionTextureizer.ClearDesc();
+
         //list inventory
-        foreach(var item in Items.items)
+        foreach (var item in Items.items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("Text").GetComponent<Text>();

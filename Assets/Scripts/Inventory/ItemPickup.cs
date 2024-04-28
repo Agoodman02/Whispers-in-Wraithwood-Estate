@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour
     //Declare varibles
     public Item Item;
     [SerializeField] Image pickupPopup; 
-    [SerializeField] Text ItemText;
+    //[SerializeField] Text ItemText;
 
     public bool allowPickup;
     [HideInInspector] public string itemPopupName;
@@ -22,8 +22,6 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
-        //allowPickup = GameObject.Find("PlayerPrefab").GetComponent<PlayerPickup>().allowPickup;
-
         //If within range
         if (allowPickup)
         {
@@ -35,30 +33,6 @@ public class ItemPickup : MonoBehaviour
             }
         }
     }
-    
-    //Shows popup and allows item to be picked up once in range
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            EnablePickupPopup();
-
-            allowPickup = true;
-        }
-    }
-
-    //Hides popup and does not allow item to be picked up once in range
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            DisablePickupPopup();
-
-            allowPickup = false;
-        }
-    }
-    */
 
     //Picks up item
     public void Pickup()
@@ -72,7 +46,7 @@ public class ItemPickup : MonoBehaviour
     public void EnablePickupPopup()
     {
         pickupPopup.gameObject.SetActive(true);
-        ItemText.text = $"{Item.itemName}";
+        //ItemText.text = $"{Item.itemName}";
     }
 
     //Hides pickup text

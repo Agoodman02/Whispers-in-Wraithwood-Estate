@@ -6,4 +6,9 @@ using UnityEngine;
 public class InventorySpace : ScriptableObject
 {
     [SerializeField] public List<Item> items;
+
+    public void clearinv()
+    {
+        items.Clear();
+    }
 }

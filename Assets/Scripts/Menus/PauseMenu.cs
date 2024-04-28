@@ -12,9 +12,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     //public GameObject settingsMenu;
     //public GameObject controlsMenu;
-    //public GameObject screenUI;
+    public GameObject screenUI;
     public static bool isPaused;
     public AudioSource pauseMenuSound;
+
+    public InventoryManager inventoryManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +31,18 @@ public class PauseMenu : MonoBehaviour
         //Opens Pause  menu and stops game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
+            if (!inventoryManager.inventoryMenuActivated)
             {
-                ResumeGame();
+                if(isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
-            else
-            {
-                PauseGame();
-            }
+
         }
     }
 
@@ -44,7 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-        //screenUI.SetActive(false);
+        screenUI.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
         pauseMenuSound.Play();
@@ -53,19 +59,21 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    /*
-    //Settings Menu
-    public void SettingsMenu()
+    public void Controls()
     {
-        settingsMenu.SetActive(true);
+        SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
     }
-    */
+
+    public void Settings()
+    {
+        SceneManager.LoadScene("Settings", LoadSceneMode.Additive);
+    }
 
     //Resume Game
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        //screenUI.SetActive(true);
+        screenUI.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
         pauseMenuSound.Play();
