@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class InteractableScript : MonoBehaviour
 {
     //declare varibles
+    [SerializeField] GameManager gameManager;
     [SerializeField] InventoryManager inventoryManager;
     public InventorySpace Items;
     public Item Item;
@@ -59,7 +60,6 @@ public class InteractableScript : MonoBehaviour
     public GameObject clue20;
     public GameObject clue21;
 
-
     InputMap actions;
     [HideInInspector] public bool nearboard = false;
 
@@ -94,32 +94,62 @@ public class InteractableScript : MonoBehaviour
                 {
                     //Picture 1
                     case 1:
-                        clue18.SetActive(true);
+                        if (!clue18.activeSelf)
+                        {
+                            clue18.SetActive(true);
+                            gameManager.AddedHasOliviaEdmundPhoto = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     //Bloody Pen
                     case 2:
-                        clue17.SetActive(true);
+                        if (!clue17.activeSelf)
+                        {
+                            clue17.SetActive(true);
+                            gameManager.AddedHasBloodyPen = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     //Hex Bag
                     case 3:
-                        clue19.SetActive(true);
+                        if (!clue19.activeSelf)
+                        {
+                            clue19.SetActive(true);
+                            gameManager.AddedHasHexBag = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     //Poison Cup
                     case 4:
-                        clue21.SetActive(true);
+                        if (!clue21.activeSelf)
+                        {
+                            clue21.SetActive(true);
+                            gameManager.AddedHasOliviaCup = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     //Corpse Pic
                     case 5:
-                        clue16.SetActive(true);
+                        if (!clue16.activeSelf)
+                        {
+                            clue16.SetActive(true);
+                            gameManager.AddedFindBody = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     //Spellbook
                     case 6:
-                        clue20.SetActive(true);
+                        if (!clue20.activeSelf)
+                        {
+                            clue20.SetActive(true);
+                            gameManager.AddedHasSpellbook = true;
+                            gameManager.CluesOnBoard++;
+                        }
                         //Items.items.Remove(i);
                         break;
                     default:
