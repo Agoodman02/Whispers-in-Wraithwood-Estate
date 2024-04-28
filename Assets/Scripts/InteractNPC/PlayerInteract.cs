@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-   
+   PlayerControler playerControler;
+   PlayerControler player;
 
    private void Update() 
    {
@@ -15,16 +17,34 @@ public class PlayerInteract : MonoBehaviour
             foreach (Collider collider in colliderArray)
             {   
                 Debug.Log(collider);
-                if(collider.TryGetComponent(out NPCInteractable npcInteractable)) //change to name of NPC
+                if(collider.TryGetComponent(out NPCInteractable Bartholomew_Vampire)) //Bart Main
                     {
-                        //if npcInteractable = "Bartholomew_Vampire"
-                        //rotate camera & Body towards NPC
-                        //DoCameraControl = true;
-                        npcInteractable.StartConversation();
+                        //playerControler.TeleportPlayer(Vector3, Vector3,false);
+                        Bartholomew_Vampire.StartConversation();
+                    } 
+                if(collider.TryGetComponent(out NPCInteractable Edmund_Skeleton)) //Edmund Main
+                    {
+                        //playerControler.TeleportPlayer(Vector3, Vector3, false);
+                        Edmund_Skeleton .StartConversation();
+                    } 
+                if(collider.TryGetComponent(out NPCInteractable Max_Werewolf)) //Maxwell Main
+                    {
+                        //playerControler.TeleportPlayer(Vector3, Vector3,false);
+                        Max_Werewolf.StartConversation();
+                    } 
+                if(collider.TryGetComponent(out NPCInteractable Minerva_Witch)) //Minerva Main
+                    {
+                        //playerControler.TeleportPlayer(Vector3, Vector3,false);
+                        Minerva_Witch.StartConversation();
+                    } 
+                if(collider.TryGetComponent(out NPCInteractable MrWraithwood)) //Wraithwood Main
+                    {
+                        //playerControler.TeleportPlayer(Vector3, Vector3, false);
+                        MrWraithwood.StartConversation();
                     } 
             }
         }
-    //DoCameraControl = true;
+    playerControler.DoCameraControl = true;
    }
 
     //UI
