@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   itemName: Spellbook
+  itemDescription: A mysterious book found in Olivia's room.
   icon: {fileID: -1012254677, guid: 804325642d245e34a98adf2fd7b15832, type: 3}
+  ItemInspectionImage: {fileID: 2800000, guid: b255a13e79c08f74aa466d0c6c47c426, type: 3}
   prefab: {fileID: 0}
