@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
 {
     //declare varibles
     public GameObject InventoryMenu;
+    public GameObject interactionPopup;
     public GameObject screenUI;
     [HideInInspector] public bool inventoryMenuActivated;
 
@@ -39,6 +40,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             screenUI.SetActive(true);
+            interactionPopup.SetActive(true);
             inventoryMenuActivated = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -51,6 +53,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             screenUI.SetActive(false);
+            interactionPopup.SetActive(false);
             inventoryMenuActivated = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;  

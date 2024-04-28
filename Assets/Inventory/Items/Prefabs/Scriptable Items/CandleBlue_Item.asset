@@ -16,6 +16,6 @@ MonoBehaviour:
   itemName: Blue Candle
   itemDescription: A mysterious blue candle. It feels oddly heavier than a normal
     candle.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 30a635a7ff4779b4caf76f66006fb5ff, type: 3}
   ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}

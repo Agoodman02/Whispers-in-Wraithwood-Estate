@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 4
   itemName: Olivia's Cup
   itemDescription: "A fancy cup with Olivia\u2019s name on it."
-  icon: {fileID: 1494718026, guid: c8bf51bc08041fc4aa2d2c172daf07f8, type: 3}
+  icon: {fileID: 490769681, guid: ee3a0ad060604ae4a921a435fed0481c, type: 3}
   ItemInspectionImage: {fileID: 2800000, guid: 4a29c5afd15909647aedeaf76859e19d, type: 3}
   prefab: {fileID: 0}

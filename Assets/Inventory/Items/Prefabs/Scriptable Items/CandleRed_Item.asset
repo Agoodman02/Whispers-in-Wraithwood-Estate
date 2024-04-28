@@ -16,6 +16,6 @@ MonoBehaviour:
   itemName: Red Candle
   itemDescription: A mysterious red candle. It feels oddly heavier than a normal
     candle.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7dbc24b99c74c66409c6305e63e9d726, type: 3}
   ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}
