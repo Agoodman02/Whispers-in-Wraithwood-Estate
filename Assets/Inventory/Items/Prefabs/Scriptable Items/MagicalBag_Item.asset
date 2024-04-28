@@ -17,5 +17,5 @@ MonoBehaviour:
   itemDescription: "A brown sack, covered with magical sigils. It was found by Olivia\u2019s
     body."
   icon: {fileID: -933250381, guid: 7088e835cbf545649ad1eb07a49ed3d2, type: 3}
-  ItemInspectionImage: {fileID: 0}
+  ItemInspectionImage: {fileID: 2800000, guid: a1633c0d2801e984ca70cd7d3e348cbb, type: 3}
   prefab: {fileID: 7547099659401848210, guid: 64f48e23314dbc44fb982d21e15fb734, type: 3}

@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Bloody Key
   itemDescription: 'A key with blood on it that you found in the Ballroom. '
   icon: {fileID: 855794929, guid: b6380d02fed375242be77d3a7699cd38, type: 3}
-  ItemInspectionImage: {fileID: 0}
+  ItemInspectionImage: {fileID: 2800000, guid: 0a1441a6502935443ac9a80066be435e, type: 3}
   prefab: {fileID: 0}

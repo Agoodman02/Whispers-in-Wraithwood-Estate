@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Fancy Key
   itemDescription: 'A key with a decorative design you found in the Entryway. '
   icon: {fileID: -652262456, guid: 257b2dbc904187c47ae9ebcc8ebeb3dc, type: 3}
-  ItemInspectionImage: {fileID: 0}
+  ItemInspectionImage: {fileID: 2800000, guid: 28b0bc2deaf422e4ab90a0bde1e98716, type: 3}
   prefab: {fileID: 0}
