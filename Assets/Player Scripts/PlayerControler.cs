@@ -28,7 +28,7 @@ public class PlayerControler : MonoBehaviour
 
     //Inventory Stuff
     public InventoryManager inventoryManager;
-    [HideInInspector]public bool allowPickup = false;
+    [HideInInspector] public bool allowPickup = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class PlayerControler : MonoBehaviour
 
         //activate actions
         actions = new InputMap();
-        
+
         actions.Player3D.Enable();
     }
 
@@ -64,23 +64,23 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
-
-        Movement3d = gameObject.transform.forward * (MovementDir.y * PlayerWalkSpeed) + gameObject.transform.right * (MovementDir.x * PlayerWalkSpeed);
-        Movement3d.y = selfphys.velocity.y;
-
         if (DoCameraControl)
         {
-            float mousex = Input.GetAxisRaw("Mouse X") * Time.deltaTime * MouseSensitivity.x;
+            float mousex = Input.GetAxisRaw("Mouse X") * MouseSensitivity.x;
             float mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * MouseSensitivity.y;
 
             camroty += mousex;
             camrotx -= mousey;
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
-            gameObject.transform.rotation = Quaternion.Euler(0, camroty, 0);
-            CameraCenter.transform.rotation = Quaternion.Euler(camrotx, camroty, 0);
+            selfphys.rotation = Quaternion.Euler(0, camroty, 0);
+            CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
         }
+
+        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
+
+        Movement3d = (PlayerWalkSpeed * transform.forward * MovementDir.y) + (PlayerWalkSpeed * transform.right * MovementDir.x);
+        Movement3d.y = selfphys.velocity.y;
 
         // it wasn't samdaman_og
 
@@ -93,17 +93,31 @@ public class PlayerControler : MonoBehaviour
             InteractPressed();
         }
 
-        if (LookingAt.transform.gameObject != WasLooking.transform.gameObject)
+        if (WasLooking.transform != null && LookingAt.transform == null || LookingAt.transform.gameObject != WasLooking.transform.gameObject)
         {
-            WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
-            WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+            if (WasLooking.transform != null && hasComponent<ItemPickup>(WasLooking.transform.gameObject))
+            {
+                WasLooking.transform.GetComponent<ItemPickup>().allowPickup = false;
+                WasLooking.transform.GetComponent<ItemPickup>().DisablePickupPopup();
+            }
+            else if (hasComponent<InteractionTextPopup>(WasLooking.transform.gameObject))
+            {
+                WasLooking.transform.GetComponent<InteractionTextPopup>().DisableTextPopup();
+            }
         }
 
-        //Tells ItemPickup if player is looking at an item; not in use
-        if (LookingAt.transform.gameObject.layer == 6)
+        if (LookingAt.transform != null && LookingAt.transform.gameObject.layer == 6)
         {
-            LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
-            LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
+            if (hasComponent<ItemPickup>(LookingAt.transform.gameObject))
+            {
+                LookingAt.transform.GetComponent<ItemPickup>().allowPickup = true;
+                LookingAt.transform.GetComponent<ItemPickup>().EnablePickupPopup();
+            }
+            else if (hasComponent<InteractionTextPopup>(LookingAt.transform.gameObject))
+            {
+                Debug.Log("showing interact pop up for " + LookingAt.transform.gameObject.name);
+                LookingAt.transform.GetComponent<InteractionTextPopup>().EnableTextPopup();
+            }
         }
     }
 
@@ -120,16 +134,49 @@ public class PlayerControler : MonoBehaviour
 
     void InteractPressed()
     {
-        if(LookingAt.transform.name == null)
+        if (LookingAt.transform.name == null)
         {
             return;
         }
 
         Debug.Log(LookingAt.transform.gameObject.name);
 
-        if(LookingAt.transform.gameObject.layer == 6)
+        if (LookingAt.transform.gameObject.layer == 6)
         {
             LookingAt.transform.gameObject.GetComponent<InteractReciever>().Interacted();
         }
     }
+
+    public bool hasComponent<T>(GameObject g)
+    {
+        return g.GetComponent<T>() != null;
+    }
+
+    public void TeleportPlayer(Vector3 p, Vector3 re, bool cam)
+    {
+        gameObject.transform.position = p;
+        gameObject.transform.rotation = Quaternion.Euler(0, re.y, 0);
+        CameraCenter.transform.localRotation = Quaternion.Euler(re.x, 0, 0);
+        DoCameraControl = cam;
+    }
+
+    public void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void UnlockCursor(bool confined)
+    {
+        Cursor.visible = true;
+        if (confined)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
 }
+
