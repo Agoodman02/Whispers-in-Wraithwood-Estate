@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: JanitorClosetKey_Item
   m_EditorClassIdentifier: 
   id: 8
-  itemName: Janitor Closet Key
+  itemName: Bloody Key
+  itemDescription: 'A key with blood on it that you found in the Ballroom. '
   icon: {fileID: 855794929, guid: b6380d02fed375242be77d3a7699cd38, type: 3}
+  ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: JewelryBoxKey_Item
   m_EditorClassIdentifier: 
   id: 7
-  itemName: Jewelry Box Key
+  itemName: Fancy Key
+  itemDescription: 'A key with a decorative design you found in the Entryway. '
   icon: {fileID: -652262456, guid: 257b2dbc904187c47ae9ebcc8ebeb3dc, type: 3}
+  ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}
