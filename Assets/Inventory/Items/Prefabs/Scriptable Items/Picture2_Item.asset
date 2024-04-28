@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Picture2_Item
   m_EditorClassIdentifier: 
   id: 5
-  itemName: Picture of Corpse
+  itemName: Picture of the Body
+  itemDescription: "It depicts Olivia\u2019s body. Her head has been injured, and
+    two small marks are on her neck."
   icon: {fileID: 0}
+  ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}

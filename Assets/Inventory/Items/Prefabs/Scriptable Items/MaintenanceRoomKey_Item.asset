@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: MaintenanceRoomKey_Item
   m_EditorClassIdentifier: 
   id: 15
-  itemName: Maintenance Room Key
+  itemName: Rusty Key
+  itemDescription: "A well-used rusty key that you found in Mr. Wraithwood\u2019s
+    room."
   icon: {fileID: 855794929, guid: b6380d02fed375242be77d3a7699cd38, type: 3}
+  ItemInspectionImage: {fileID: 2800000, guid: fbc6d221389d0dc449d7c6d81d1452a7, type: 3}
   prefab: {fileID: 0}

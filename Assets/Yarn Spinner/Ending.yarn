@@ -1,0 +1,56 @@
+﻿title: EndingPhone
+---
+PLAYER: (It all finally makes sense! I gotta call Mr. Wraithwood and let him know.)
+
+-> PLAYER: I’ve figured out what happened. // new dialogue option
+    MR: Very well. Get your evidence and I will have all the guests meet you in the Ballroom. Once exposed, the others should be able to handle whoever’s responsible…
+===
+
+title: Slide1
+---
+//~Monsters are all seated, listening~
+PLAYER: Thanks for coming. It’s now clear to me who is responsible for Olivia’s death…
+PLAYER: Edmund. What do you have to say for yourself?
+EDMUND: Nothing, as I’ve done nothing.
+PLAYER: No, I know the truth. You knew Olivia. In fact, you forgot to mention she was your wife, isn’t that right?
+PLAYER: (My vision's getting blurry... It's hard to look right at him…)
+EDMUND: Well… no…
+PLAYER: Yes, the two of you were married and she even brought you back from the dead. But you weren’t thankful for it, were you?
+EDMUND: Why would I want to live like this? It’s a nightmare!
+PLAYER: Exactly. If only you could find a way out, which is exactly what you asked Minerva for. But no, you’d continue to stay as you were, all because of Olivia.
+EDMUND: …
+PLAYER: So you poisoned her cup, but didn’t stop there. I found the murder weapon: your pen. You bashed her over the head then made those stab marks with it on poor Olivia, didn’t you?
+===
+
+title: Slide2
+---
+//~ Edmund standing (emotional stance)~
+EDMUND: Poor Olivia? Poor Olivia?! All she had to do was set me free. But no. Not even free from her presence. She just HAD to stalk me here, but wouldn’t listen…
+EDMUND: We were together long enough that you would think she’d respect my wishes, but it was all about her. All these years. She had to be with me and I had to ‘live’ with all the consequences.
+EDMUND: And that’s what she tells me AGAIN tonight after tracking me here. Pulls me aside, thinking somehow that she could convince me to go back with her. Foolish. 
+EDMUND: I give her one last chance to dispel me. To just LEAVE ME ALONE. Yet even the poison wasn't enough to persuade her. I told her that she could have the antidote and be fine, if only she would let me go. 
+PLAYER: (Sounds like...Minerva's chanting something... But I can't keep my eyes open for much longer...)
+EDMUND: But when she still wouldn’t back down, it finally occurred to me… her magic is what brought me alive; maybe it’s all that’s keeping me alive. Maybe I could end it right there with her.
+EDMUND: Sadly not. I’m still stuck here, now ‘living’ with what I’ve done and all your judgment for it. None of you know what it’s like to be this way and I just want it to STOP…!
+===
+
+title: Slide3
+---
+//~Edmund crumbled to a pile of bones, hat, and vial of antidote~
+MINERVA: (Finishes chanting) Very well, Edmund… Have it your way…
+MAX: Minerva! I mean, it’s what he wanted, but still…
+BART: Had to be done… But I may yet miss that sad sack of bones…
+MINERVA: Yes, well, what’s this?
+===
+
+title: Slide4
+---
+//~Minerva in front of the player holding the antidote~
+MINERVA: Here’s what he had on him… the antidote, perhaps?
+===
+
+title: Slide5
+---
+//~At front desk, with phone picked up~
+MR. WRAITHWOOD: Looks like you're still in one piece. The night took an unexpected turn, but you did well. Now get out of here and enjoy a day off. *Hangs up*
+===

@@ -1,0 +1,109 @@
+﻿title: MRPStartConvo
+---
+// On phone
+-> PLAYER: What do you know about Olivia?
+    MR: Not much; she was hired pretty recently. Just figure this out. *Hangs up*
+-> PLAYER: What do you know of the guests here? //MR03
+    MR: I try not to meddle in other people’s business and I’d suggest you do the same. *Hangs up*
+-> PLAYER: Why won’t you be more helpful? // MR07
+    MR: Stop complaining. *Hangs up*
+===
+title: MR02FD
+---
+// Unlocked after certain conditions
+// After finding that the front door is locked
+PLAYER: Why is the front door locked? //MR02FD
+MR: I prefer to handle issues internally. Get back to work. *Hangs up*
+===
+title: MR04BD
+---
+// After finding Olivia's body
+PLAYER: Olivia has been killed! I found her body in the storage room. // MR04BD
+MR: Well, that’s just splendid. Hmm... Figure out what happened and let me know when you do. *Hangs up*
+PLAYER: ...
+===
+title: MR05SB
+---
+// After finding spellbook
+PLAYER: I found a spellbook in Olivia’s room. Was she a witch? //MR05SB
+MR: Oh, that does seem to ring a bell. I think she was. Keep going. *Hangs up*
+===
+title: MRO6OE
+---
+// After finding out Olivia was married or finding O + E photo
+PLAYER: Do you know if Olivia was married? //MR06OE
+MR: Why would I? *Hangs up*
+===
+title: MRPSick
+---
+// on phone
+PLAYER: I'm feeling awful...
+MR: You're out of sick days. *Hangs up*
+===
+title: MRStartConvo
+---
+// In-person
+MR: What is it?
+-> Ask about Mr. Wraithwood
+    <<jump MR08>>
+-> Ask about others
+    <<jump MR09>>
+===
+title: MREndConvo
+---
+PLAYER: Okay, good talk.
+===
+title: MR08
+---
+-> PLAYER: What are you?
+    MR: Is it not clear? I’m a ghost. Please leave my room. // MR08
+-> PLAYER: What’s it like being a ghost? // MR11
+    MR: It’s like having one of your subordinates ask you stupid questions. Next?
+-> PLAYER: Why won’t you be more helpful? // MR10
+    MR: *Sigh* Truth be told, I’m stuck in this room. I couldn’t galavant around with you, even if I wanted to.
+<<jump MREndConvo>>
+===
+
+title: MR09
+---
+-> PLAYER: What do you know about Olivia? // MR09OL
+    MR: Not much; she was hired pretty recently. Satisfied?
+-> PLAYER: What do you know of the guests here? // MR12
+    MR: I just heard of Monsters Anonymous and, as someone who can relate, offered to host them here for a meeting.
+-> PLAYER: Did Olivia know you were a ghost? // MR13OL
+    MR: No and I imagine she was just as surprised as you at tonight’s guests, too.
+<<jump MREndConvo>>
+===
+title: MR14BD
+---
+// After finding Olivia's body
+PLAYER: Olivia has been killed! I found her body in the storage room. // MR14BD
+MR: Well, that’s just splendid. Hmm… Go figure out what happened and let me know when you do.
+===
+title: MR15SB
+---
+// After finding spellbook
+PLAYER: I found a spellbook in Olivia’s room. Was she a witch? // MR15SB
+MR: Oh, that does seem to ring a bell. I think she was. Now shoo.
+===
+title: MR16OE
+---
+//After finding out that Olivia was married or O + E photo
+PLAYER: Do you know if Olivia was married? // MR16OE
+MR: Hmm… now that you mention it, I think I vaguely remember her being a widow.
+===
+title: MR17FD
+---
+// After finding that the front door is locked
+PLAYER: Why is the front door locked? // MR17FD
+MR: I prefer to handle issues internally. Get back to work.
+PLAYER: Okay, good talk. // exit convo 
+===
+
+title: MRISick
+---
+PLAYER: I’m feeling awful…
+MR: Okay? Do I look like a doctor to you?
+===
+
+

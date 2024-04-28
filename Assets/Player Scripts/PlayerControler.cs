@@ -64,23 +64,23 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
-
-        Movement3d = gameObject.transform.forward * (MovementDir.y * PlayerWalkSpeed) + gameObject.transform.right * (MovementDir.x * PlayerWalkSpeed);
-        Movement3d.y = selfphys.velocity.y;
-
         if (DoCameraControl)
         {
-            float mousex = Input.GetAxisRaw("Mouse X") * Time.deltaTime * MouseSensitivity.x;
+            float mousex = Input.GetAxisRaw("Mouse X") * MouseSensitivity.x;
             float mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * MouseSensitivity.y;
 
             camroty += mousex;
             camrotx -= mousey;
             camrotx = Mathf.Clamp(camrotx, -89f, 89f);
 
-            gameObject.transform.rotation = Quaternion.Euler(0, camroty, 0);
-            CameraCenter.transform.rotation = Quaternion.Euler(camrotx, camroty, 0);
+            selfphys.rotation = Quaternion.Euler(0, camroty, 0);
+            CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
         }
+
+        MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
+
+        Movement3d = (PlayerWalkSpeed * transform.forward * MovementDir.y) + (PlayerWalkSpeed * transform.right * MovementDir.x);
+        Movement3d.y = selfphys.velocity.y;
 
         // it wasn't samdaman_og
 
@@ -150,6 +150,33 @@ public class PlayerControler : MonoBehaviour
     public bool hasComponent<T>(GameObject g)
     {
         return g.GetComponent<T>() != null;
+    }
+
+    public void TeleportPlayer(Vector3 p, Vector3 re, bool cam)
+    {
+        gameObject.transform.position = p;
+        gameObject.transform.rotation = Quaternion.Euler(0, re.y, 0);
+        CameraCenter.transform.localRotation = Quaternion.Euler(re.x, 0, 0);
+        DoCameraControl = cam;
+    }
+
+    public void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void UnlockCursor(bool confined)
+    {
+        Cursor.visible = true;
+        if (confined)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
 
