@@ -1,9 +1,9 @@
-1 - Picture 1 (Olivia & Edmund(Alive))	//Adds note 18;							removes from inventory
-2 - Bloody Pen							//Adds note 17;							removes from inventory
-3 - Hex Bag								//Adds note 19;							removes from inventory
+1 - Picture 1 (Olivia & Edmund(Alive))	//Adds note 18;							stays in inventory
+2 - Bloody Pen							//Adds note 17;							stays in inventory
+3 - Hex Bag								//Adds note 19;							stays in inventory
 4 - Poison Cup							//Adds note 21							stays in inventory
-5 - Picture 2 (Corpse)					//Adds note 16; gotten from corpse;		removes from inventory
-6 - Spellbook							//Adds note 20;							removes from inventory
+5 - Picture 2 (Corpse)					//Adds note 16; gotten from corpse;		stays in inventory
+6 - Spellbook							//Adds note 20;							stays in inventory
 7 - Jewelry Box Key						//opens jewelry box; reveals picture 1; removes from inventory
 8 - Janitor Key							//opens janitor closet					stays in inventory
 9 - Crowbar								//Open Vent; reveals pen				removes from inventory
@@ -12,7 +12,8 @@
 12 - Pink Candle (Olivia)				//candle puzzle;						removes from inventory
 13 - Blue Candle (Max)					//candle puzzle;						removes from inventory
 14 - Red Candle (Bart)					//candle puzzle;						removes from inventory
-15 - Maintenance Room Key
+15 - Maintenance Room Key				//open maintenance room					stays in inventory
+16 - Jewelry Box Clue					//note for jewelry box key				stays in inventory
 
 
 
