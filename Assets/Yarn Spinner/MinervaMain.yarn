@@ -1,16 +1,8 @@
 ﻿
 title: MNStartConvo
 ---
-// Before "Photo of Body" Clue and after Minerva sees the player is poisoned
-MINERVA: Yes?
+PLAYER: Can I ask you a few questions, Minerva?
 ===
-
-title: MNStartSick
----
-// occurs once then reverts to og starter
-MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
-===
-
 title: MN01OL
 ---
 // If talked to before finding Olivia
@@ -84,8 +76,9 @@ MINERVA: That’s a hex bag. It’s a tool used by some who practice witchcraft.
 PLAYER: Is it yours?
 MINERVA: No. It isn’t mine.
 MINERVA: Someone else must be practicing witchcraft around here.
-// if "Minerva Talk Flag 1"
+// if asked after spellbook 
 MINERVA: If it was with Olivia, it was probably her’s. // MN09HXSB
+// ^^ is this important, can we cut it?
 ===
 
 title: MN10SB
