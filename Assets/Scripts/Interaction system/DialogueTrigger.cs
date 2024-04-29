@@ -76,6 +76,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameManager EDTalkOliviaWitch;
     public GameManager EDTalkOliviaNecromancer;
     public GameManager EDTalkOEPhoto;
+    public GameManager EDAskedAboutOlivia;
+    public GameManager EDTalk_MaxFlirtWithEdmund;
     // ---- Minerva Clues
     public GameManager KnowHasPoison;
     public GameManager KnowMinervaDislikesOlivia;
@@ -123,9 +125,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         ///* Check if all of the clues are added to the evidence board.
     
-        if (CluesOnBoard.CluesOnBoard == 21) 
+        if (CluesOnBoard.CluesOnBoard == 22) 
         {
-            targetNodeName = "Insert Final Cutscene NodeName Here";
+            //target node name is set to the first dialogue node in Ending.yarn. FIGURE OUT HOW TO CHAIN IT + PHOTOS TOGETHER! AND/OR JUST MAKE ONE BIG DIALOGUE NODE.
+            targetNodeName = "EndingPhone";
 
         // If the currently running node is different from the target node (nodeName), Stop running the current node and dialogue.
             if (dialogueRunner.CurrentNodeName != targetNodeName)
@@ -134,6 +137,7 @@ public class DialogueTrigger : MonoBehaviour
             }
             // Start running the target dialogue node.
             dialogueRunner.StartDialogue(targetNodeName);
+            // quit game code here. :-) should run after dialogue is completed lol
         }
     }
 
@@ -168,6 +172,8 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia = true;
                     BTTalkPreBody.BTTalkPreBody = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
                 }
                 /// - [BT04BD] - After finding Olivia’s body. [FindBody == True, BTTalkPostBody == false] [Set BTTalkPostBody = true, KnowBartDislikesHumans = True, KnowMaxSeenWithBlood = True, KnowMaxRejectedByOlivia = true]
                 else if (FindBody.FindBody == true & BTTalkPostBody.BTTalkPostBody == false)
@@ -178,6 +184,8 @@ public class DialogueTrigger : MonoBehaviour
                     KnowBartDislikesHumans.KnowBartDislikesHumans = true;
                     KnowMaxSeenWithBlood.KnowMaxSeenWithBlood = true;
                     KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
                 }
                 /// - [BT-06-OE] - After finding ‘Olivia & Edmund photo’. [HasOliviaEdmundPhoto == True, BTTalkOEPhoto == false] [Set BTTalkOEPhoto = true]
                 else if (HasOliviaEdmundPhoto.HasOliviaEdmundPhoto == true & BTTalkOEPhoto.BTTalkOEPhoto == false)
@@ -285,12 +293,17 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     KnowOliviaWidow.KnowOliviaWidow = true;
                     MRTalkOEPhoto.MRTalkOEPhoto = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
                 }
                 ///--- Start Questioning Dialogue: MRStartConvo ---//
                 ///*Dialogue options: [MRStartConvo] - MRStartConvo includes these options, and jumps to MR08 or MR09 depending on the option chosen. [Set KnowWraithwoodIsGhost = true]
-                /// * About Mr.Wraithwood [MR08]
-                /// * About Others [MR09]
-                else
+                /// * About Mr.Wraithwood
+                ///  - [MR08] -  [Set KnowWraithwoodIsGhost = true]
+                ///  - [MR10] - [Set KnowWraithwoodIsRoomBound = true]
+                /// * About Others
+                ///  - [MR09OL] - [Set KnowOliviaRecentlyJoined = true]
+                else if (KnowWraithwoodIsRoomBound)
                 {
                     targetNodeName = "MRStartConvo";
                     RunTargetNode();
@@ -345,15 +358,15 @@ public class DialogueTrigger : MonoBehaviour
                 }
                 ///*Dialogue options:
                 /// - About Him
-                ///  * [ED-04] - His Alibi [EdmundAskedAboutOlivia == False]
-                ///    - [ED-04-OL] - His Alibi, alternate dialogue for same dialogue option. [EdmundAskedAboutOlivia == False].
+                ///  * [ED-04] - His Alibi [EDAskedAboutOlivia == False]
+                ///    - [ED-04-OL] - His Alibi, alternate dialogue for same dialogue option. [EDAskedAboutOlivia == False].
                 ///  * [ED-05] - On Being a Skeleton
                 /// - About Others
                 ///  * [ED-09-OL] - About Olivia
                 ///  * [ED-10-BT] - On Bartholomew
                 ///  * [ED-11-MN] - On Minerva
-                ///  * [ED-13-MX] - On Max
-                ///    - [ED-14-MX] - If Asked about Max's flirting. [KnowMaxRejectedByOlivia == True]
+                ///  * [ED-13-MX] - On Max [Set EDTalk_MaxFlirtWithEdmund = true]
+                ///    - [ED-14-MX] - If Asked about Max's flirting. [EDTalk_MaxFlirtWithEdmund == true & KnowMaxRejectedByOlivia == True]
                 break;
             //If currently selected character is Minerva. [MN], "Minerva".
             case "Minerva":
@@ -372,7 +385,7 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     MNTalkPostBody.MNTalkPostBody = true;
                 }
-                /// - [MN-14-PSN] - Has collected >= 10 clues, and PlayerIsSick. [PlayerIsSick == true, MNTalkPlayerSick == false] [set MNTalkPlayerSick = true]
+                /// - [MN-14-PSN] - Has collected >= 10 clues, and PlayerIsSick. [PlayerIsSick == true, MNTalkPlayerSick == false] [Set MNTalkPlayerSick = true]
                 else if (PlayerIsSick.PlayerIsSick == true & MNTalkPlayerSick == false)
                 {
                     targetNodeName = "MN14PSN";
@@ -385,6 +398,7 @@ public class DialogueTrigger : MonoBehaviour
                     targetNodeName = "MN15CP";
                     RunTargetNode();
                     KnowPlayerIsPoisoned.KnowPlayerIsPoisoned = true;
+                    CluesObtained.CluesObtained += 1;
                 }
                 ///   
                 ///--- Start Questioning Dialogue: [MNStartConvo] ---//
@@ -421,8 +435,10 @@ public class DialogueTrigger : MonoBehaviour
                     targetNodeName = "MX01OL";
                     RunTargetNode();
                     MXTalkPreFindBody.MXTalkPreFindBody = true;
-                    KnowOliviaMarried.KnowOliviaMarried = true;
                     MXTalkedAboutMeeting.MXTalkedAboutMeeting = true;
+                    KnowOliviaMarried.KnowOliviaMarried = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
                 }
                 /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MXKnowsOliviaDead == true] [Set MXTalkedAboutMeeting = true.]
                 else if (MXKnowsOliviaDead.MXKnowsOliviaDead == true)

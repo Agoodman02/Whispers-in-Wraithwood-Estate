@@ -85,6 +85,8 @@ public class GameManager : MonoBehaviour
     public bool EDTalkOliviaWitch = false;
     public bool EDTalkOliviaNecromancer = false;
     public bool EDTalkOEPhoto = false;
+    public bool EDAskedAboutOlivia = false;
+    public bool EDTalk_MaxFlirtWithEdmund = false;
     // ---- Minerva Clues ----------------------------------------------- MINERVA --- //
     public bool KnowHasPoison = false;
     public bool KnowMinervaDislikesOlivia = false;
