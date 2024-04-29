@@ -5,14 +5,11 @@ MAXWELL: Aagh! This night couldn’t get any worse... Woah! It’s you. Uh, hey!
 
 title: MX01OL
 ---
-// before body is found?
+// Before the body is found.
 PLAYER: Maxwell, you wouldn’t know where Olivia is, do you?
 MAXWELL: Wait, where she is? No! Do you?
 PLAYER: No… I don’t.
-===
-
-title: MX02
----
+// I merged MX01 & MX02. MX01OL just leads into MX02 anyway.
 PLAYER: Could you tell me if anything happened during the meeting?
 MAX: Eh, uh, not really, dude. Talked about the normal stuff. No need to worry.
 PLAYER: I’m here to help, Max. Did something happen?
@@ -26,7 +23,7 @@ MAX: Ugh, and she told me she was married too! Could you imagine if her husband 
 
 title: MX03BD
 ---
-// after body found?
+// After body found, and you've told Maxwell that Olivia is dead. (Don't worry, the requirements are handled in DialogueTrigger.cs.)
 PLAYER: Could you tell me if anything happened during the meeting?
 MAX: Eh, uh, not really, dude. Talked about the normal stuff. No need to worry.
 PLAYER: I’m here to help, Max. Did something happen?
@@ -66,14 +63,11 @@ title: MX06PSN
 //the first time the first time the player talks to Maxwell at above
 //#2. Otherwise, see “When talking to Maxwell” (MXStartConvo)
 // ^^ ...huh?
+//Yeah, don't worry about it. LOL.
 PLAYER: Maxwell...
 MAX: Woah! Hey, are you feeling alright? You look, even *smell* like you’re about to keel over. You want to lie down?
 PLAYER: I-I’ll be fine. I just feel under the weather all of a sudden.
-===
-
-title: MX07PSN
----
-// if the player hasn't talked to Minerva about being poisoned first
+// *Note: [MX-07-PSN] was removed from the final writing script.
 PLAYER: You didn’t see anything happen after the meeting by the front desk, did you?
 MAXWELL: No...I was kind of busy at that time.
 MAXWELL: Don’t you guys have a nurse or something? You probably should get checked out. //This ends the conversation.

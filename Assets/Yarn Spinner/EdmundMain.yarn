@@ -7,32 +7,29 @@ EDMUND: No. I’ve just been here after the meeting.
 
 title: ED02BD
 ---
-//after finding Olivia's body
--> PLAYER: Olivia’s been found dead.
-    EDMUND: Okay.
-    PLAYER: No reaction?
-    EDMUND: I’ve only just met her.
-    EDMUND: So no.
-===
-title: ED03OL
----
-// after revealing shes been murdered
--> PLAYER: There’s a chance Olivia’s been murdered.
-    EDMUND: Okay.
-    PLAYER: Do you know if she has any enemies here?
-    EDMUND: No, I barely knew the girl.
-    PLAYER: Well I’ll still need to ask you some questions anyways.
-    EDMUND: ...
-===
-
-title: EDCS
----
-// Start of loop?
-PLAYER: I need to ask you some questions
+//after finding Olivia's body and/or requires photo of body clue
+PLAYER: I found Olivia. She’s been murdered.
+EDMUND: Okay.
+PLAYER: No reaction?
+EDMUND: I’ve only just met her.
+EDMUND: So no.
+PLAYER: Do you know if she has any enemies here?
+EDMUND: No, I barely knew the girl.
+PLAYER: Well I’ll still need to ask you some questions anyways.
 EDMUND: ...
 ===
 
-title: Ed04
+title: EDStartConvo
+---
+PLAYER: I need to ask you some questions.
+EDMUND: ...
+===
+title: EDEndConvo
+---
+PLAYER: "That'll be all."
+===
+
+title: ED04
 ---
 // Alibi
 PLAYER: Where were you before and after the meeting?
@@ -50,64 +47,17 @@ EDMUND: As I’ve said before, I was in my room. I don’t really talk to anyone
 title: ED05
 ---
 //On being a Skeleton
--> PLAYER: So what’s it like as a skeleton?
-    EDMUND: ...
-    EDMUND: It’s like being cursed.
-    PLAYER: I’ve never been cursed before.
-    EDMUND: Imagine living in absolute nothingness.
-    EDMUND: To know you’ll never feel a summer breeze again.
-    EDMUND: To forget what a delicious steak tastes like.
-    EDMUND: ...
-    EDMUND: It’s something like that.
-    PLAYER: I-I see. I’m sorry to hear that.
+PLAYER: So what’s it like as a skeleton?
+EDMUND: ...
+EDMUND: It’s like being cursed.
+PLAYER: I’ve never been cursed before.
+EDMUND: Imagine living in absolute nothingness.
+EDMUND: To know you’ll never feel a summer breeze again.
+EDMUND: To forget what a delicious steak tastes like.
+EDMUND: ...
+EDMUND: It’s something like that.
 ===
 
-//title: EDOD
-//---
-//PLAYER: Did you notice the drink that she had?
-//EDMUND: What of it?
-//PLAYER: Did you see anyone tamper with it?
-//EDMUND: No? Do you think that’s what killed her?
-//PLAYER: It’s a possibility I’m looking into.
-//===
-
-
-//title:ED06MNMR
-//---
-// unlocked after learning from Minerva, or asking Mr. Wraithwood
-//PLAYER: Did you know that Olivia was a witch?
-//EDMUND: Nope. Didn’t really know her at all.
-//===
-
-//title: ED07MN
-//---
-// unlocked after learning from Minerva
-//PLAYER: Did you know she was a necromancer?
-//EDMUND: No. Again I never really knew her.
-//===
-
-
-//title: ED08OE
-//---
-//Show him the picture of O + E 
-//PLAYER: Any idea on who you think is in this picture with Olivia?
-//EDMUND: Could be anyone.
-//PLAYER: Seems like she was close with whoever this was.
-//EDMUND: ...Sure. Didn’t know her well enough.
-//===
-
-//title: ED09OL
-//---
-//PLAYER: So Olivia.
-//EDMUND: What about her?
-//PLAYER: You gave her a look earlier in the lobby.
-//EDMUND: It was the same look I gave you.
-//EDMUND: I’m surprised there’s two humans working here.
-//PLAYER: Is it really that odd?
-//EDMUND: ... You’ve seen the other guests here right?
-//EDMUND: Most humans just run off scared.
-//PLAYER: ...
-//===
 
 title: ED10BT
 ---
@@ -132,7 +82,7 @@ title: ED12MN
 // unlocked after asking Minerva about Edmund
 PLAYER: Minerva mentioned you were really insistent about her dealing in necromancy. What exactly did you want her to do?
 EDMUND: I wanted her to undo me.
-PLAYER: … What?
+PLAYER: ...What?
 EDMUND: I wanted her to undo the resurrection spell that’s been cast on me.
 PLAYER: And she turned you down?
 EDMUND: Yeah. Something about hating necromancy. Some witch she is.
@@ -148,9 +98,16 @@ EDMUND: Maybe? I don’t really care. He doesn’t seem capable of much outside 
 
 title: ED14MX
 ---
+// unlocked after talk about max flirting with ed flag
 PLAYER: Max seems pretty flirty, huh?
 EDMUND: Seems that way.
 PLAYER: Did you hear about him making a pass on Olivia?
 EDMUND: No, but it’s unsurprising. Did she turn him down? He doesn’t seem like her type.
-PLAYER: Apparently, she did turn him down.
+===
+
+title: ED15MR
+---
+PLAYER: Do you know anything about Mr. Wraithwood?
+EDMUND: That’s the guy the estate is named after. Can’t find much on him. It’s strange.
+
 ===

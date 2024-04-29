@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Self Made/Characters/Edmund_idle.prefab.meta
+guid: 9d1082e4d6f0afb4287aca27b8c73313
+PrefabImporter:
+========
 guid: 325356a0b921bf743b783c8a03a18fb6
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> main:Assets/Inventory/Items/Prefabs/Inventory images.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
