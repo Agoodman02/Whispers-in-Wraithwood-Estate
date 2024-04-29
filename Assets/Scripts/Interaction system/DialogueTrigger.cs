@@ -105,6 +105,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
     }
+    void Update()
+    {
+        CheckIfPlayerSick();
+    }
 
     // This function should be run every time the player obtains a clue. This should run AFTER any dialogue for obtaining a clue is completed.
     public void CheckIfPlayerSick()
