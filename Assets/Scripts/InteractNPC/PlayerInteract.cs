@@ -11,7 +11,16 @@ public class PlayerInteract : MonoBehaviour
    
    PlayerControler player;
 
-   UnityEngine.Vector3 myVector;
+   UnityEngine.Vector3 minervaCoor;
+   UnityEngine.Vector3 minervaRot;
+   UnityEngine.Vector3 maxwellCoor;
+   UnityEngine.Vector3 maxwellRot;
+   UnityEngine.Vector3 bartCoor;
+   UnityEngine.Vector3 bartRot;
+   UnityEngine.Vector3 edmundCoor;
+   UnityEngine.Vector3 edmundRot;
+   UnityEngine.Vector3 wraithwoodCoor;
+   UnityEngine.Vector3 wraithwoodRot;
    Rigidbody m_Rigidbody;
 
    public bool enterCollider= false;
@@ -19,7 +28,21 @@ public class PlayerInteract : MonoBehaviour
 
    private void Start() 
    {
-        myVector = new UnityEngine.Vector3(0.0f,0.0f,0.0f);
+        minervaCoor = new UnityEngine.Vector3(-24.49f,0.0f,23.88f);
+        minervaRot = new UnityEngine.Vector3(0f,0);
+
+        maxwellCoor = new UnityEngine.Vector3(-12.01f,0.0f,10.46f);
+        maxwellRot = new UnityEngine.Vector3(0f,0);
+
+        bartCoor = new UnityEngine.Vector3(23.84f,0.0f,33.63f);
+        bartRot = new UnityEngine.Vector3(0f,0);
+
+        edmundCoor = new UnityEngine.Vector3(0f,0f,0f);
+        edmundRot = new UnityEngine.Vector3(0f,0);
+
+        wraithwoodCoor = new UnityEngine.Vector3(0f,0f,0f);
+        wraithwoodRot = new UnityEngine.Vector3(0f,0);
+
         m_Rigidbody = GetComponent<Rigidbody>();
    }
 
@@ -45,35 +68,35 @@ public class PlayerInteract : MonoBehaviour
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Bartholomew_Vampire);
                             Debug.Log("Interact with Bart");
-                            player.TeleportPlayer(myVector, myVector, false);
+                            player.TeleportPlayer(bartCoor, bartRot, false);
                             Bartholomew_Vampire.StartConversation();
                         } 
                     if (collider.gameObject.name == "Edmund_Skeleton") // EdmundMain.yarn
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Edmund_Skeleton);
                             Debug.Log("Interact with Edmund");
-                            player.TeleportPlayer(myVector, myVector, false);
+                            player.TeleportPlayer(edmundCoor, edmundRot, false);
                             Edmund_Skeleton.StartConversation();
                         } 
                     if (collider.gameObject.name == "Max_Werewolf") // MaxwellMain.yarn
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Max_Werewolf);
                             Debug.Log("Interact with Maxwell");
-                            player.TeleportPlayer(myVector, myVector, false);
+                            player.TeleportPlayer(maxwellCoor, maxwellRot, false);
                             Max_Werewolf.StartConversation();
                         } 
                     if (collider.gameObject.name == "Minerva_Witch") //Minerva Main
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Minerva_Witch);
                             Debug.Log("Interact with Minerva");
-                            player.TeleportPlayer(myVector, myVector, false);
+                            player.TeleportPlayer(minervaCoor, minervaRot, false);
                             Minerva_Witch.StartConversation();
                         } 
                     if (collider.gameObject.name == "Mr.Wraithwood") //Wraithwood Main
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable MrWraithwood);
                             Debug.Log("Interact with Wraithwood");
-                            player.TeleportPlayer(myVector, myVector, false);
+                            player.TeleportPlayer(wraithwoodCoor, wraithwoodRot, false);
                             MrWraithwood.StartConversation();
                         } 
                 }
