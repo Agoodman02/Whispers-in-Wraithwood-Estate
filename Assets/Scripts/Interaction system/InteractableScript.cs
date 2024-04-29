@@ -12,15 +12,20 @@ public class InteractableScript : MonoBehaviour
     public Item Item;
 
     [Header("Interaction Objects")]
-    public GameObject wardrobeBlockingDoor;
+    public GameObject bookShelf;
     public GameObject JewelryBoxLid;
-    public GameObject janitorClosetDoor;
     public GameObject closedVent;
     public GameObject openedVent;
     public GameObject bloodyPen;
     public GameObject picture1;
-    public GameObject picture2;
     public GameObject oliviaBody;
+
+    [Header ("Candles")]
+    public GameObject redCandle;
+    public GameObject blueCandle;
+    public GameObject greenCandle;
+    public GameObject pinkCandle;
+    public GameObject purpleCandle;
 
     [Header("Sound Effects")]
     public AudioSource ventSound;
@@ -56,14 +61,12 @@ public class InteractableScript : MonoBehaviour
 
 
     InputMap actions;
-    public bool nearboard = false;
+    [HideInInspector] public bool nearboard = false;
 
     private List<Item> toremove;
 
     void Awake()
     {
-
-
         actions = new InputMap();
 
         actions.Player3D.Enable();
@@ -92,31 +95,32 @@ public class InteractableScript : MonoBehaviour
                     //Picture 1
                     case 1:
                         clue18.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Bloody Pen
                     case 2:
                         clue17.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Hex Bag
                     case 3:
                         clue19.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Poison Cup
                     case 4:
                         clue21.SetActive(true);
+                        //Items.items.Remove(i);
                         break;
                     //Corpse Pic
                     case 5:
                         clue16.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     //Spellbook
                     case 6:
                         clue20.SetActive(true);
-                        Items.items.Remove(i);
+                        //Items.items.Remove(i);
                         break;
                     default:
                         return;
@@ -125,9 +129,13 @@ public class InteractableScript : MonoBehaviour
         }
     }
 
-    public void MoveWardrobe()
+    public void MoveBookShelf()
     {
-        wardrobeBlockingDoor.SetActive(false);
+        if (pinkCandle.activeSelf & greenCandle.activeSelf & blueCandle.activeSelf & redCandle.activeSelf & purpleCandle.activeSelf)
+        {
+            bookShelf.SetActive(false);
+        }
+
     }
 
     public void OpenJewelryBox()
@@ -161,5 +169,54 @@ public class InteractableScript : MonoBehaviour
     public void InteractWithBody()
     {
         InventoryManager.Instance.Add(Item);
+    }
+
+    public void AddCandle()
+    {
+        //purple candle
+        foreach (Item i in Items.items)
+        {
+            if (i.id == 10)
+            {
+                purpleCandle.SetActive(true);
+                Items.items.Remove(i);
+            }
+        }
+        //green candle
+        foreach (Item i in Items.items)
+        {
+            if (i.id == 11)
+            {
+                greenCandle.SetActive(true);
+                Items.items.Remove(i);
+            }
+        }
+        //pink candle
+        foreach (Item i in Items.items)
+        {
+            if (i.id == 12)
+            {
+                pinkCandle.SetActive(true);
+                Items.items.Remove(i);
+            }
+        }
+        //blue candle
+        foreach (Item i in Items.items)
+        {
+            if (i.id == 13)
+            {
+                blueCandle.SetActive(true);
+                Items.items.Remove(i);
+            }
+        }
+        //red candle
+        foreach (Item i in Items.items)
+        {
+            if (i.id == 14)
+            {
+                redCandle.SetActive(true);
+                Items.items.Remove(i);
+            }
+        }
     }
 }
