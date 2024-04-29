@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EndingSlideshow : MonoBehaviour
 {
+    [Header("Slides")]
     public GameObject slide1;
     public GameObject slide2;
     public GameObject slide3;
     public GameObject slide4;
     public GameObject slide5;
     public GameObject slide6;
-    public GameObject slideshowCanvas;
 
-    public AudioSource slideshowMusic;
-    public AudioSource backgroundMusic;
+    [Header("Canvases")]
+    public GameObject slideshowCanvas;
     public GameObject playerUI;
 
     public void Awake()
     {
         //make sure things aren't ugly
-        tutorial.SetActive(false);
+        slideshowCanvas.SetActive(false);
     }
 
     public void openPage1()
@@ -61,9 +61,6 @@ public class EndingSlideshow : MonoBehaviour
 
     public void startSlideshow()
     {
-        tutorial.SetActive(true);
-
-        Destroy(backgroundMusic);
-        slideshowMusic.Play();
+        slideshowCanvas.SetActive(true);
     }
 }
