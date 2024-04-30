@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //Pretty sure I got this right. If not feel free to correct it. I did not test it.
+//Leave Skye to dialogue trigger.
 public class TutorialInteraction : MonoBehaviour
 {
     [SerializeField] InventoryManager inventoryManager;
@@ -13,10 +14,11 @@ public class TutorialInteraction : MonoBehaviour
 
     [Header("Interaction Objects")]
 
+    public GameObject TutorialFlyer;
     public GameObject PoisonCup;
-    //Is that the name?
-    //public GameObject tutorialflyer;
 
+    //Add in scene transition to full level after player picks up poison cup.
+    //Also maybe have the player forced to pick up flyer first then the cup.
 
     //Idk if I need this part:
 
@@ -27,14 +29,10 @@ public class TutorialInteraction : MonoBehaviour
 
     void Awake()
     {
-
-
         actions = new InputMap();
 
         actions.Player3D.Enable();
         
-
-        //new hotness
         Items.clearinv();
     } */
 
@@ -42,7 +40,7 @@ public class TutorialInteraction : MonoBehaviour
     {
 
     }
-    public void GrabPoster()
+    public void GrabFlyer()
     {
         InventoryManager.Instance.Add(Item);
     }
