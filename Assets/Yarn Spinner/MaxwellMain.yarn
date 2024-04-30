@@ -1,0 +1,156 @@
+﻿title: MXStartConvo
+---
+MAXWELL: Aagh! This night couldn’t get any worse... Woah! It’s you. Uh, hey! How can I help ya?
+===
+
+title: MX01OL
+---
+// Before the body is found.
+PLAYER: Maxwell, you wouldn’t know where Olivia is, do you?
+MAXWELL: Wait, where she is? No! Do you?
+PLAYER: No… I don’t.
+// I merged MX01 & MX02. MX01OL just leads into MX02 anyway.
+PLAYER: Could you tell me if anything happened during the meeting?
+MAX: Eh, uh, not really, dude. Talked about the normal stuff. No need to worry.
+PLAYER: I’m here to help, Max. Did something happen?
+MAX: Ugh, fine.
+MAX: Your coworker totally dug into me!
+PLAYER: Olivia?
+MAX: At the end of the meeting, she swung by. I asked her if she’d like to hang out after hours, you know, ask for her number... and she totally lays into me with all sorts of insults! She went on and on! You should’ve seen the grin on the vampire’s face, too! I’d never been more humiliated! // deserved
+PLAYER: Ah, I see...
+MAX: Ugh, and she told me she was married too! Could you imagine if her husband was around? What a nightmare!
+===
+
+title: MX03BD
+---
+// After body found, and you've told Maxwell that Olivia is dead. (Don't worry, the requirements are handled in DialogueTrigger.cs.)
+PLAYER: Could you tell me if anything happened during the meeting?
+MAX: Eh, uh, not really, dude. Talked about the normal stuff. No need to worry.
+PLAYER: I’m here to help, Max. Did something happen?
+MAX: Ugh, fine.
+MAX: Your coworker totally dug into me!
+PLAYER: Olivia?
+MAX: At the end of the meeting, she swung by. I asked her if she’d like to hang out after hours, you know, ask for her number... and she totally lays into me with all sorts of insults! She went on and on! You should’ve seen the grin on the vampire’s face, too! I’d never been more humiliated!
+PLAYER: Ah, I see...
+MAX: Ugh, and she told me she was married too! Could you imagine if her husband was around? What a nightmare!
+MAX: And now she’s dead… I feel like I’m going crazy!
+PLAYER: (...I didn’t know Olivia was married. I guess she does wear that ring on her finger.) 
+===
+
+title: MX04BL
+---
+// after speaking about the meeting
+// see MX13BL
+// if player has not confronted Max about the blood
+PLAYER: Did you see Olivia after the meeting?
+MAX: Huh? Uh, not since she laid into me and walked out. I wandered around a bit to see if someone else was around I’d want to talk to and went to the bathroom to freshen up, but I didn’t see her.
+===
+
+title: MX05
+---
+// after speaking about the meeting
+// see MX13BL
+// if player has confronted Max about the blood
+PLAYER: Did you see Olivia after the meeting?
+MAX: No, sorry... I wandered around for a bit, made sure the coast was clear, and snuck into the kitchen for a snack, went to the bathroom to wash up, then headed right back to my room.
+===
+
+title: MX06PSN
+---
+//If the player’s clue % is at #2 or higher and the player has not 
+//found out the cause of feeling sick, only one dialogue will be 
+//available to the player for each character. This also will play for 
+//the first time the first time the player talks to Maxwell at above
+//#2. Otherwise, see “When talking to Maxwell” (MXStartConvo)
+// ^^ ...huh?
+//Yeah, don't worry about it. LOL.
+PLAYER: Maxwell...
+MAX: Woah! Hey, are you feeling alright? You look, even *smell* like you’re about to keel over. You want to lie down?
+PLAYER: I-I’ll be fine. I just feel under the weather all of a sudden.
+// *Note: [MX-07-PSN] was removed from the final writing script.
+PLAYER: You didn’t see anything happen after the meeting by the front desk, did you?
+MAXWELL: No...I was kind of busy at that time.
+MAXWELL: Don’t you guys have a nurse or something? You probably should get checked out. //This ends the conversation.
+===
+
+title: MX08OL
+---
+// if player talked to Minerva first about being poisoned
+PLAYER: I’m sorry, Maxwell, but...Olivia’s been murdered.
+MAXWELL: Wh-What? You’re...you must be kidding!
+MAXWELL: That’s not something you should be joking about!
+PLAYER: ...
+MAXWELL: Oh my God. No...no way...
+PLAYER: I’m sorry, but... I need to ask you some questions. Alright?
+MAXWELL: O-Okay. ...Fine. No problem. Ask away! I’ll tell you all I know!
+===
+
+title: MX09BT
+---
+// after telling Max about Olivia being murdered
+PLAYER: What do you know about Bartholomew?
+MAXWELL: That the weak, stuck-up, good-for-nothing vampire was probably the one who did it! I knew Bart was always the worst kind of guy, but I'd never thought he'd sink so low as to kill a belle like that!
+MAX: Call it a gut feeling, but if anyone were to snap and kill someone, it’d be that parasite!
+PLAYER: You and Bartholomew don't get along, do you?
+MAXWELL: Nope, sure don’t. I invite the guy out for drinks one day and he calls me a "lowborn mangy mutt with no sense of taste or style!" Can you believe that, dude?
+PLAYER: He is pretty...aloof.
+MAXWELL: And he said I stink! He's the guy who stinks like a swamp if you ask me! I'm the one who's putting on the nicest cologne!
+PLAYER: Ah, of course...
+MAXWELL: He's always been like that. All high and mighty. He tries to keep up this...vibe, you know? Where you can't approach him. He acts all pure and untouchable.
+MAXWELL: Listen, cutie: I'm telling you this for your own good. I'd stay away from him. He's always been nothing but trouble.
+MAXWELL: See, Bart...he's bit someone before. Had a bad day and gave into an urge.
+PLAYER: Did he...?
+MAXWELL: Nah, he didn't kill them the first time. He didn't bite a major artery. I bet there's a lot more details he didn't tell us, details he'll never share. Anyways, you didn't hear it from me, alright? You stay safe.
+===
+
+title: MX10MN
+---
+PLAYER: Tell me more about Minerva and what she did tonight.
+MAXWELL: Minerva? Cute. Personality? Nice, but not my type.
+PLAYER: Max, please don’t joke around!
+MAXWELL: Yeesh, sorry.
+MAXWELL: As far as I know, she just went back to her room to do some reading. She’s always been a big study-bug. If there’s something you don’t get and don’t want to get Bart’s sass, you ask her.
+PLAYER: ...And get her sass instead?
+MAXWELL: It’s a lot less frustrating coming from her!
+===
+
+title: MX10MR
+---
+PLAYER: Do you know anything about Mr. Wraithwood?
+MAXWELL: The owner of this place? He’s like, old, isn’t he?
+===
+
+title: MX12ED
+---
+PLAYER: Please tell me more about Edmund.
+MAXWELL: Hmm… Well, he was pretty quiet, like normal.
+MAXWELL: He’s the old-fashioned sort. And not really fun to be around. He lacks a sort of drive, you know?
+PLAYER: A drive?
+MAXWELL: I can’t even hate the guy. It’s just rare that he wants to do much of anything.
+MAXWELL: And that includes tonight. I didn’t spot him after the meeting
+===
+
+title: MX13BL
+---
+// If the player has spoken to him about the meeting (and getting 
+//rejected by Olivia), and if the player has been told about the blood
+//on him, the player has the ability to bring it up with Maxwell:
+PLAYER: Max, you were spotted with blood all over you. Care to explain?
+MAX: …
+MAX: …Shoot…
+MAX: Listen, I…I got really upset after Olivia rejected me right there in front of everyone. You know that feeling in your gut when you’ve been rejected and your world’s tilting from left to right? I needed to do something to clear my nerves, so…
+PLAYER: So…
+MAXWELL: I ate that half-defrosted pig in the fridge.
+PLAYER: …
+PLAYER: Huh?
+MAXWELL: Listen, I’m so sorry! I’ll pay for it! It’s just, when I get upset, I need to do something to get it out of my system!
+PLAYER: No, no, it’s…it’s alright. I’ll talk about it with the owner later.
+PLAYER: So, all you did was eat the pig?
+MAX: Yeah…sorry, I know that’s not my most flattering moment.
+===
+
+title: MXEndConvo
+---
+PLAYER: That’s all for now. Thanks for helping me out.
+MAX: No problem! Come back anytime!
+===

@@ -1,0 +1,113 @@
+﻿title: ED01OL
+---
+//looking for Olivia
+PLAYER: Have you seen Olivia?
+EDMUND: No. I’ve just been here after the meeting.
+===
+
+title: ED02BD
+---
+//after finding Olivia's body and/or requires photo of body clue
+PLAYER: I found Olivia. She’s been murdered.
+EDMUND: Okay.
+PLAYER: No reaction?
+EDMUND: I’ve only just met her.
+EDMUND: So no.
+PLAYER: Do you know if she has any enemies here?
+EDMUND: No, I barely knew the girl.
+PLAYER: Well I’ll still need to ask you some questions anyways.
+EDMUND: ...
+===
+
+title: EDStartConvo
+---
+PLAYER: I need to ask you some questions.
+EDMUND: ...
+===
+title: EDEndConvo
+---
+PLAYER: "That'll be all."
+===
+
+title: ED04
+---
+// Alibi
+PLAYER: Where were you before and after the meeting?
+EDMUND: I was in my room. I don’t really talk to anyone else outside of meetings.
+===
+
+title: ED04OL
+---
+// asked about Olivia before
+PLAYER: Where were you before and after the meeting?
+EDMUND: As I’ve said before, I was in my room. I don’t really talk to anyone else outside of meetings.
+===
+
+
+title: ED05
+---
+//On being a Skeleton
+PLAYER: So what’s it like as a skeleton?
+EDMUND: ...
+EDMUND: It’s like being cursed.
+PLAYER: I’ve never been cursed before.
+EDMUND: Imagine living in absolute nothingness.
+EDMUND: To know you’ll never feel a summer breeze again.
+EDMUND: To forget what a delicious steak tastes like.
+EDMUND: ...
+EDMUND: It’s something like that.
+===
+
+
+title: ED10BT
+---
+PLAYER: What do you know about Bartholomew?
+EDMUND: He’s a vampire. Never really talked to him outside of meetings. 
+PLAYER: Any reason?
+EDMUND: No. We don’t gel is all.
+EDMUND: …Hates humans, though.
+PLAYER: R-really? 
+EDMUND: Has a lot of issues with them. 
+EDMUND: (…) Can’t really say I care.
+===
+
+title: ED11MN
+---
+PLAYER: What do you think about Minerva?
+EDMUND: She’s nice enough. And I figure having a witch on my good side isn’t a bad idea, so we get along. Beats the opposite.
+===
+
+title: ED12MN
+---
+// unlocked after asking Minerva about Edmund
+PLAYER: Minerva mentioned you were really insistent about her dealing in necromancy. What exactly did you want her to do?
+EDMUND: I wanted her to undo me.
+PLAYER: ...What?
+EDMUND: I wanted her to undo the resurrection spell that’s been cast on me.
+PLAYER: And she turned you down?
+EDMUND: Yeah. Something about hating necromancy. Some witch she is.
+===
+
+title: ED13MX
+---
+PLAYER: What do you think about Max?
+EDMUND: The werewolf? He’s an idiot. And he’s loud.
+PLAYER: Okay, and do you think he’s capable of killing someone?
+EDMUND: Maybe? I don’t really care. He doesn’t seem capable of much outside of talking someone to death.
+===
+
+title: ED14MX
+---
+// unlocked after talk about max flirting with ed flag
+PLAYER: Max seems pretty flirty, huh?
+EDMUND: Seems that way.
+PLAYER: Did you hear about him making a pass on Olivia?
+EDMUND: No, but it’s unsurprising. Did she turn him down? He doesn’t seem like her type.
+===
+
+title: ED15MR
+---
+PLAYER: Do you know anything about Mr. Wraithwood?
+EDMUND: That’s the guy the estate is named after. Can’t find much on him. It’s strange.
+
+===

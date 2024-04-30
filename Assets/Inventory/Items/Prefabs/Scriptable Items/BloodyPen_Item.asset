@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   itemName: Bloody Pen
+  itemDescription: A pen dripping with blood. It was found in a vent near the janitor
+    closet.
   icon: {fileID: 21300000, guid: 1d5e72b206d81f142af53eb5f2aee163, type: 3}
+  ItemInspectionImage: {fileID: 2800000, guid: 431dd77b4d2a4cd47bc1feb12d01e013, type: 3}
   prefab: {fileID: 0}
