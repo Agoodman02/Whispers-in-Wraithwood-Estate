@@ -30,6 +30,7 @@ public class InteractableScript : MonoBehaviour
 
     [Header("Sound Effects")]
     public AudioSource ventSound;
+    public AudioSource bookshelfSound;
 
     [Header("Bart Clues")]
     public GameObject clue1;
@@ -164,6 +165,7 @@ public class InteractableScript : MonoBehaviour
         if (pinkCandle.activeSelf & greenCandle.activeSelf & blueCandle.activeSelf & redCandle.activeSelf & purpleCandle.activeSelf)
         {
             bookShelf.SetActive(false);
+            bookshelfSound.Play();
         }
 
     }

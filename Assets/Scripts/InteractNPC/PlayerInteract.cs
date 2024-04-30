@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-   
+    private DialogueTrigger dialogueTrigger;
    PlayerControler player;
 
    UnityEngine.Vector3 minervaCoor;
@@ -49,6 +49,8 @@ public class PlayerInteract : MonoBehaviour
    private void Awake()
    {
         player = PlayerControler.player;
+
+        dialogueTrigger = GetComponent<DialogueTrigger>();
    }
 
    private void Update() 
@@ -69,36 +71,40 @@ public class PlayerInteract : MonoBehaviour
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Bartholomew_Vampire);
                             Debug.Log("Interact with Bart");
                             player.TeleportPlayer(bartCoor, bartRot, false);
-                            Bartholomew_Vampire.StartConversation();
+                            dialogueTrigger.TalkToCharacter();
                         } 
                     if (collider.gameObject.name == "Edmund_Skeleton") // EdmundMain.yarn
                         {
-                            collider.TryGetComponent<NPCInteractable>(out NPCInteractable Edmund_Skeleton);
+                            collider.TryGetComponent<NPCInteractable>(out NPCInteractable Edmund_Skeleton);  //does this need to be renamed?
                             Debug.Log("Interact with Edmund");
-                            player.TeleportPlayer(edmundCoor, edmundRot, false);
-                            Edmund_Skeleton.StartConversation();
-                        } 
+                            player.TeleportPlayer(edmundCoor, edmundRot, false);    //does this work?
+                            //Edmund_Skeleton.StartConversation();
+                        dialogueTrigger.TalkToCharacter();
+                    } 
                     if (collider.gameObject.name == "Max_Werewolf") // MaxwellMain.yarn
                         {
-                            collider.TryGetComponent<NPCInteractable>(out NPCInteractable Max_Werewolf);
+                            //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Max_Werewolf);
                             Debug.Log("Interact with Maxwell");
                             player.TeleportPlayer(maxwellCoor, maxwellRot, false);
-                            Max_Werewolf.StartConversation();
-                        } 
+                            //Max_Werewolf.StartConversation();
+                        dialogueTrigger.TalkToCharacter();
+                    } 
                     if (collider.gameObject.name == "Minerva_Witch") //Minerva Main
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable Minerva_Witch);
                             Debug.Log("Interact with Minerva");
                             player.TeleportPlayer(minervaCoor, minervaRot, false);
-                            Minerva_Witch.StartConversation();
-                        } 
+                            //Minerva_Witch.StartConversation();
+                        dialogueTrigger.TalkToCharacter();
+                    } 
                     if (collider.gameObject.name == "Mr.Wraithwood") //Wraithwood Main
                         {
                             collider.TryGetComponent<NPCInteractable>(out NPCInteractable MrWraithwood);
                             Debug.Log("Interact with Wraithwood");
                             player.TeleportPlayer(wraithwoodCoor, wraithwoodRot, false);
-                            MrWraithwood.StartConversation();
-                        } 
+                            //MrWraithwood.StartConversation();
+                        dialogueTrigger.TalkToCharacter();
+                    } 
                 }
             }
             player.DoCameraControl = true;
