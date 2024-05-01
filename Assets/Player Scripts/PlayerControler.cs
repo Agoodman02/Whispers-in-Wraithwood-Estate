@@ -28,6 +28,7 @@ public class PlayerControler : MonoBehaviour
 
     private float camrotx;
     private float camroty;
+    private float walktime = 0;
 
     //Inventory Stuff
     public InventoryManager inventoryManager;
@@ -67,6 +68,8 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        walktime += Time.deltaTime;
+
         if (DoCameraControl)
         {
             float mousex = Input.GetAxisRaw("Mouse X") * MouseSensitivity.x;
@@ -194,19 +197,13 @@ public class PlayerControler : MonoBehaviour
             return;
         }
 
-        float t = 0;
-
-        if (t >= FootStepFreq)
+        if (walktime >= FootStepFreq)
         {
-            t = 0;
+            walktime = 0;
 
             FootSteps.pitch = Random.Range(0f, 3f);
             FootSteps.clip = FootStepSounds[Random.Range(0, FootStepSounds.Length)];
             FootSteps.Play();
-        }
-        else
-        {
-            t += Time.deltaTime;
         }
     }
 }

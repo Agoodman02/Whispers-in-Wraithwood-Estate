@@ -190,7 +190,7 @@ MonoBehaviour:
   FootSteps: {fileID: 271016617019699060}
   FootStepSounds:
   - {fileID: 8300000, guid: 14f71940de6d2924aa713ed2dd2b06ed, type: 3}
-  FootStepFreq: 0
+  FootStepFreq: 0.4
   inventoryManager: {fileID: 0}
   allowPickup: 0
 --- !u!1 &2180631405611704457
