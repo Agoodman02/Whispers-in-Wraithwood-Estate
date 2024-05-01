@@ -37,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
         bartCoor = new UnityEngine.Vector3(23.84f,0.0f,33.63f);
         bartRot = new UnityEngine.Vector3(0f,0);
 
-        edmundCoor = new UnityEngine.Vector3(0f,0f,0f);
+        edmundCoor = new UnityEngine.Vector3(0f, 0f, 0f);
         edmundRot = new UnityEngine.Vector3(0f,0);
 
         wraithwoodCoor = new UnityEngine.Vector3(0f,0f,0f);
@@ -49,8 +49,6 @@ public class PlayerInteract : MonoBehaviour
    private void Awake()
    {
         player = PlayerControler.player;
-
-        dialogueTrigger = GetComponent<DialogueTrigger>();
    }
 
    private void Update() 
@@ -75,7 +73,7 @@ public class PlayerInteract : MonoBehaviour
                         } 
                     if (collider.gameObject.name == "Edmund_Skeleton") // EdmundMain.yarn
                         {
-                            collider.TryGetComponent<NPCInteractable>(out NPCInteractable Edmund_Skeleton);  //does this need to be renamed?
+                            collider.TryGetComponent<DialogueTrigger>(out DialogueTrigger Edmund_Skeleton);  //does this need to be renamed?
                             Debug.Log("Interact with Edmund");
                             player.TeleportPlayer(edmundCoor, edmundRot, false);    //does this work?
                             //Edmund_Skeleton.StartConversation();
