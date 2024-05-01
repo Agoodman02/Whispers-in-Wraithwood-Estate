@@ -28,19 +28,21 @@ public class PlayerInteract : MonoBehaviour
 
    private void Start() 
    {
-        minervaCoor = new UnityEngine.Vector3(-24.49f,0.0f,23.88f);
+        //If NPCs get moved, these cords must change
+        //Find cords by placing player prefab and front and copy tranform values
+        minervaCoor = new UnityEngine.Vector3(-24.02899f, 0.0f, 20.2725f);
         minervaRot = new UnityEngine.Vector3(0f,0);
 
-        maxwellCoor = new UnityEngine.Vector3(-12.01f,0.0f,10.46f);
+        maxwellCoor = new UnityEngine.Vector3(-13.09594f, 0.0f, 9.612762f);
         maxwellRot = new UnityEngine.Vector3(0f,0);
 
-        bartCoor = new UnityEngine.Vector3(23.84f,0.0f,33.63f);
+        bartCoor = new UnityEngine.Vector3(24.82226f, 0.0f, 35.75872f);
         bartRot = new UnityEngine.Vector3(0f,0);
 
         edmundCoor = new UnityEngine.Vector3(10.79212f, 0.006152828f, 9.04614f);
         edmundRot = new UnityEngine.Vector3(0f,0);
 
-        wraithwoodCoor = new UnityEngine.Vector3(0f,0f,0f);
+        wraithwoodCoor = new UnityEngine.Vector3(-25.50302f, 0f, 32.30211f);
         wraithwoodRot = new UnityEngine.Vector3(0f,0);
 
         m_Rigidbody = GetComponent<Rigidbody>();
