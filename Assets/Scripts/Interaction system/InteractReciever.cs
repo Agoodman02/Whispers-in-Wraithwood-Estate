@@ -12,7 +12,7 @@ public class InteractReciever : MonoBehaviour
 
     public void Interacted()
     {
-        Debug.Log("interact recieved by player");
+        //Debug.Log("interact recieved by player");
         onTrigger.Invoke();
     }
 
