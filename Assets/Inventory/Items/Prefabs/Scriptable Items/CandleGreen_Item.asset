@@ -16,6 +16,6 @@ MonoBehaviour:
   itemName: Green Candle
   itemDescription: A mysterious green candle. It feels oddly heavier than a normal
     candle.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b410ca56f32410e49b41023a37a374b5, type: 3}
   ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}
