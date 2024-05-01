@@ -154,7 +154,7 @@ public class InteractableScript : MonoBehaviour
                         //Items.items.Remove(i);
                         break;
                     default:
-                        return;
+                        break;
                 }
             }
         }
