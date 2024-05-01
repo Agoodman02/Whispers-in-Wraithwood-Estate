@@ -31,6 +31,7 @@ public class InteractableScript : MonoBehaviour
     [Header("Sound Effects")]
     public AudioSource ventSound;
     public AudioSource bookshelfSound;
+    public AudioSource meowSound;
 
     [Header("Bart Clues")]
     public GameObject clue1;
@@ -167,7 +168,6 @@ public class InteractableScript : MonoBehaviour
             bookShelf.SetActive(false);
             bookshelfSound.Play();
         }
-
     }
 
     public void OpenJewelryBox()
@@ -201,6 +201,11 @@ public class InteractableScript : MonoBehaviour
     public void InteractWithBody()
     {
         InventoryManager.Instance.Add(Item);
+    }
+
+    public void CatMeow()
+    {
+        meowSound.Play();
     }
 
     public void AddCandle()
