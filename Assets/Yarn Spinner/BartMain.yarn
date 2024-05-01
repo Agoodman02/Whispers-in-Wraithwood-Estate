@@ -86,15 +86,6 @@ BART: Don’t call me Bart unless you want to feel even worse. But yes, you do a
 //BART: Didn’t seem like it, but I know little of that sad sack of bones’ background.
 //===
 
-title: BT07MX
----
-// after max has said that Bart has bitten a human
-PLAYER: Apparently, you’ve bitten into a human before. Is it true?
-BART: …curses upon whoever broke the sanctity of our meeting discussions.
-PLAYER: So it is?
-BART: It was eons ago. I hardly remember it, nor would I repeat that blunder.
-===
-
 title: BT08ED
 ---
 PLAYER: What do you know about Edmund?
@@ -117,7 +108,7 @@ PLAYER: Please do.
 BART: Listen, human, I’d like to spend as little of your short lifespan with you as possible, so save us both the time and leave.
 ===
 
-title: BT11OC // self made, could change
+title: BT11OC
 ---
 PLAYER: Ugh, Bart, I’m feeling dreadful…
 BART: Don’t call me Bart unless you want to feel even worse. But yes, you do appear to be in poor health. Good luck with that.
