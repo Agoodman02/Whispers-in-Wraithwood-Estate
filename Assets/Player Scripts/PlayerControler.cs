@@ -13,6 +13,9 @@ public class PlayerControler : MonoBehaviour
     public float PlayerWalkSpeed = 50f;
     public float PlayerReach = 5f;
     [SerializeField] public Vector2 MouseSensitivity = new Vector2(125, 125); //serialized for saving
+    public AudioSource FootSteps;
+    public AudioClip[] FootStepSounds;
+    public float FootStepFreq;
 
     Vector2 MovementDir;
     Vector3 Movement3d;
@@ -75,6 +78,8 @@ public class PlayerControler : MonoBehaviour
 
             selfphys.rotation = Quaternion.Euler(0, camroty, 0);
             CameraCenter.transform.localEulerAngles = Vector3.right * camrotx;
+
+            DoWalkSound();
         }
 
         MovementDir = actions.Player3D.Movement.ReadValue<Vector2>();
@@ -177,6 +182,31 @@ public class PlayerControler : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    void DoWalkSound()
+    {
+        float walkingspeed = (Mathf.Abs(selfphys.velocity.x) + Mathf.Abs(selfphys.velocity.z));
+
+        if (walkingspeed < .1)
+        {
+            return;
+        }
+
+        float t = 0;
+
+        if (t >= FootStepFreq)
+        {
+            t = 0;
+
+            FootSteps.pitch = Random.Range(0f, 3f);
+            FootSteps.clip = FootStepSounds[Random.Range(0, FootStepSounds.Length)];
+            FootSteps.Play();
+        }
+        else
+        {
+            t += Time.deltaTime;
         }
     }
 }
