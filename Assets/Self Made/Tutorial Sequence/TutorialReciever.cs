@@ -10,37 +10,9 @@ public class TutorialReciever : MonoBehaviour
     public TutorialInteraction TutorialInteraction;
     public UnityEvent onTrigger;
 
-    //public InteractableScript InteractableScript;
-
     public void Interacted()
     {
         Debug.Log("interact recieved by player");
         onTrigger.Invoke();
     }
-
-    //Idk if I need this part:
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            InteractableScript.nearboard = true;
-        }
-        else
-        {
-            return;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            InteractableScript.nearboard = false;
-        }
-        else
-        {
-            return;
-        }
-    } */
 }
