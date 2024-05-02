@@ -32,6 +32,7 @@ public class InteractableScript : MonoBehaviour
     public AudioSource ventSound;
     public AudioSource bookshelfSound;
     public AudioSource meowSound;
+    public AudioSource quackSound;
 
     [Header("Bart Clues")]
     public GameObject clue1;
@@ -206,6 +207,11 @@ public class InteractableScript : MonoBehaviour
     public void CatMeow()
     {
         meowSound.Play();
+    }
+
+    public void DuckQuack()
+    {
+        quackSound.Play();
     }
 
     public void AddCandle()
