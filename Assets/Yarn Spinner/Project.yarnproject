@@ -7,7 +7,7 @@
     "MinervaMain.yarn",
     "Player.yarn",
     "WraithwoodMain.yarn",
-    "Introduction.yarn"
+    "Introductions.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
