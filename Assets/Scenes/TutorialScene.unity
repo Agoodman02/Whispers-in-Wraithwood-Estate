@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: c1cc9458fce09f54c8cf7077666199c7
+  m_OcclusionCullingData: {fileID: 36300000, guid: db4626fa97a6c9a4fa4757c8e0d897a0, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -2092,7 +2092,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5251741472502243864, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1246053134}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4875779536330864802, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 803120274}
   m_SourcePrefab: {fileID: 100100000, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
 --- !u!4 &338592025 stripped
 Transform:
@@ -4202,6 +4205,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a359bd274e1eb504c8b521a5bc2b8a96, type: 3}
   m_PrefabInstance: {fileID: 585446331}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &681312504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8299999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8299999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8299999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.552
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4730002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.034
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.39497027
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.91869396
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 133.472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_Name
+      value: OLIVIA
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e5dca2cc9692fe479c35de4273933bb, type: 3}
 --- !u!1 &697944910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +5091,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4875779536330864802, guid: 4a7c63536f311024a9261e199723e57c, type: 3}
   m_PrefabInstance: {fileID: 338592024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &803120274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803120268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableScript: {fileID: 0}
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987932928}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TalkToObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &813923545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6138,6 +6246,169 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011819747270, guid: 41dddacf632c28449946dc1e4bbb7eb5, type: 3}
   m_PrefabInstance: {fileID: 969715091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987932927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987932930}
+  - component: {fileID: 987932929}
+  - component: {fileID: 987932928}
+  m_Layer: 0
+  m_Name: DialogueTriggerHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &987932928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987932927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endDialogue: 0
+  selectedCharacter: 
+  currentCharacter: {fileID: 0}
+  targetNodeName: tut3
+  KnowPlayerIsPoisoned: {fileID: 0}
+  KnowBartBitHuman: {fileID: 0}
+  KnowBartDislikesHumans: {fileID: 0}
+  BTTalkPreBody: {fileID: 0}
+  BTTalkPostBody: {fileID: 0}
+  BTTalkOEPhoto: {fileID: 0}
+  BTTalkBartBitHuman: {fileID: 0}
+  KnowFrontDoorLocked: {fileID: 0}
+  KnowWraithwoodIsGhost: {fileID: 0}
+  KnowWraithwoodIsRoomBound: {fileID: 0}
+  MRTalkSick: {fileID: 0}
+  MRTalkFrontDoor: {fileID: 0}
+  MRTalkBody: {fileID: 0}
+  MRTalkSpellbook: {fileID: 0}
+  MRTalkOEPhoto: {fileID: 0}
+  KnowOliviaKilled: {fileID: 0}
+  KnowOliviaMarried: {fileID: 0}
+  KnowOliviaWidow: {fileID: 0}
+  KnowOliviaWitch: {fileID: 0}
+  KnowOliviaNecromancer: {fileID: 0}
+  KnowOliviaRecentlyJoined: {fileID: 0}
+  KnowMaxRejectedByOlivia: {fileID: 0}
+  KnowMaxSeenWithBlood: {fileID: 0}
+  MXTalkPreFindBody: {fileID: 0}
+  MXTalkedAboutMeeting: {fileID: 0}
+  MXKnowsOliviaDead: {fileID: 0}
+  MXTalkBloodied: {fileID: 0}
+  MXTalkSick: {fileID: 0}
+  KnowEdmund_Want_UndoUndead: {fileID: 0}
+  KnowEdmund_Hate_BeingUndead: {fileID: 0}
+  EDTalkPreBody: {fileID: 0}
+  EDTalkPostBody: {fileID: 0}
+  EDTalkOliviaWitch: {fileID: 0}
+  EDTalkOliviaNecromancer: {fileID: 0}
+  EDTalkOEPhoto: {fileID: 0}
+  KnowHasPoison: {fileID: 0}
+  KnowMinervaDislikesOlivia: {fileID: 0}
+  MNTalkPreBody: {fileID: 0}
+  MNTalkPostBody: {fileID: 0}
+  MNTalkPlayerSick: {fileID: 0}
+  FindBody: {fileID: 0}
+  HasOliviaEdmundPhoto: {fileID: 0}
+  HasSpellbook: {fileID: 0}
+  HasOliviaCup: {fileID: 0}
+  HasBloodyPen: {fileID: 0}
+  HasHexBag: {fileID: 0}
+  CluesObtained: {fileID: 0}
+  CluesOnBoard: {fileID: 0}
+  PlayerIsSick: {fileID: 0}
+--- !u!114 &987932929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987932927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endDialogue: 0
+  selectedCharacter: 
+  currentCharacter: {fileID: 0}
+  targetNodeName: tut2
+  KnowPlayerIsPoisoned: {fileID: 0}
+  KnowBartBitHuman: {fileID: 0}
+  KnowBartDislikesHumans: {fileID: 0}
+  BTTalkPreBody: {fileID: 0}
+  BTTalkPostBody: {fileID: 0}
+  BTTalkOEPhoto: {fileID: 0}
+  BTTalkBartBitHuman: {fileID: 0}
+  KnowFrontDoorLocked: {fileID: 0}
+  KnowWraithwoodIsGhost: {fileID: 0}
+  KnowWraithwoodIsRoomBound: {fileID: 0}
+  MRTalkSick: {fileID: 0}
+  MRTalkFrontDoor: {fileID: 0}
+  MRTalkBody: {fileID: 0}
+  MRTalkSpellbook: {fileID: 0}
+  MRTalkOEPhoto: {fileID: 0}
+  KnowOliviaKilled: {fileID: 0}
+  KnowOliviaMarried: {fileID: 0}
+  KnowOliviaWidow: {fileID: 0}
+  KnowOliviaWitch: {fileID: 0}
+  KnowOliviaNecromancer: {fileID: 0}
+  KnowOliviaRecentlyJoined: {fileID: 0}
+  KnowMaxRejectedByOlivia: {fileID: 0}
+  KnowMaxSeenWithBlood: {fileID: 0}
+  MXTalkPreFindBody: {fileID: 0}
+  MXTalkedAboutMeeting: {fileID: 0}
+  MXKnowsOliviaDead: {fileID: 0}
+  MXTalkBloodied: {fileID: 0}
+  MXTalkSick: {fileID: 0}
+  KnowEdmund_Want_UndoUndead: {fileID: 0}
+  KnowEdmund_Hate_BeingUndead: {fileID: 0}
+  EDTalkPreBody: {fileID: 0}
+  EDTalkPostBody: {fileID: 0}
+  EDTalkOliviaWitch: {fileID: 0}
+  EDTalkOliviaNecromancer: {fileID: 0}
+  EDTalkOEPhoto: {fileID: 0}
+  KnowHasPoison: {fileID: 0}
+  KnowMinervaDislikesOlivia: {fileID: 0}
+  MNTalkPreBody: {fileID: 0}
+  MNTalkPostBody: {fileID: 0}
+  MNTalkPlayerSick: {fileID: 0}
+  FindBody: {fileID: 0}
+  HasOliviaEdmundPhoto: {fileID: 0}
+  HasSpellbook: {fileID: 0}
+  HasOliviaCup: {fileID: 0}
+  HasBloodyPen: {fileID: 0}
+  HasHexBag: {fileID: 0}
+  CluesObtained: {fileID: 0}
+  CluesOnBoard: {fileID: 0}
+  PlayerIsSick: {fileID: 0}
+--- !u!4 &987932930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987932927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -38.199596, y: -25.448833, z: 5.689945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989250077
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,7 +6726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: -0.11936563
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6463,11 +6734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.49
+      value: 7.1108646
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.22835083
+      value: -0.9999909
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6475,11 +6746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.97357893
+      value: 0.0042684074
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6487,7 +6758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -206.4
+      value: -360.489
       objectReference: {fileID: 0}
     - target: {fileID: 6152107932349345274, guid: 9ea1e048befb02f4a8ede0b0bbf4d9b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7541,6 +7812,7 @@ GameObject:
   - component: {fileID: 1227763559}
   - component: {fileID: 1227763558}
   - component: {fileID: 1227763557}
+  - component: {fileID: 1227763561}
   - component: {fileID: 1227763556}
   - component: {fileID: 1227763554}
   - component: {fileID: 1227763553}
@@ -7618,6 +7890,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 1227763554}
   Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   Item: {fileID: 11400000, guid: 037381d989f8e8e4aa9a721a2eafe2cb, type: 2}
+  slideshow: {fileID: 0}
   bookShelf: {fileID: 0}
   JewelryBoxLid: {fileID: 0}
   closedVent: {fileID: 0}
@@ -7717,6 +7990,71 @@ MonoBehaviour:
   Item: {fileID: 11400000, guid: 895e4fd2c6e521049acf5e2d369ef892, type: 2}
   TutorialFlyer: {fileID: 1870471185}
   PoisonCup: {fileID: 803120268}
+--- !u!114 &1227763561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227763552}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acb8520557949445a7a3d5d554802b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endDialogue: 0
+  selectedCharacter: 
+  currentCharacter: {fileID: 0}
+  targetNodeName: tut3
+  KnowPlayerIsPoisoned: {fileID: 0}
+  KnowBartBitHuman: {fileID: 0}
+  KnowBartDislikesHumans: {fileID: 0}
+  BTTalkPreBody: {fileID: 0}
+  BTTalkPostBody: {fileID: 0}
+  BTTalkOEPhoto: {fileID: 0}
+  BTTalkBartBitHuman: {fileID: 0}
+  KnowFrontDoorLocked: {fileID: 0}
+  KnowWraithwoodIsGhost: {fileID: 0}
+  KnowWraithwoodIsRoomBound: {fileID: 0}
+  MRTalkSick: {fileID: 0}
+  MRTalkFrontDoor: {fileID: 0}
+  MRTalkBody: {fileID: 0}
+  MRTalkSpellbook: {fileID: 0}
+  MRTalkOEPhoto: {fileID: 0}
+  KnowOliviaKilled: {fileID: 0}
+  KnowOliviaMarried: {fileID: 0}
+  KnowOliviaWidow: {fileID: 0}
+  KnowOliviaWitch: {fileID: 0}
+  KnowOliviaNecromancer: {fileID: 0}
+  KnowOliviaRecentlyJoined: {fileID: 0}
+  KnowMaxRejectedByOlivia: {fileID: 0}
+  KnowMaxSeenWithBlood: {fileID: 0}
+  MXTalkPreFindBody: {fileID: 0}
+  MXTalkedAboutMeeting: {fileID: 0}
+  MXKnowsOliviaDead: {fileID: 0}
+  MXTalkBloodied: {fileID: 0}
+  MXTalkSick: {fileID: 0}
+  KnowEdmund_Want_UndoUndead: {fileID: 0}
+  KnowEdmund_Hate_BeingUndead: {fileID: 0}
+  EDTalkPreBody: {fileID: 0}
+  EDTalkPostBody: {fileID: 0}
+  EDTalkOliviaWitch: {fileID: 0}
+  EDTalkOliviaNecromancer: {fileID: 0}
+  EDTalkOEPhoto: {fileID: 0}
+  KnowHasPoison: {fileID: 0}
+  KnowMinervaDislikesOlivia: {fileID: 0}
+  MNTalkPreBody: {fileID: 0}
+  MNTalkPostBody: {fileID: 0}
+  MNTalkPlayerSick: {fileID: 0}
+  FindBody: {fileID: 0}
+  HasOliviaEdmundPhoto: {fileID: 0}
+  HasSpellbook: {fileID: 0}
+  HasOliviaCup: {fileID: 0}
+  HasBloodyPen: {fileID: 0}
+  HasHexBag: {fileID: 0}
+  CluesObtained: {fileID: 0}
+  CluesOnBoard: {fileID: 0}
+  PlayerIsSick: {fileID: 0}
 --- !u!1 &1231750528
 GameObject:
   m_ObjectHideFlags: 0
@@ -15534,6 +15872,7 @@ GameObject:
   - component: {fileID: 1870471187}
   - component: {fileID: 1870471191}
   - component: {fileID: 1870471190}
+  - component: {fileID: 1870471192}
   m_Layer: 6
   m_Name: TutorialFlyer
   m_TagString: Untagged
@@ -15657,6 +15996,34 @@ MonoBehaviour:
   Items: {fileID: 11400000, guid: d20cffbeab25c7f4ba3e3f07d5812325, type: 2}
   pickupPopup: {fileID: 1829284413}
   allowPickup: 0
+--- !u!114 &1870471192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870471185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6daa65021ff75842b6eabe0ac05f6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableScript: {fileID: 0}
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987932929}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TalkToObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1875326640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17253,3 +17620,5 @@ SceneRoots:
   - {fileID: 1829284410}
   - {fileID: 781520890}
   - {fileID: 766400441}
+  - {fileID: 681312504}
+  - {fileID: 987932930}

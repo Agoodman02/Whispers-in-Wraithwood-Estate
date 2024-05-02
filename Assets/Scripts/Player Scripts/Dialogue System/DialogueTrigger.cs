@@ -6,7 +6,7 @@ using UnityEngine;
 using Yarn.Unity;
 public class DialogueTrigger : MonoBehaviour
 {
-    [HideInInspector] public bool endDialogue = false;
+    [HideInInspector] public bool IsDialogueActive = false;
     //Note: The pseudocode uses nodenames with "-" hyphens in them, but the actual dialogue nodes do not have any hyphens.
 
     //Yarn Spinner's Dialogue runner. This runs the dialogue.
@@ -111,6 +111,7 @@ public class DialogueTrigger : MonoBehaviour
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
     }
 
+
     // This function should be run every time the player obtains a clue. This should run AFTER any dialogue for obtaining a clue is completed.
     public void CheckIfPlayerSick()
     {
@@ -163,7 +164,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TalkToCharacter()
     {
         Debug.Log("Player character dialogue");
-        endDialogue = false;
+        IsDialogueActive = true;
         // Set the global variable "currentCharacter" to the currently selected character. "selectedCharacter" is set in the Unity hierarchy, as it is a Serialized Field.
         currentCharacter.currentCharacter = selectedCharacter;
         //Run code based on which character is currently being spoken to.

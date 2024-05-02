@@ -12,6 +12,8 @@ public class InteractableScript : MonoBehaviour
     public InventorySpace Items;
     public Item Item;
 
+    public GameObject slideshow;
+
     [Header("Interaction Objects")]
     public GameObject bookShelf;
     public GameObject JewelryBoxLid;
@@ -89,10 +91,24 @@ public class InteractableScript : MonoBehaviour
 
     private void Update()
     {
+        if (actions.Player3D.Interact.WasPressedThisFrame() && nearboard)
+        {
+            //checks if ending
+            if (gameManager.CluesOnBoard == 21)
+            {
+                slideshow.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Haha loser, no clues");
+            }
+        }
+
         foreach (Item i in Items.items)
         {
             if (actions.Player3D.Interact.WasPressedThisFrame() && nearboard)
             {
+                //checks inventory for physical evidence
                 switch (i.id)
                 {
                     //Picture 1

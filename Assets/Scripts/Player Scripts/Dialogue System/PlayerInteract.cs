@@ -117,7 +117,7 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
             //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
-            if(dialogueTrigger.endDialogue == true)
+            if(dialogueTrigger.IsDialogueActive == false)
             {
                 player.DoCameraControl = true;
                 Cursor.visible = false;
