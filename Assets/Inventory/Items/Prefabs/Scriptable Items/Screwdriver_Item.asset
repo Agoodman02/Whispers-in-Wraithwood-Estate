@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Screwdriver
   itemDescription: A metallic tool used for handling screws.
   icon: {fileID: 21300000, guid: fd91d163048dd044c9929d47a65f617a, type: 3}
-  ItemInspectionImage: {fileID: 0}
+  ItemInspectionImage: {fileID: 2800000, guid: da03ff10c9e9ef140b393bb769ffb0d6, type: 3}
   prefab: {fileID: 0}

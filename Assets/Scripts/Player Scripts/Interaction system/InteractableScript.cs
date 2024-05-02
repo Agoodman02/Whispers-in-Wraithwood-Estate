@@ -261,5 +261,10 @@ public class InteractableScript : MonoBehaviour
                 Items.items.Remove(i);
             }
         }
+        if (pinkCandle.activeSelf & greenCandle.activeSelf & blueCandle.activeSelf & redCandle.activeSelf & purpleCandle.activeSelf)
+        {
+            bookShelf.SetActive(false);
+            bookshelfSound.Play();
+        }
     }
 }

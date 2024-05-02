@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CandlePink_Item
   m_EditorClassIdentifier: 
   id: 12
-  itemName: Red Candle
+  itemName: Pink Candle
   itemDescription: A mysterious pink candle. It feels oddly heavier than a normal
     candle.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9b7618c2b0c74214997929945db37e95, type: 3}
   ItemInspectionImage: {fileID: 0}
   prefab: {fileID: 0}

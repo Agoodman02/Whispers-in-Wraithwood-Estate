@@ -62,11 +62,11 @@ public class PlayerInteract : MonoBehaviour
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {   
-                //Debug.Log(collider.gameObject.name);
                 if (enterCollider == true)
                 {
-                    //player.DoCameraControl = false;
-                    //if(collider.TryGetComponent(out NPCInteractable Bartholomew_Vampire)) //Bart Main
+                    //Unlocks mouse
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                     if (collider.gameObject.name == "Bartholomew_Vampire") // BartMain.yarn
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Bartholomew_Vampire);
@@ -105,6 +105,12 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
             //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
+            if(dialogueTrigger.endDialogue == true)
+            {
+                player.DoCameraControl = true;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }  
    }
     
