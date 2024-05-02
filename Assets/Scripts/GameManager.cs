@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
     // ------------------------------ General Variables --------------------- //
     // 10 CluesObtained is the trigger for PlayerIsSick.
     public int CluesObtained = 0;
-    public int CluesOnBoard = 0;
+    public int CluesOnBoard = 21;
     public bool PlayerIsSick = false;
 
 }

@@ -11,6 +11,9 @@ public class DialogueTrigger : MonoBehaviour
     //Yarn Spinner's Dialogue runner. This runs the dialogue.
     private DialogueRunner dialogueRunner;
 
+    //Runs the ending slideshow
+    EndingSlideshow slideshow;
+
     //Attach this DialogueTrigger script to every Character.
     //selectedCharacter should be used to store the name of the currently targeted character. 
     //Since this is attached per character (can also be used for clues) that you interact with for dialogue, you can manually input the name of the Character/Object this is attached to in the Unity interface, through this Serialized Field.
@@ -126,7 +129,11 @@ public class DialogueTrigger : MonoBehaviour
     
         if (CluesOnBoard.CluesOnBoard == 21) 
         {
-            targetNodeName = "Insert Final Cutscene NodeName Here";
+            targetNodeName = "Ending";
+
+            slideshow.startSlideshow();
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
 
         // If the currently running node is different from the target node (nodeName), Stop running the current node and dialogue.
             if (dialogueRunner.CurrentNodeName != targetNodeName)

@@ -6,7 +6,8 @@
     "MaxwellMain.yarn",
     "MinveraMain.yarn",
     "Player.yarn",
-    "WraithwoodMain.yarn"
+    "WraithwoodMain.yarn",
+    "Ending.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
