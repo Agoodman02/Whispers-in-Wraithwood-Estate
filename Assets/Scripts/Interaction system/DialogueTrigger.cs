@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.Object;
+
 using Yarn.Unity;
+using Yarn.Dialogue;
 public class DialogueTrigger : MonoBehaviour
 {
     //Note: The pseudocode uses nodenames with "-" hyphens in them, but the actual dialogue nodes do not have any hyphens.
@@ -126,21 +129,52 @@ public class DialogueTrigger : MonoBehaviour
         {
             // Wraithwood
             case "MR08A":
-                KnowWraithwoodIsGhost.KnowWraithwoodIsGhost = true;
+                if (KnowWraithwoodIsGhost.KnowWraithwoodIsGhost == false)
+                {
+                    KnowWraithwoodIsGhost.KnowWraithwoodIsGhost = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
             case "MR10":
-                KnowWraithwoodIsRoomBound.KnowWraithwoodIsRoomBound = true;
+                if (KnowWraithwoodIsRoomBound.KnowWraithwoodIsRoomBound == false)
+                {
+                    KnowWraithwoodIsRoomBound.KnowWraithwoodIsRoomBound = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
             case "MR09OL":
-                KnowOliviaRecentlyJoined.KnowOliviaRecentlyJoined = true;
+                if (KnowOliviaRecentlyJoined.KnowOliviaRecentlyJoined == false)
+                {
+                    KnowOliviaRecentlyJoined.KnowOliviaRecentlyJoined = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
             // Edmund
             case "ED05":
-                KnowEdmund_Want_UndoUndead.KnowEdmund_Want_UndoUndead = true;
+                if (KnowEdmund_Want_UndoUndead.KnowEdmund_Want_UndoUndead == false)
+                {
+                    KnowEdmund_Want_UndoUndead.KnowEdmund_Want_UndoUndead = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
             case "ED10BT":
-                KnowBartDislikesHumans.KnowBartDislikesHumans = true;
+                if (KnowBartDislikesHumans.KnowBartDislikesHumans == false)
+                {
+                    KnowBartDislikesHumans.KnowBartDislikesHumans = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
             case "ED13MX":
+                if (EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund == false)
+                {
                 EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund = true;
+                }
             // Minerva
             case "MN06ED":
-                KnowEdmund_AskMinerva_Necromancy.KnowEdmund_AskMinerva_Necromancy = true;
+                if (KnowEdmund_AskMinervaNecromancy.KnowEdmund_AskMinervaNecromancy == false)
+                {
+                KnowEdmund_AskMinervaNecromancy.KnowEdmund_AskMinervaNecromancy = true;
+                }
         }
     }
 
