@@ -67,6 +67,7 @@ public class DialogueTrigger : MonoBehaviour
     public GameManager MXKnowsOliviaDead;
     public GameManager MXTalkBloodied;
     public GameManager MXTalkSick;
+    public GameManager MXTalkBart;
     // ---- Edmund Clues
     public GameManager KnowEdmund_Want_UndoUndead;
     public GameManager KnowEdmund_Hate_BeingUndead;
@@ -78,13 +79,19 @@ public class DialogueTrigger : MonoBehaviour
     public GameManager EDTalkOEPhoto;
     public GameManager EDAskedAboutOlivia;
     public GameManager EDTalk_MaxFlirtWithEdmund;
+    public GameManager KnowEdmund_AskMinervaNecromancy;
+    public GameManager EDTalkMinervaNecromancy;
+    public GameManager EDTalk_Max2;
     // ---- Minerva Clues
-    public GameManager KnowHasPoison;
+    public GameManager KnowMinervaHasPoison;
     public GameManager KnowMinervaDislikesOlivia;
     //UNOFFICIAL flags; Not on evidence board.
     public GameManager MNTalkPreBody;
     public GameManager MNTalkPostBody;
     public GameManager MNTalkPlayerSick;
+    public GameManager MNTalkSpellbook;
+    public GameManager MNTalkHexBag;
+    public GameManager MNTalkOliviaWitch;
 
     // ------------------------------ Physical Clues ------------------- //
     public GameManager FindBody;
@@ -101,11 +108,40 @@ public class DialogueTrigger : MonoBehaviour
     public GameManager CluesOnBoard;
     public GameManager PlayerIsSick;
 
+    public bool IsDialogueActive = false;
+
 
     // Start is called before the first frame update.
     void Start()
     {
         dialogueRunner = FindObjectOfType<Yarn.Unity.DialogueRunner>();
+    }
+    
+    void Update()
+    {
+        IsDialogueActive = dialogueRunner.IsActive;
+
+        // Checks & sets variables for nested dialogue options that affect verbal clues or bools, based on the current running node.
+        switch(dialogueRunner.CurrentNode)
+        {
+            // Wraithwood
+            case "MR08A":
+                KnowWraithwoodIsGhost.KnowWraithwoodIsGhost = true;
+            case "MR10":
+                KnowWraithwoodIsRoomBound.KnowWraithwoodIsRoomBound = true;
+            case "MR09OL":
+                KnowOliviaRecentlyJoined.KnowOliviaRecentlyJoined = true;
+            // Edmund
+            case "ED05":
+                KnowEdmund_Want_UndoUndead.KnowEdmund_Want_UndoUndead = true;
+            case "ED10BT":
+                KnowBartDislikesHumans.KnowBartDislikesHumans = true;
+            case "ED13MX":
+                EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund = true;
+            // Minerva
+            case "MN06ED":
+                KnowEdmund_AskMinerva_Necromancy.KnowEdmund_AskMinerva_Necromancy = true;
+        }
     }
 
     // This function should be run every time the player obtains a clue. This should run AFTER any dialogue for obtaining a clue is completed.
@@ -235,12 +271,18 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     MRTalkBody.MRTalkBody = true;
                 }
-                /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true]
+                /// - [MR-05-SB] - After finding spellbook. [HasSpellbook == True, MRTalkSpellbook == false] [Set MRTalkSpellbook = true, KnowOliviaWitch = true]
                 else if (HasSpellbook.HasSpellbook == true & MRTalkSpellbook.MRTalkSpellbook == false)
                 {
                     targetNodeName = "MR05SB";
                     RunTargetNode();
                     MRTalkSpellbook.MRTalkSpellbook = true;
+                    if (KnowOliviaWitch.KnowOliviaWitch == false)
+                    {
+                        KnowOliviaWitch.KnowOliviaWitch = true;
+                        CluesObtained.CluesObtained += 1;
+                        CheckIfPlayerSick();
+                    }
                 }
                 /// - [MR-06-OE] - After being told Olivia said she was married or finding ‘O + E photo’. [MRTalkOEPhoto == false & (HasOliviaEdmundPhoto == True || KnowOliviaMarried == True)] [Set MRTalkOEPhoto = true]
                 else if (MRTalkOEPhoto.MRTalkOEPhoto == false & (HasOliviaEdmundPhoto.HasOliviaEdmundPhoto == true | KnowOliviaMarried.KnowOliviaMarried == true))
@@ -297,13 +339,13 @@ public class DialogueTrigger : MonoBehaviour
                     CheckIfPlayerSick();
                 }
                 ///--- Start Questioning Dialogue: MRStartConvo ---//
-                ///*Dialogue options: [MRStartConvo] - MRStartConvo includes these options, and jumps to MR08 or MR09 depending on the option chosen. [Set KnowWraithwoodIsGhost = true]
+                ///*Dialogue options: - These variables are set in Update() using [dialogueRunner.CurrentNode], due to being nested nodes.
                 /// * About Mr.Wraithwood
                 ///  - [MR08] -  [Set KnowWraithwoodIsGhost = true]
                 ///  - [MR10] - [Set KnowWraithwoodIsRoomBound = true]
                 /// * About Others
                 ///  - [MR09OL] - [Set KnowOliviaRecentlyJoined = true]
-                else if (KnowWraithwoodIsRoomBound)
+                else
                 {
                     targetNodeName = "MRStartConvo";
                     RunTargetNode();
@@ -347,26 +389,38 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     EDTalkOEPhoto.EDTalkOEPhoto = true;
                 }
-                /// 
-                ///--- Start Questioning Dialogue: EDStartConvo ---//
+                /// - [ED-12-MN] - Only appears if the player has the “Edmund asked Minerva about Necromancy” flag. [EDTalkMinervaNecromancy = false, KnowEdmund_AskMinervaNecromancy == true]
+                else if (KnowEdmund_AskMinervaNecromancy.KnowEdmund_AskMinervaNecromancy == true & EDTalkMinervaNecromancy.EDTalkMinervaNecromancy == false)
+                {
+                    targetNodeName = "ED12MN";
+                    RunTargetNode();
+                    EDTalkMinervaNecromancy.EDTalkMinervaNecromancy = true;
+                }
+                ///  [ED-14-MX] - If Asked about Max's flirting. [EDTalk_MaxFlirtWithEdmund == false & KnowMaxRejectedByOlivia == True] [Set EDTalk_Max2 = true]
+                else if (EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund == true & KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia == true & EDTalk_Max2.EDTalk_Max2 == false)
+                {
+                    targetNodeName = "ED14MX";
+                    RunTargetNode();
+                    EDTalk_Max2.EDTalk_Max2 = true;
+
+                }
+                ///--- Start Questioning Dialogue: [EDStartConvo] ---//
                 else
                 { 
-                    //***CURRENTLY: ALL NESTED DIALOGUE OPTION VARIABLES (FLAGS) ARE NOT FUNCTIONAL YET. NEEDS VARIABLE STORAGE MANAGEMENT SYSTEM FIRST.
-                    //***CURRENTLY: ALL DIALOGUE OPTIONS ARE ALSO NOT FUNCTIONAL YET. MNStartConvo does NOT run all of the following dialogue options listed below.
                     targetNodeName = "EDStartConvo";
                     RunTargetNode();
                 }
-                ///*Dialogue options:
+                ///*Dialogue options: - These variables are set in Update() using [dialogueRunner.CurrentNode], due to being nested nodes.
                 /// - About Him
-                ///  * [ED-04] - His Alibi [EDAskedAboutOlivia == False]
+                ///  * [ED-04] - His Alibi
+                ///    // CURRENTLY NOT IMPLEMENTED [ED04OL]
                 ///    - [ED-04-OL] - His Alibi, alternate dialogue for same dialogue option. [EDAskedAboutOlivia == False].
-                ///  * [ED-05] - On Being a Skeleton
+                ///  * [ED-05] - On Being a Skeleton [Set KnowEdmund_Want_UndoUndead = true]
                 /// - About Others
-                ///  * [ED-09-OL] - About Olivia
-                ///  * [ED-10-BT] - On Bartholomew
+                ///  * [ED-10-BT] - On Bartholomew [Set KnowBartDislikesHumans = true]
                 ///  * [ED-11-MN] - On Minerva
                 ///  * [ED-13-MX] - On Max [Set EDTalk_MaxFlirtWithEdmund = true]
-                ///    - [ED-14-MX] - If Asked about Max's flirting. [EDTalk_MaxFlirtWithEdmund == true & KnowMaxRejectedByOlivia == True]
+                ///  * [ED-15-MR] - On Mr.Wraithwood
                 break;
             //If currently selected character is Minerva. [MN], "Minerva".
             case "Minerva":
@@ -399,31 +453,71 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     KnowPlayerIsPoisoned.KnowPlayerIsPoisoned = true;
                     CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
                 }
-                ///   
+                ///  - [MN-09-HX] - Hex Bag (before asking about Spellbook) [MNTalkSpellbook == False, HasHexBag == true, MNTalkHexBag == false] [Set MNTalkHexBag = true]
+                else if (HasHexBag.HasHexBag == true & MNTalkSpellbook == false & MNTalkHexBag.MNTalkHexBag == false)
+                {
+                    targetNodeName = "MN09HX";
+                    RunTargetNode();
+                    MNTalkHexBag.MNTalkHexBag = true;
+                }
+                ///  - [MN-09-HX-SB] - Hex Bag (after asking about Spellbook) [MNTalkSpellbook == True, HasHexBag == true, MNTalkHexBag == false] [set MNTalkHexBag = true]
+                else if (HasHexBag.HasHexBag == true & MNTalkSpellbook.MNTalkSpellbook == true & MNTalkHexBag.MNTalkHexBag == false)
+                {
+                    targetNodeName = "MN09HXSB";
+                    RunTargetNode();
+                    MNTalkHexBag.MNTalkHexBag = true;
+                }
+                ///  - [MN-10-SB] - Spellbook [MNTalkSpellbook == false, HasSpellbook == true] [Set KnowOliviaWitch = True, MNTalkSpellbook = True]
+                else if (HasSpellbook.HasSpellbook == true & MNTalkSpellbook == false)
+                {
+                    targetNodeName = "MN10SB";
+                    RunTargetNode();
+                    MNTalkSpellbook.MNTalkSpellbook = true;
+                    if (KnowOliviaWitch.KnowOliviaWitch == false)
+                    {
+                        KnowOliviaWitch.KnowOliviaWitch = true;
+                        CluesObtained.CluesObtained += 1;
+                        CheckIfPlayerSick();
+                    }
+                }
+                ///  - [MN-11-OL] - Olivia Is Witch (After learning Olivia is a witch from Minerva) [KnowOliviaWitch == True, MNTalkOliviaWitch == false] [Set MNTalkOliviaWitch = true, KnowOliviaNecromancer = True]
+                else if (KnowOliviaWitch.KnowOliviaWitch == true & MNTalkOliviaWitch == false)
+                {
+                    targetNodeName = "MN11OL";
+                    RunTargetNode();
+                    MNTalkOliviaWitch.MNTalkOliviaWitch = true;
+                    KnowOliviaNecromancer.KnowOliviaNecromancer = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
+                ///  - [MN-12-PSN] - Bottles From Minvera's Room writers had a clue for vial interaction but it's not a physical clue, so doubt it'd be accessible. no requirements. 
+                ///     * [KnowMinervaHasPoison == false] [Set KnowMinervaHasPoison = true]
+                else if (KnowMinervaHasPoison.KnowMinervaHasPoison == false)
+                {
+                    targetNodeName = "MN12PSN";
+                    RunTargetNode();
+                    KnowMinervaHasPoison.KnowMinervaHasPoison = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
                 ///--- Start Questioning Dialogue: [MNStartConvo] ---//
                 else
                 {
-                    //***CURRENTLY: ALL NESTED DIALOGUE OPTION VARIABLES (FLAGS) ARE NOT FUNCTIONAL YET. NEEDS VARIABLE STORAGE MANAGEMENT SYSTEM FIRST.
-                    //***CURRENTLY: ALL DIALOGUE OPTIONS ARE ALSO NOT FUNCTIONAL YET. MNStartConvo does NOT run all of the following dialogue options listed below.
                     targetNodeName = "MNStartConvo";
                     RunTargetNode();
                 }
-                ///*Dialogue Options:
+                ///*Dialogue Options: - These variables are set in Update() using [dialogueRunner.CurrentNode], due to being nested nodes.
                 /// - About Others
                 ///  * [MN-03-OL] - Olivia
                 ///  * [MN-04-MX] - Maxwell
-                ///  * [MN-06-ED] - Edmund
+                ///  * [MN-06-ED] - Edmund [Set KnowEdmund_AskMinerva_Necromancy = true]
                 ///  * [MN-07-BT] - Bart
                 ///  * [MN-13-MR] - Mr. Wraithwood
-                /// - About Clues [Dialogue options are only available if the related clue has been found/obtained.]
+                /// - About the Meeting
                 ///  * [MN-05] - About the Meeting
                 ///  * [MN-08] - About Alibi since the Meeting
-                ///  * [MN-09-HX] - Hex Bag (before asking about Spellbook) [AskedSpellbook == False]
-                ///  * [MN-09-HX-SB] - Hex Bag (after asking about Spellbook) [AskedSpellBook == True]
-                ///  * [MN-10-SB] - Spellbook [AskedSpellbook == True] [Set KnowOliviaWitch = True]
-                ///  * [MN-11-OL] - Olivia Is Witch (After learning Olivia is a witch from Minerva) [KnowOliviaWitch == True] [Set KnowOliviaNecromancer = True]
-                ///  * [MN-12-PSN] - Bottles From Minvera's Room
                 ///--- End Questioning Dialogue: [MNEndConvo] ---//
                 break;
             case "Max":
@@ -440,12 +534,25 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
-                /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MXKnowsOliviaDead == true] [Set MXTalkedAboutMeeting = true.]
-                else if (MXKnowsOliviaDead.MXKnowsOliviaDead == true)
+                /// - [MX-03-BD] - About the meeting, if Max has been told that Olivia is dead. [MXKnowsOliviaDead == true, MXTalkedAboutMeeting == false] [Set MXTalkedAboutMeeting = true, KnowMaxRejectedByOlivia = true, KnowOliviaMarried = true]
+                else if (MXKnowsOliviaDead.MXKnowsOliviaDead == true & MXTalkedAboutMeeting.MXTalkedAboutMeeting == false)
                 {
                     targetNodeName = "MX03BD";
                     RunTargetNode();
                     MXTalkedAboutMeeting.MXTalkedAboutMeeting = true;
+                    // If player has not yet acquired this clue
+                    if (KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia == false)
+                    {
+                        KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia = true;
+                        CluesObtained.CluesObtained += 1;
+                        CheckIfPlayerSick();
+                    }
+                    if (KnowOliviaMarried.KnowOliviaMarried == false)
+                    {
+                        KnowOliviaMarried.KnowOliviaMarried = true;
+                        CluesObtained.CluesObtained += 1;
+                        CheckIfPlayerSick();
+                    }
                 }
                 /// - [MX-13-BL] - Ask about Max being seen all bloodied. [MaxTalkedAboutMeeting == true, KnowMaxRejectedByOlivia == true, KnowMaxSeenWithBlood == true, MXTalkBloodied == false] [set MXTalkBloodied = true]
                 else if (MXTalkedAboutMeeting.MXTalkedAboutMeeting == true & KnowMaxRejectedByOlivia.KnowMaxRejectedByOlivia == true & KnowMaxSeenWithBlood.KnowMaxSeenWithBlood == true & MXTalkBloodied == false)
@@ -468,16 +575,23 @@ public class DialogueTrigger : MonoBehaviour
                     RunTargetNode();
                     MXTalkSick.MXTalkSick = true;
                 }
+                /// - [MX-09-BT] - Ask about Bartholomew [MaxKnowsOliviaDead == true, MXTalkBart == false] [set KnowBartBitHuman = true, MXTalkBart = true]
+                else if (MXKnowsOliviaDead.MXKnowsOliviaDead == true & MXTalkBart == false)
+                {
+                    targetNodeName = "MX09BT";
+                    RunTargetNode();
+                    MXTalkBart.MXTalkBart = true;
+                    KnowBartBitHuman.KnowBartBitHuman = true;
+                    CluesObtained.CluesObtained += 1;
+                    CheckIfPlayerSick();
+                }
                 ///--- Start Questioning Dialogue: [MXStartConvo] ---//
                 else
                 {
-                    //***CURRENTLY: ALL NESTED DIALOGUE OPTION VARIABLES (FLAGS) ARE NOT FUNCTIONAL YET. NEEDS VARIABLE STORAGE MANAGEMENT SYSTEM FIRST.
-                    //***CURRENTLY: ALL DIALOGUE OPTIONS ARE ALSO NOT FUNCTIONAL YET. MNStartConvo does NOT run all of the following dialogue options listed below.
                     targetNodeName = "MXStartConvo";
                     RunTargetNode();
                 }
-                ///*Dialogue Options:
-                /// - [MX-09-BT] - Ask about Bartholomew [MaxKnowsOliviaDead == true] [set KnowBartBitHuman = true]
+                ///*Dialogue Options: - These variables are set in Update() using [dialogueRunner.CurrentNode], due to being nested nodes.
                 /// - [MX-10-MN] - Ask about Minerva
                 /// - [MX-11-MR] - Ask about Wraithwood
                 /// - [MX-12-ED] - Ask about Edmund

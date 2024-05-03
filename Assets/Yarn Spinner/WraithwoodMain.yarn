@@ -56,22 +56,38 @@ PLAYER: Okay, good talk.
 title: MR08
 ---
 -> PLAYER: What are you?
-    MR: Is it not clear? I’m a ghost. Please leave my room. // MR08
+    <<jump MR08A>>
 -> PLAYER: What’s it like being a ghost? // MR11
     MR: It’s like having one of your subordinates ask you stupid questions. Next?
+    <<jump MREndConvo>>
 -> PLAYER: Why won’t you be more helpful? // MR10
-    MR: *Sigh* Truth be told, I’m stuck in this room. I couldn’t galavant around with you, even if I wanted to.
+    <<jump MR10>>
+===
+title: MR08A
+---
+MR: Is it not clear? I'm a ghost. Please leave my room. //Originally MR08.
+<<jump MREndConvo>>
+===
+title: MR10
+---
+MR: *Sigh* Truth be told, I’m stuck in this room. I couldn’t galavant around with you, even if I wanted to. // MR10.
 <<jump MREndConvo>>
 ===
 
 title: MR09
 ---
 -> PLAYER: What do you know about Olivia? // MR09OL
-    MR: Not much; she was hired pretty recently. Satisfied?
+    <<jump MR09OL>>
 -> PLAYER: What do you know of the guests here? // MR12
     MR: I just heard of Monsters Anonymous and, as someone who can relate, offered to host them here for a meeting.
+    <<jump MREndConvo>>
 -> PLAYER: Did Olivia know you were a ghost? // MR13OL
     MR: No and I imagine she was just as surprised as you at tonight’s guests, too.
+    <<jump MREndConvo>>
+===
+title: MR09OL
+---
+MR: Not much; she was hired pretty recently. Satisfied?
 <<jump MREndConvo>>
 ===
 title: MR14BD
