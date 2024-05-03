@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Object;
-
 using Yarn.Unity;
-using Yarn.Dialogue;
+using Yarn.Markup;
+using Yarn;
 public class DialogueTrigger : MonoBehaviour
 {
     //Note: The pseudocode uses nodenames with "-" hyphens in them, but the actual dialogue nodes do not have any hyphens.
@@ -112,7 +112,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameManager PlayerIsSick;
 
     public bool IsDialogueActive = false;
-
+    public class Dialogue{}
+    public string CurrentNodeName;
 
     // Start is called before the first frame update.
     void Start()
@@ -122,10 +123,10 @@ public class DialogueTrigger : MonoBehaviour
     
     void Update()
     {
-        IsDialogueActive = dialogueRunner.IsActive;
+        IsDialogueActive = dialogueRunner.IsDialogueRunning;
 
         // Checks & sets variables for nested dialogue options that affect verbal clues or bools, based on the current running node.
-        switch(dialogueRunner.CurrentNode)
+        switch(dialogueRunner.CurrentNodeName)
         {
             // Wraithwood
             case "MR08A":
@@ -135,6 +136,7 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
+                break;
             case "MR10":
                 if (KnowWraithwoodIsRoomBound.KnowWraithwoodIsRoomBound == false)
                 {
@@ -142,6 +144,7 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
+                break;
             case "MR09OL":
                 if (KnowOliviaRecentlyJoined.KnowOliviaRecentlyJoined == false)
                 {
@@ -149,6 +152,7 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
+                break;
             // Edmund
             case "ED05":
                 if (KnowEdmund_Want_UndoUndead.KnowEdmund_Want_UndoUndead == false)
@@ -157,6 +161,7 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
+                break;
             case "ED10BT":
                 if (KnowBartDislikesHumans.KnowBartDislikesHumans == false)
                 {
@@ -164,17 +169,20 @@ public class DialogueTrigger : MonoBehaviour
                     CluesObtained.CluesObtained += 1;
                     CheckIfPlayerSick();
                 }
+                break;
             case "ED13MX":
                 if (EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund == false)
                 {
                 EDTalk_MaxFlirtWithEdmund.EDTalk_MaxFlirtWithEdmund = true;
                 }
+                break;
             // Minerva
             case "MN06ED":
                 if (KnowEdmund_AskMinervaNecromancy.KnowEdmund_AskMinervaNecromancy == false)
                 {
                 KnowEdmund_AskMinervaNecromancy.KnowEdmund_AskMinervaNecromancy = true;
                 }
+                break;
         }
     }
 
