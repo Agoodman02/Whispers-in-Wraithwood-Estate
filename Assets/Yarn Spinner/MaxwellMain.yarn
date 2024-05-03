@@ -1,6 +1,12 @@
 ﻿title: MXStartConvo
 ---
 MAXWELL: Aagh! This night couldn’t get any worse... Woah! It’s you. Uh, hey! How can I help ya?
+-> Ask about Minerva
+    <<jump MX10MN>>
+-> Ask about Mr.Wraithwood
+    <<jump MX11MR>>
+-> Ask about Edmund
+    <<jump MX12ED>>
 ===
 
 title: MX01OL
@@ -112,12 +118,14 @@ MAXWELL: Yeesh, sorry.
 MAXWELL: As far as I know, she just went back to her room to do some reading. She’s always been a big study-bug. If there’s something you don’t get and don’t want to get Bart’s sass, you ask her.
 PLAYER: ...And get her sass instead?
 MAXWELL: It’s a lot less frustrating coming from her!
+<<jump MXEndConvo>>
 ===
 
-title: MX10MR
+title: MX11MR
 ---
 PLAYER: Do you know anything about Mr. Wraithwood?
 MAXWELL: The owner of this place? He’s like, old, isn’t he?
+<<jump MXEndConvo>>
 ===
 
 title: MX12ED
@@ -127,7 +135,8 @@ MAXWELL: Hmm… Well, he was pretty quiet, like normal.
 MAXWELL: He’s the old-fashioned sort. And not really fun to be around. He lacks a sort of drive, you know?
 PLAYER: A drive?
 MAXWELL: I can’t even hate the guy. It’s just rare that he wants to do much of anything.
-MAXWELL: And that includes tonight. I didn’t spot him after the meeting
+MAXWELL: And that includes tonight. I didn’t spot him after the meeting.
+<<jump MXEndConvo>>
 ===
 
 title: MX13BL

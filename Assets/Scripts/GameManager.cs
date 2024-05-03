@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     public bool MXKnowsOliviaDead = false;
     public bool MXTalkBloodied = false;
     public bool MXTalkSick = false;
+    public bool MXTalkBart = false;
     // ---- Edmund Clues ------------------------------------------------ EDMUND ---- //
     public bool KnowEdmund_Want_UndoUndead = false;
     public bool KnowEdmund_Hate_BeingUndead = false;
@@ -85,8 +86,13 @@ public class GameManager : MonoBehaviour
     public bool EDTalkOliviaWitch = false;
     public bool EDTalkOliviaNecromancer = false;
     public bool EDTalkOEPhoto = false;
+    public bool EDAskedAboutOlivia = false;
+    public bool EDTalk_MaxFlirtWithEdmund = false;
+    public bool KnowEdmund_AskMinervaNecromancy = false;
+    public bool EDTalkMinervaNecromancy = false;
+    public bool EDTalk_Max2 = false;
     // ---- Minerva Clues ----------------------------------------------- MINERVA --- //
-    public bool KnowHasPoison = false;
+    public bool KnowMinervaHasPoison = false;
     public bool KnowMinervaDislikesOlivia = false;
     //*** Added to evidence board?
     public bool AddedKnowHasPoison = false;
@@ -95,6 +101,9 @@ public class GameManager : MonoBehaviour
     public bool MNTalkPreBody = false;
     public bool MNTalkPostBody = false;
     public bool MNTalkPlayerSick = false;
+    public bool MNTalkSpellbook = false;
+    public bool MNTalkHexBag = false;
+    public bool MNTalkOliviaWitch = false;
 
 
     // ------------------------------ Physical Clues --------------------------------------------------- //

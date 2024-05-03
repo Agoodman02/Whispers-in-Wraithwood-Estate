@@ -116,14 +116,21 @@ public class PlayerInteract : MonoBehaviour
                     }
                 }
             }
-            //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
+
+        }  
+                    //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger 
             if(dialogueTrigger.IsDialogueActive == false)
             {
                 player.DoCameraControl = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
-        }  
+            else
+            {
+                player.DoCameraControl = false;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
    }
     
 
