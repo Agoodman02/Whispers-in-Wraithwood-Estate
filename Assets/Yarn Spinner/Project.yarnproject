@@ -1,13 +1,7 @@
 {
   "projectFileVersion": 2,
   "sourceFiles": [
-    "EdmundMain.yarn",
-    "BartMain.yarn",
-    "MaxwellMain.yarn",
-    "MinervaMain.yarn",
-    "Player.yarn",
-    "WraithwoodMain.yarn",
-    "Introductions.yarn"
+    "Opening.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"

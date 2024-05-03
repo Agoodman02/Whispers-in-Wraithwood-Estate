@@ -1,26 +1,7 @@
 ﻿title: Intro
 ---
 Wraithwood: Alright, I’m trusting you with the front desk tonight. There’s going to be a special event. Being new here will be no excuse for unprofessionalism. We’re going to have some… non-traditional guests. Just be respectful and you should be fine. *Hangs up*
-(Olivia is drinking from her cup.)
-OLIVIA: Are you ready for tonight? I assume the boss gave you his typical warnings.
-PLAYER: Oh! Olivia, you’ve already finished cleaning up all the guest rooms? And, yeah. You could say that.
-OLIVIA: I have. Don’t worry too much about tonight: I’ll be helping out with setting up the ballroom later once all the guests are here. It will be just another day on the job!
-PLAYER: I wonder who these non-traditional guests are...
-<<jump tut1>>
-===
-
-title: tut1
----
-OLIVIA: Well that’s my cue to go finish ballroom prep. Oh, could you remove the meeting notice from the bulletin board? Thanks, I’ll see you later!
-(Olivia leaves.)
-===
-title: tut2
----
-PLAYER: (*And that’s all the guests, right? I guess I have time for a quick break and* am *pretty thirsty. Whatever Olivia was drinking smells good… I don’t think she’d mind.)*
-===
-title: tut3
----
-PLAYER: *(Ah… a refreshing drink. But now what am I to do? Mr. Wraithwood didn’t really say anything beyond manning the front desk…)*
+<<jump Maxwell>>
 ===
 
 title: Maxwell
@@ -58,10 +39,10 @@ PLAYER: (First a werewolf, now a skeleton? How does he even talk? …Ugh, neverm
 EDMUND: …You must be a new sort, huh.
 PLAYER: …I’m sorry?
 EDMUND: Forget it. It doesn’t matter.
-The skeleton turns to look at Olivia
+Edmund looks past you at Olivia.
 OLIVIA: Good evening.
 EDMUND: …Yeah.
-They turn to look back at you.
+He turns to look at the player.
 EDMUND: Reservations under Edmund?
 PLAYER: Oh, of course! You’re all registered, sir. 
 OLIVIA: I’ll go ahead and bring your luggage to your room.
@@ -80,7 +61,7 @@ PLAYER: Good evening! Are you here on the owner’s invitation…?
 MINERVA: Unless I got the wrong place, I believe so!
 OLIVIA: You’ve come to the right place. Some of the others have already arrived.
 MINERVA: And here I thought I might be the first. I should be under ‘Minerva’.
-PLAYER: Let me get you your key.
+Once the player hands over the key.
 PLAYER: So you’re acquainted with the other guests, Miss Minerva?
 MINERVA: Minerva is fine.
 MINERVA: And yes, I am. Is there a problem?
@@ -88,7 +69,7 @@ PLAYER: Ah, no, not at all.
 PLAYER: (It’s just that she’s the odd one out so far…)
 OLIVIA: I’ll go ahead and bring the luggage over to your room, Minerva. Right this way.
 PLAYER: Have a great stay!
-(Minerva and Olivia head off. Eventually, Olivia returns.)
+Once Olivia returns and after Minerva has left
 PLAYER: Olivia, I’m a bit confused. What kind of event is going on?
 OLIVIA: Monsters Anonymous.
 PLAYER: Pardon?
@@ -96,7 +77,7 @@ OLIVIA: Monsters Anonymous. It’s a support group for the…non-humans. They di
 PLAYER: I see… But what about Minerva?
 OLIVIA: Hmm? Isn’t it obvious?
 OLIVIA: She’s a Witch.
-PLAYER: Ah, okay. Thanks.
+PLAYER: That makes sense. Thanks.
 OLIVIA: There shouldn’t be much left on the list. Keep up the good work.
 PLAYER: Got it!
 PLAYER: (Still, I can’t help but wonder…)
@@ -116,15 +97,6 @@ OLIVIA: Here, let me get your luggage to your room, sir.
 PLAYER: And I’ll get you your key.
 Player turns around, grabs keys, turns back, and hands them to Bart.
 PLAYER: Okay, here you go… have a good night.
-BART: ...
+Bart scowls and leaves.
 PLAYER: (...you’re welcome?)
-===
-
-title: StartOfGameplay
----
-PLAYER: (Ugh… I’m feeling awful.)
-PLAYER: Yes?
-MR. WRAITHWOOD: Have you seen Olivia?
-PLAYER: Yes… well, a bit ago I mean.
-MR. WRAITHWOOD: She was supposed to check in with me… Please fetch her and have her ring me. *hangs up* 
 ===

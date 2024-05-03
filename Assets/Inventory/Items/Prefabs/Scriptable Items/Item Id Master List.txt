@@ -14,11 +14,13 @@
 14 - Red Candle (Bart)					//candle puzzle;						removes from inventory
 15 - Maintenance Room Key				//open maintenance room					stays in inventory
 16 - Jewelry Box Clue					//note for jewelry box key				stays in inventory
-17 - Flyer								//for tutorial; taken of of board		dissappears on FullLevel load
 
-17 inventory items
-9 stay in inventory
-8 get removed when used
+
+
+14 inventory items
+
+20 - Sphere
+21 - Cube
 
 Hidden inventory for non-item clues?
 note for each persons name

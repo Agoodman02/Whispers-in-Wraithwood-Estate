@@ -1,8 +1,9 @@
-﻿title: Ending
+﻿title: EndingPhone
 ---
 PLAYER: (It all finally makes sense! I gotta call Mr. Wraithwood and let him know.)
-PLAYER: I’ve figured out what happened. // new dialogue option?
-MR: Very well. Get your evidence and I will have all the guests meet you in the Ballroom. Once exposed, the others should be able to handle whoever’s responsible…
+
+-> PLAYER: I’ve figured out what happened. // new dialogue option
+    MR: Very well. Get your evidence and I will have all the guests meet you in the Ballroom. Once exposed, the others should be able to handle whoever’s responsible…
 ===
 
 title: Slide1

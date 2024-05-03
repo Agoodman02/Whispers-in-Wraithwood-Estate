@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 093db4522cea79a4db977a0d9f312584
-  m_OcclusionCullingData: {fileID: 36300000, guid: db6978516e5dcbe47b42b8703d9c8779, type: 2}
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856160523}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Tutorial
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -925,7 +925,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3fbb45d33423355468aeb757d3f84a92, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4f2a54688321ff14eba08a8153115bbf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 44757a685e5d6974b9a4c4974dcd85db, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

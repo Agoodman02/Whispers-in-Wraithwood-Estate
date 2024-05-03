@@ -40,25 +40,6 @@ MAX: At the end of the meeting, she swung by. I asked her if she’d like to han
 PLAYER: Ah, I see...
 MAX: Ugh, and she told me she was married too! Could you imagine if her husband was around? What a nightmare!
 MAX: And now she’s dead… I feel like I’m going crazy!
-PLAYER: (...I didn’t know Olivia was married. I guess she does wear that ring on her finger.) 
-===
-
-title: MX04BL
----
-// after speaking about the meeting
-// see MX13BL
-// if player has not confronted Max about the blood
-PLAYER: Did you see Olivia after the meeting?
-MAX: Huh? Uh, not since she laid into me and walked out. I wandered around a bit to see if someone else was around I’d want to talk to and went to the bathroom to freshen up, but I didn’t see her.
-===
-
-title: MX05
----
-// after speaking about the meeting
-// see MX13BL
-// if player has confronted Max about the blood
-PLAYER: Did you see Olivia after the meeting?
-MAX: No, sorry... I wandered around for a bit, made sure the coast was clear, and snuck into the kitchen for a snack, went to the bathroom to wash up, then headed right back to my room.
 ===
 
 title: MX06PSN
