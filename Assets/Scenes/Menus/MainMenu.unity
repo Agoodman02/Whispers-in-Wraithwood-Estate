@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 093db4522cea79a4db977a0d9f312584
+  m_OcclusionCullingData: {fileID: 36300000, guid: db6978516e5dcbe47b42b8703d9c8779, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856160523}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Tutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
