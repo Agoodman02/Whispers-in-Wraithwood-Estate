@@ -190,11 +190,12 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+    // --------------------------------------- [**CURRENTLY NOT IN USE***] -----------------------------------//
     //This function checks if the player has acquired 100% of the clues, and then triggers the final cutscene's dialogue node.
     public void TriggerFinalCutscene()
     {
         ///* Check if all of the clues are added to the evidence board.
-    
+        // Honestly at this point I've lost track of the exact # of clues because it keeps changing. (Discovering new implicit clues that writers did not indicate is a real, formal clue)
         if (CluesOnBoard.CluesOnBoard == 22) 
         {
             //target node name is set to the first dialogue node in Ending.yarn. FIGURE OUT HOW TO CHAIN IT + PHOTOS TOGETHER! AND/OR JUST MAKE ONE BIG DIALOGUE NODE.
@@ -210,6 +211,7 @@ public class DialogueTrigger : MonoBehaviour
             // quit game code here. :-) should run after dialogue is completed lol
         }
     }
+    // --------------------------------------- [**CURRENTLY NOT IN USE**] -------------------------------------//
 
     public void RunTargetNode()
     {
