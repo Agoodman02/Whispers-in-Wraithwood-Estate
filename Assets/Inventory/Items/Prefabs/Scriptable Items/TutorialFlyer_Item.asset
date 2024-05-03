@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 17
   itemName: Flyer
-  itemDescription: A flyer from the bulletin board.
-  icon: {fileID: 0}
-  ItemInspectionImage: {fileID: 0}
+  itemDescription: A flyer taken off of the bulletin board. It says "M.A. Meeting,
+    8PM in the Ballroom".
+  icon: {fileID: 21300000, guid: 93b72f1020f0391499cc12b31ae2681e, type: 3}
+  ItemInspectionImage: {fileID: 2800000, guid: 93b72f1020f0391499cc12b31ae2681e, type: 3}
   prefab: {fileID: 0}

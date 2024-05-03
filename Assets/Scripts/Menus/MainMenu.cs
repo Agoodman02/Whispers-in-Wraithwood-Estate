@@ -23,10 +23,14 @@ public class MainMenu : MonoBehaviour
     }
 
     //Load game
-    public void PlayGame()
+    public void Tutorial()
     {
         SceneManager.LoadScene(1);
         Destroy(theMusic);
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(2);
     }
 
     //loads credits

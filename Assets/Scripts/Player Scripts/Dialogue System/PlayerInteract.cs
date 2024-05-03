@@ -21,7 +21,9 @@ public class PlayerInteract : MonoBehaviour
    UnityEngine.Vector3 edmundRot;
    UnityEngine.Vector3 wraithwoodCoor;
    UnityEngine.Vector3 wraithwoodRot;
-   Rigidbody m_Rigidbody;
+    UnityEngine.Vector3 wraithwoodPhoneCoor;
+    UnityEngine.Vector3 wraithwoodPhoneRot;
+    Rigidbody m_Rigidbody;
 
    public bool enterCollider= false;
 
@@ -45,6 +47,9 @@ public class PlayerInteract : MonoBehaviour
         wraithwoodCoor = new UnityEngine.Vector3(-25.50302f, 0f, 32.30211f);
         wraithwoodRot = new UnityEngine.Vector3(0f,0);
 
+        wraithwoodPhoneCoor = new UnityEngine.Vector3(-1.17062f, 0f, 10.12839f);
+        wraithwoodPhoneRot = new UnityEngine.Vector3(7f, 0);
+
         m_Rigidbody = GetComponent<Rigidbody>();
    }
 
@@ -62,11 +67,11 @@ public class PlayerInteract : MonoBehaviour
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {   
-                //Debug.Log(collider.gameObject.name);
                 if (enterCollider == true)
                 {
-                    //player.DoCameraControl = false;
-                    //if(collider.TryGetComponent(out NPCInteractable Bartholomew_Vampire)) //Bart Main
+                    //Unlocks mouse
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                     if (collider.gameObject.name == "Bartholomew_Vampire") // BartMain.yarn
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Bartholomew_Vampire);
@@ -101,10 +106,23 @@ public class PlayerInteract : MonoBehaviour
                             Debug.Log("Interact with Wraithwood");
                             player.TeleportPlayer(wraithwoodCoor, wraithwoodRot, false);
                             dialogueTrigger.TalkToCharacter();
-                    } 
+                    }
+                    if (collider.gameObject.name == "SM_Phone (Wraithwood Phone)") //Wraithwood Main
+                    {
+                        //collider.TryGetComponent<NPCInteractable>(out NPCInteractable MrWraithwood);
+                        Debug.Log("Interact with Wraithwood Phone");
+                        player.TeleportPlayer(wraithwoodPhoneCoor, wraithwoodPhoneRot, false);
+                        dialogueTrigger.TalkToCharacter();
+                    }
                 }
             }
             //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
+            if(dialogueTrigger.IsDialogueActive == false)
+            {
+                player.DoCameraControl = true;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }  
    }
     

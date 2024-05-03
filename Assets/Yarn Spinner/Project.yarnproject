@@ -4,10 +4,10 @@
     "EdmundMain.yarn",
     "BartMain.yarn",
     "MaxwellMain.yarn",
-    "MinveraMain.yarn",
+    "MinervaMain.yarn",
     "Player.yarn",
     "WraithwoodMain.yarn",
-    "Ending.yarn"
+    "Introductions.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
