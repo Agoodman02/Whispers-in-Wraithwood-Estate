@@ -18,5 +18,5 @@ MonoBehaviour:
     drawn, with \u201CO + E\u201D scribbled on it. It was found in Olivia\u2019s
     jewelry box."
   icon: {fileID: 867031816, guid: 508ee73da83fe414990758a2f2d12b64, type: 3}
-  ItemInspectionImage: {fileID: 2800000, guid: e5f8cd68a0d546e45ba59a2c2ca9bd35, type: 3}
+  ItemInspectionImage: {fileID: 2800000, guid: 508ee73da83fe414990758a2f2d12b64, type: 3}
   prefab: {fileID: 0}

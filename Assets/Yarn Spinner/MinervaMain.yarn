@@ -1,44 +1,7 @@
-﻿
-title: MNStartConvo
+﻿title: MNStartConvo
 ---
-// Before "Photo of Body" Clue and after Minerva sees the player is poisoned
-MINERVA: Yes?
--> Ask about others
-    <<jump MNOthers>>
--> Ask about the meeting
-    <<jump MNClues>>
+PLAYER: Can I ask you a few questions, Minerva?
 ===
-
-title: MNOthers
----
-PLAYER: I wanted to ask you about someone...
--> About Olivia
-    << jump MN03OL>>
--> About Maxwell
-    <<jump MN04MX>>
--> About Edmund
-    << jump MN06ED>>
--> About Bartholomew
-    <<jump MN07BT>>
--> About Mr.Wraithwood
-    <<jump MN13MR>>
-===
-
-title: MNClues
----
--> About the meeting
-    <<jump MN05>>
--> About her alibi
-    <<jump MN08>>
-===
-
-title: MNStartSick
----
-// NOT USED. This line is instead merged in MN14PSN & MN15CP.
-// occurs once then reverts to og starter
-MINERVA: Hmm? Woah, hold on. You aren’t about to be sick, are you? What’s wrong?
-===
-
 title: MN01OL
 ---
 // If talked to before finding Olivia
@@ -62,7 +25,6 @@ PLAYER: Is there anything you can tell me about Olivia?
 MINERVA: ...
 MINERVA: I’d guess I know about as much as the victim as you do.
 PLAYER: I see.
-<<jump MNEndConvo>>
 ===
 
 title: MN04MX
@@ -71,7 +33,6 @@ PLAYER: Can I ask more about Maxwell?
 MINERVA: No.
 PLAYER: …
 MINERVA: Just kidding. He’s pretty straightforward; a werewolf who wears his heart on his sleeve. If you asked him about something, he’d probably tell you straight away.
-<<jump MNEndConvo>>
 ===
 
 title: MN05
@@ -80,7 +41,6 @@ title: MN05
 PLAYER: Did anything happen during or after the meeting?
 MINERVA: Well, the only thing I can think of is what Max tried to pull. Have you heard about it?
 MINERVA: He asked Olivia out, made a comment about her that she sure didn’t like, and then she turned him down!
-<<jump MNEndConvo>>
 ===
 
 title: MN06ED
@@ -91,7 +51,6 @@ MINERVA: I suppose you could say we’re acquainted fairly well!
 MINERVA: Oh, but nothing that close, mind you. He’s asked me for a favor before, but…
 PLAYER: Pardon?
 MINERVA: Well, he’s asked me for magical help before. …Something involving necromancy. He was pretty insistent about it, but I just don’t deal in that type of witchcraft.
-<<jump MNEndConvo>>
 ===
 
 title: MN07BT
@@ -100,34 +59,25 @@ PLAYER: Can you tell me about Bartholomew?
 MINERVA: That’s a very broad question. Let’s see, older than he looks, almost always wears the same few sets of clothes…
 PLAYER: Er, what about after the meeting? Did you see him at all?
 MINERVA: Not at all. I’ve been in my room, and, thankfully, these walls aren’t paper thin. So I haven’t heard him at all, either. I have no idea what he was up to.
-<<jump MNEndConvo>>
 ===
 
 title: MN08
 ---
 PLAYER: Could you tell me what you were doing between after the meeting and now?
 MINERVA: I headed straight to my room to relax, and I haven’t moved from here since. Does that answer your question?
-<<jump MNEndConvo>>
 ===
 
 title: MN09HX
 ---
-// ask about hexbag & before asking about spellbook
+// asked about hexbag
 PLAYER: Minerva, I found this sack near Olivia’s body. Do you know what this is?
 MINERVA: That’s a hex bag. It’s a tool used by some who practice witchcraft.
 PLAYER: Is it yours?
 MINERVA: No. It isn’t mine.
 MINERVA: Someone else must be practicing witchcraft around here.
-===
-title: MN09HXSB
----
-// ask about hexbag & after asking about spellbook
-PLAYER: Minerva, I found this sack near Olivia’s body. Do you know what this is?
-MINERVA: That’s a hex bag. It’s a tool used by some who practice witchcraft.
-PLAYER: Is it yours?
-MINERVA: No. It isn’t mine.
-MINERVA: Someone else must be practicing witchcraft around here.
+// if asked after spellbook 
 MINERVA: If it was with Olivia, it was probably her’s. // MN09HXSB
+// ^^ is this important, can we cut it?
 ===
 
 title: MN10SB
@@ -170,7 +120,6 @@ title: MN13MR
 ---
 PLAYER: Do you know anything about the owner here, Mr. Wraithwood?
 MINERVA: No. I’m surprised you asked me: shouldn’t you know more than I do?
-<<jump MNEndConvo>>
 ===
 
 title: MN16MN

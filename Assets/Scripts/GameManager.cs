@@ -127,5 +127,4 @@ public class GameManager : MonoBehaviour
     public int CluesObtained = 0;
     public int CluesOnBoard = 0;
     public bool PlayerIsSick = false;
-
 }
