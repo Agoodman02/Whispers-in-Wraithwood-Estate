@@ -23,6 +23,28 @@ title: EDStartConvo
 ---
 PLAYER: I need to ask you some questions.
 EDMUND: ...
+-> Ask about him
+    <<jump EDHim>>
+-> Ask about others
+    <<jump EDOthers>>
+===
+title: EDHim
+---
+-> Ask about his Alibi
+    <<jump ED04>>
+-> On being a skeleton
+    <<jump ED05>>
+===
+title: EDOthers
+---
+-> About Bartholomew
+    <<jump ED10BT>>
+-> About Minerva
+    <<jump ED11MN>>
+-> About Maxwell
+    <<jump ED13MX>>
+-> About Mr.Wraithwood
+    <<jump ED15MR>>
 ===
 title: EDEndConvo
 ---
@@ -34,6 +56,7 @@ title: ED04
 // Alibi
 PLAYER: Where were you before and after the meeting?
 EDMUND: I was in my room. I don’t really talk to anyone else outside of meetings.
+<<jump EDEndConvo>>
 ===
 
 title: ED04OL
@@ -56,6 +79,7 @@ EDMUND: To know you’ll never feel a summer breeze again.
 EDMUND: To forget what a delicious steak tastes like.
 EDMUND: ...
 EDMUND: It’s something like that.
+<<jump EDEndConvo>>
 ===
 
 
@@ -69,12 +93,14 @@ EDMUND: …Hates humans, though.
 PLAYER: R-really? 
 EDMUND: Has a lot of issues with them. 
 EDMUND: (…) Can’t really say I care.
+<<jump EDEndConvo>>
 ===
 
 title: ED11MN
 ---
 PLAYER: What do you think about Minerva?
 EDMUND: She’s nice enough. And I figure having a witch on my good side isn’t a bad idea, so we get along. Beats the opposite.
+<<jump EDEndConvo>>
 ===
 
 title: ED12MN
@@ -94,6 +120,7 @@ PLAYER: What do you think about Max?
 EDMUND: The werewolf? He’s an idiot. And he’s loud.
 PLAYER: Okay, and do you think he’s capable of killing someone?
 EDMUND: Maybe? I don’t really care. He doesn’t seem capable of much outside of talking someone to death.
+<<jump EDEndConvo>>
 ===
 
 title: ED14MX
@@ -109,5 +136,5 @@ title: ED15MR
 ---
 PLAYER: Do you know anything about Mr. Wraithwood?
 EDMUND: That’s the guy the estate is named after. Can’t find much on him. It’s strange.
-
+<<jump EDEndConvo>>
 ===
