@@ -13,20 +13,4 @@ MonoBehaviour:
   m_Name: Current Inventory
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 982ccfb3880e8184aa8a30a542afdf99, type: 2}
-  - {fileID: 11400000, guid: fbb9aba2150cb064a9f3e30398877266, type: 2}
-  - {fileID: 11400000, guid: 12d27a54940c26040aee9a2618364688, type: 2}
-  - {fileID: 11400000, guid: feaf389dc6a2648478a9c1a3b644fd87, type: 2}
-  - {fileID: 11400000, guid: 08c4d5d6e8c2799469b38b7c3bed02f9, type: 2}
-  - {fileID: 11400000, guid: 67a7a51df3a0dca4b80cd7cbd40eb6b0, type: 2}
-  - {fileID: 11400000, guid: ee539a28097008b4e9ff70d3d93daf87, type: 2}
-  - {fileID: 11400000, guid: 8026014d150c5b6489fa782e71a092dd, type: 2}
-  - {fileID: 11400000, guid: 98a4d8c7e625ac549a6d621b449f602f, type: 2}
-  - {fileID: 11400000, guid: 38e7ddde5fa286748bdcebad94323707, type: 2}
-  - {fileID: 11400000, guid: 5eca12947c173214dbccdf320a05b7fb, type: 2}
-  - {fileID: 11400000, guid: 3b4ef45112345fc488e0328d925fe8c7, type: 2}
-  - {fileID: 11400000, guid: 91d8ba68ab8b8e545a4cc6866e40edef, type: 2}
-  - {fileID: 11400000, guid: 037381d989f8e8e4aa9a721a2eafe2cb, type: 2}
   - {fileID: 11400000, guid: 895e4fd2c6e521049acf5e2d369ef892, type: 2}
-  - {fileID: 11400000, guid: eaf344cde8cf25d4ba0a852169b4000a, type: 2}
-  - {fileID: 11400000, guid: db79c3b5f55d2c74cb7c8babe6217deb, type: 2}

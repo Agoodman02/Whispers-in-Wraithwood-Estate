@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
 
     // Update is called once per frame
@@ -55,8 +55,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
         pauseMenuSound.Play();
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     public void Controls()
@@ -78,8 +78,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         pauseMenuSound.Play();
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     //Start Menu

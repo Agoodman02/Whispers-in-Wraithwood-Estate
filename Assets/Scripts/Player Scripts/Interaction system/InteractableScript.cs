@@ -103,7 +103,6 @@ public class InteractableScript : MonoBehaviour
             {
                 Debug.Log("Haha loser, no clues");
             }
-            
             //checks for dialogue clues
             if( gameManager.KnowPlayerIsPoisoned == true)
             {
@@ -190,17 +189,17 @@ public class InteractableScript : MonoBehaviour
             if (gameManager.KnowEdmund_Want_UndoUndead == true)
             {
                 gameManager.AddedKnowEdmund_Want_UndoUndead = true;
-                clue6.SetActive(true);
+                clue5.SetActive(true);
                 gameManager.CluesOnBoard++;
             }
             if (gameManager.KnowEdmund_Hate_BeingUndead == true)
             {
                 gameManager.AddedKnowEdmund_Hate_BeingUndead = true;
-                clue5.SetActive(true);
+                clue6.SetActive(true);
                 gameManager.CluesOnBoard++;
             }
             // ---- Minerva Clues ----------------------------------------------- MINERVA --- //
-            if (gameManager.KnowHasPoison == true)
+            if (gameManager.KnowMinervaHasPoison == true)
             {
                 gameManager.AddedKnowHasPoison = true;
                 clue11.SetActive(true);
