@@ -91,6 +91,7 @@ public class InteractableScript : MonoBehaviour
 
     private void Update()
     {
+        //checks for ending
         if (actions.Player3D.Interact.WasPressedThisFrame() && nearboard)
         {
             //checks if ending
@@ -101,6 +102,114 @@ public class InteractableScript : MonoBehaviour
             else
             {
                 Debug.Log("Haha loser, no clues");
+            }
+            //checks for dialogue clues
+            if( gameManager.KnowPlayerIsPoisoned == true)
+            {
+                gameManager.AddedKnowPlayerIsPoisoned = true;
+                clue18.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            // ---- Bart Clues ------------------------------------------- BARTHOLOMEW ----- //
+            if (gameManager.KnowBartBitHuman == true)
+            {
+                gameManager.AddedKnowBartBitHuman = true;
+                clue2.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowBartDislikesHumans == true)
+            {
+                gameManager.AddedKnowBartDislikesHumans = true;
+                clue1.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            // ---- Wraithwood Clues -------------------------------------- WRAITHWOOD ---- //
+            if (gameManager.KnowFrontDoorLocked == true)
+            {
+                gameManager.AddedKnowFrontDoorLocked = true;
+                clue7.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if(gameManager.KnowWraithwoodIsGhost == true)
+            {
+                gameManager.AddedKnowWraithwoodIsGhost = true;
+                clue9.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowWraithwoodIsRoomBound == true)
+            {
+                gameManager.AddedKnowWraithwoodIsRoomBound = true;
+                clue8.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+
+            // ---- Olivia Clues ------------------------------------------- OLIVIA -------- //
+            if (gameManager.KnowOliviaKilled == true)
+            {
+                gameManager.AddedKnowOliviaKilled = true;
+            }
+            if (gameManager.KnowOliviaWidow == true)
+            {
+                gameManager.AddedKnowOliviaWidow = true;
+                clue12.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowOliviaWitch == true)
+            {
+                gameManager.AddedKnowOliviaWitch = true;
+                clue13.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowOliviaNecromancer == true)
+            {
+                gameManager.AddedKnowOliviaNecromancer = true;
+                clue14.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowOliviaRecentlyJoined == true)
+            {
+                gameManager.AddedKnowOliviaRecentlyJoined = true;
+                clue15.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            // ---- Max Clues --------------------------------------------- MAXWELL ------- //
+            if (gameManager.KnowMaxRejectedByOlivia == true)
+            {
+                gameManager.AddedKnowMaxRejectedByOlivia = true;
+                clue3.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowMaxSeenWithBlood == true)
+            {
+                gameManager.AddedKnowMaxSeenWithBlood = true;
+                clue4.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            // ---- Edmund Clues ------------------------------------------------ EDMUND ---- //
+            if (gameManager.KnowEdmund_Want_UndoUndead == true)
+            {
+                gameManager.AddedKnowEdmund_Want_UndoUndead = true;
+                clue5.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowEdmund_Hate_BeingUndead == true)
+            {
+                gameManager.AddedKnowEdmund_Hate_BeingUndead = true;
+                clue6.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            // ---- Minerva Clues ----------------------------------------------- MINERVA --- //
+            if (gameManager.KnowMinervaHasPoison == true)
+            {
+                gameManager.AddedKnowHasPoison = true;
+                clue11.SetActive(true);
+                gameManager.CluesOnBoard++;
+            }
+            if (gameManager.KnowMinervaDislikesOlivia == true)
+            {
+                gameManager.AddedKnowMinervaDislikesOlivia = true;
+                clue10.SetActive(true);
+                gameManager.CluesOnBoard++;
             }
         }
 

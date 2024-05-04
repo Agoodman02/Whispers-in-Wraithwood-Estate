@@ -38,15 +38,6 @@ public class ItemPickup : MonoBehaviour
                 Pickup();
             }
         }
-    }
-
-    //Picks up item
-    public void Pickup()
-    {
-        InventoryManager.Instance.Add(Item);
-        Destroy(gameObject);
-        DisablePickupPopup();
-
         //Adds clue info to game manager
         foreach (Item i in Items.items)
         {
@@ -81,6 +72,14 @@ public class ItemPickup : MonoBehaviour
                     break;
             }
         }
+    }
+
+    //Picks up item
+    public void Pickup()
+    {
+        InventoryManager.Instance.Add(Item);
+        Destroy(gameObject);
+        DisablePickupPopup();
     }
 
     //Displays pickup text

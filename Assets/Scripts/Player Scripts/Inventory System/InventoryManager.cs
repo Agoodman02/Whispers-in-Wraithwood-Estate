@@ -42,8 +42,8 @@ public class InventoryManager : MonoBehaviour
             screenUI.SetActive(true);
             interactionPopup.SetActive(true);
             inventoryMenuActivated = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
 
             CleanList();
         }
@@ -55,8 +55,8 @@ public class InventoryManager : MonoBehaviour
             screenUI.SetActive(false);
             interactionPopup.SetActive(false);
             inventoryMenuActivated = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;  
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;  
 
             ListItems();
         }
