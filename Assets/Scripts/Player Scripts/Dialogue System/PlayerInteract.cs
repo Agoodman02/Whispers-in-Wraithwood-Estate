@@ -69,60 +69,60 @@ public class PlayerInteract : MonoBehaviour
             {   
                 if (enterCollider == true)
                 {
-                    //Unlocks mouse
+                    /*//Unlocks mouse
                     Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.lockState = CursorLockMode.None;*/
                     if (collider.gameObject.name == "Bartholomew_Vampire") // BartMain.yarn
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Bartholomew_Vampire);
                             Debug.Log("Interact with Bart");
-                            player.TeleportPlayer(bartCoor, bartRot, false);
+                            //player.TeleportPlayer(bartCoor, bartRot, false);
                             dialogueTrigger.TalkToCharacter();
                         } 
                     if (collider.gameObject.name == "Edmund_Skeleton") // EdmundMain.yarn
                         {
                             //collider.TryGetComponent<DialogueTrigger>(out DialogueTrigger Edmund_Skeleton);  //does this need to be renamed?
                             Debug.Log("Interact with Edmund");
-                        player.TeleportPlayer(edmundCoor, edmundRot, false);
+                        //player.TeleportPlayer(edmundCoor, edmundRot, false);
                             dialogueTrigger.TalkToCharacter();
                     } 
                     if (collider.gameObject.name == "Max_Werewolf") // MaxwellMain.yarn
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Max_Werewolf);
                             Debug.Log("Interact with Maxwell");
-                            player.TeleportPlayer(maxwellCoor, maxwellRot, false);
+                            //player.TeleportPlayer(maxwellCoor, maxwellRot, false);
                             dialogueTrigger.TalkToCharacter();
                     } 
                     if (collider.gameObject.name == "Minerva_Witch") //Minerva Main
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable Minerva_Witch);
                             Debug.Log("Interact with Minerva");
-                            player.TeleportPlayer(minervaCoor, minervaRot, false);
+                            //player.TeleportPlayer(minervaCoor, minervaRot, false);
                             dialogueTrigger.TalkToCharacter();
                     } 
                     if (collider.gameObject.name == "Mr.Wraithwood") //Wraithwood Main
                         {
                             //collider.TryGetComponent<NPCInteractable>(out NPCInteractable MrWraithwood);
                             Debug.Log("Interact with Wraithwood");
-                            player.TeleportPlayer(wraithwoodCoor, wraithwoodRot, false);
+                            //player.TeleportPlayer(wraithwoodCoor, wraithwoodRot, false);
                             dialogueTrigger.TalkToCharacter();
                     }
                     if (collider.gameObject.name == "SM_Phone (Wraithwood Phone)") //Wraithwood Main
                     {
                         //collider.TryGetComponent<NPCInteractable>(out NPCInteractable MrWraithwood);
                         Debug.Log("Interact with Wraithwood Phone");
-                        player.TeleportPlayer(wraithwoodPhoneCoor, wraithwoodPhoneRot, false);
+                        //player.TeleportPlayer(wraithwoodPhoneCoor, wraithwoodPhoneRot, false);
                         dialogueTrigger.TalkToCharacter();
                     }
                 }
             }
-            //player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
+            /*//player.DoCameraControl = true; //put inside if statement; bool controlled by DialogueTrigger
             if(dialogueTrigger.IsDialogueActive == false)
             {
                 player.DoCameraControl = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-            }
+            }*/
         }  
    }
     
